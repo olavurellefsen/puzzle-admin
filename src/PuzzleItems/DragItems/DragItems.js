@@ -1,6 +1,10 @@
-import React from 'react';
-import { DragItemsContainer } from './DragItems.style';
+import React from "react";
+import { DragItemsContainer, DragItemsImage } from "./DragItems.style";
 
-const DragItems = () => <DragItemsContainer />;
+const DragItems = () => (
+  <DragItemsContainer>
+    <DragItemsImage src={"https://via.placeholder.com/200x800?text=DragItems"} />
+  </DragItemsContainer>
+);
 
 export default DragItems;

@@ -1,10 +1,10 @@
 import React from "react";
 import { AppContainer } from "./App.style";
-import SceneList from "../SceneList/SceneList";
+import Scenes from "../Scenes/Scenes";
 
 const App = () => (
   <AppContainer>
-    <SceneList />
+    <Scenes />
   </AppContainer>
 );
 

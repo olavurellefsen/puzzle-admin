@@ -1,14 +1,37 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import Puzzle from './Puzzle';
+import React from "react";
+import { shallow, mount } from "enzyme";
+import MainContextStore from "../../MainContextStore";
+import Puzzle from "./Puzzle";
+import { PuzzleImage } from "./Puzzle.style";
 
-describe('Puzzle', () => {
+describe("Puzzle", () => {
   let wrapper;
-  beforeEach(() => wrapper = shallow(<Puzzle />));
+  beforeEach(
+    () =>
+      (wrapper = shallow(
+        <MainContextStore>
+          <Puzzle />
+        </MainContextStore>
+      ))
+  );
 
-  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
+  it("should render correctly", () => expect(wrapper).toMatchSnapshot());
+});
 
-  it('should render a PuzzleContainer', () => {
-    expect(wrapper.find('PuzzleContainer').length).toEqual(1);
+describe("mounted Puzzle", () => {
+  let wrapper;
+  beforeEach(
+    () =>
+      (wrapper = mount(
+        <MainContextStore>
+          <Puzzle sceneId={1} />
+        </MainContextStore>
+      ))
+  );
+  it("should render a PuzzleContainer", () => {
+    expect(wrapper.find("PuzzleContainer").length).toEqual(1);
+  });
+  it("should render the a placeholder image", () => {
+    expect(wrapper.containsMatchingElement(<PuzzleImage />)).toEqual(true);
   });
 });

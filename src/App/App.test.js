@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme';
 import App from './App';
-import SceneList from '../SceneList/SceneList';
+import Scenes from '../Scenes/Scenes';
 
 describe('App structure', () => {
   let wrapper;
@@ -10,7 +10,7 @@ describe('App structure', () => {
   it('should render an AppContainer', () => {
     expect(wrapper.find('AppContainer').length).toEqual(1);
   });
-  it('should render the SceneList component', () => {
-    expect(wrapper.containsMatchingElement(<SceneList />)).toEqual(true);
+  it('should render the Scenes component', () => {
+    expect(wrapper.containsMatchingElement(<Scenes />)).toEqual(true);
   });
 });

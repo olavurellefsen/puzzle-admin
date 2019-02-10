@@ -3,12 +3,12 @@ import Scene from './Scene/Scene';
 import { SceneListContainer } from "./SceneList.style";
 
 const SceneList = () => {
+  const scenes = [0,1,2,3];
   return (
     <SceneListContainer>
-      <Scene sceneId={0}/>
-      <Scene sceneId={1}/>
-      <Scene sceneId={2}/>
-      <Scene sceneId={3}/>
+      {scenes.map((scene, index) => 
+        <Scene key={index} sceneId={scene}/>
+      )}
     </SceneListContainer>
   );
 };

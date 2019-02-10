@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PuzzleList should render correctly 1`] = `
+exports[`SceneList should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PuzzleList />,
+  Symbol(enzyme.__unrendered__): <Scenes />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -19,90 +19,36 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Puzzle
-          puzzleId={0}
-        />,
-        <Puzzle
-          puzzleId={1}
-        />,
-        <Puzzle
-          puzzleId={2}
-        />,
-        <Puzzle
-          puzzleId={3}
-        />,
-        <Puzzle
-          puzzleId={4}
-        />,
-        <Puzzle
-          puzzleId={5}
-        />,
+        <SceneList />,
+        <PuzzleList />,
+        <PuzzleItems />,
       ],
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "0",
+        "key": undefined,
         "nodeType": "function",
-        "props": Object {
-          "puzzleId": 0,
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
       },
       Object {
         "instance": null,
-        "key": "1",
+        "key": undefined,
         "nodeType": "function",
-        "props": Object {
-          "puzzleId": 1,
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
       },
       Object {
         "instance": null,
-        "key": "2",
+        "key": undefined,
         "nodeType": "function",
-        "props": Object {
-          "puzzleId": 2,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "3",
-        "nodeType": "function",
-        "props": Object {
-          "puzzleId": 3,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "4",
-        "nodeType": "function",
-        "props": Object {
-          "puzzleId": 4,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "5",
-        "nodeType": "function",
-        "props": Object {
-          "puzzleId": 5,
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -112,18 +58,19 @@ ShallowWrapper {
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-htpNat",
+        "componentId": "sc-gqjmRU",
         "isStatic": true,
         "rules": Array [
           "
-  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
 ",
         ],
       },
-      "displayName": "PuzzleListContainer",
+      "displayName": "ScenesContainer",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-htpNat",
+      "styledComponentId": "sc-gqjmRU",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],
@@ -137,90 +84,36 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Puzzle
-            puzzleId={0}
-          />,
-          <Puzzle
-            puzzleId={1}
-          />,
-          <Puzzle
-            puzzleId={2}
-          />,
-          <Puzzle
-            puzzleId={3}
-          />,
-          <Puzzle
-            puzzleId={4}
-          />,
-          <Puzzle
-            puzzleId={5}
-          />,
+          <SceneList />,
+          <PuzzleList />,
+          <PuzzleItems />,
         ],
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "0",
+          "key": undefined,
           "nodeType": "function",
-          "props": Object {
-            "puzzleId": 0,
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
         },
         Object {
           "instance": null,
-          "key": "1",
+          "key": undefined,
           "nodeType": "function",
-          "props": Object {
-            "puzzleId": 1,
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
         },
         Object {
           "instance": null,
-          "key": "2",
+          "key": undefined,
           "nodeType": "function",
-          "props": Object {
-            "puzzleId": 2,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "3",
-          "nodeType": "function",
-          "props": Object {
-            "puzzleId": 3,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "4",
-          "nodeType": "function",
-          "props": Object {
-            "puzzleId": 4,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "5",
-          "nodeType": "function",
-          "props": Object {
-            "puzzleId": 5,
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -230,18 +123,19 @@ ShallowWrapper {
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-htpNat",
+          "componentId": "sc-gqjmRU",
           "isStatic": true,
           "rules": Array [
             "
-  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
 ",
           ],
         },
-        "displayName": "PuzzleListContainer",
+        "displayName": "ScenesContainer",
         "foldedComponentIds": Array [],
         "render": [Function],
-        "styledComponentId": "sc-htpNat",
+        "styledComponentId": "sc-gqjmRU",
         "target": "div",
         "toString": [Function],
         "warnTooManyClasses": [Function],

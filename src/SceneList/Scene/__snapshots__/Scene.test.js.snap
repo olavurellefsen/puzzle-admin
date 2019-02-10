@@ -22,6 +22,7 @@ ShallowWrapper {
     "props": Object {
       "children": <Scene />,
       "value": Object {
+        "currentPuzzle": 2,
         "currentScene": 1,
       },
     },
@@ -62,6 +63,7 @@ ShallowWrapper {
       "props": Object {
         "children": <Scene />,
         "value": Object {
+          "currentPuzzle": 2,
           "currentScene": 1,
         },
       },

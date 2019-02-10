@@ -3,7 +3,9 @@
 exports[`Puzzle should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Puzzle />,
+  Symbol(enzyme.__unrendered__): <MainContextStore>
+    <Puzzle />
+  </MainContextStore>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -17,28 +19,40 @@ ShallowWrapper {
     "instance": null,
     "key": undefined,
     "nodeType": "function",
-    "props": Object {},
-    "ref": null,
-    "rendered": null,
-    "type": Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
-        "isStatic": true,
-        "rules": Array [
-          "
-",
-        ],
+    "props": Object {
+      "children": <Puzzle />,
+      "value": Object {
+        "currentPuzzle": 2,
+        "currentScene": 1,
       },
-      "displayName": "PuzzleContainer",
-      "foldedComponentIds": Array [],
-      "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
-      "target": "div",
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": Object {
+      "$$typeof": Symbol(react.provider),
+      "_context": Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": Object {
+          "$$typeof": Symbol(react.context),
+          "_calculateChangedBits": null,
+          "_context": [Circular],
+        },
+        "Provider": [Circular],
+        "_calculateChangedBits": null,
+        "_currentRenderer": null,
+        "_currentRenderer2": null,
+        "_currentValue": undefined,
+        "_currentValue2": undefined,
+        "_threadCount": 0,
+      },
     },
   },
   Symbol(enzyme.__nodes__): Array [
@@ -46,28 +60,40 @@ ShallowWrapper {
       "instance": null,
       "key": undefined,
       "nodeType": "function",
-      "props": Object {},
-      "ref": null,
-      "rendered": null,
-      "type": Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "attrs": Array [],
-        "componentStyle": ComponentStyle {
-          "componentId": "sc-bdVaJa",
-          "isStatic": true,
-          "rules": Array [
-            "
-",
-          ],
+      "props": Object {
+        "children": <Puzzle />,
+        "value": Object {
+          "currentPuzzle": 2,
+          "currentScene": 1,
         },
-        "displayName": "PuzzleContainer",
-        "foldedComponentIds": Array [],
-        "render": [Function],
-        "styledComponentId": "sc-bdVaJa",
-        "target": "div",
-        "toString": [Function],
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": Object {
+            "$$typeof": Symbol(react.context),
+            "_calculateChangedBits": null,
+            "_context": [Circular],
+          },
+          "Provider": [Circular],
+          "_calculateChangedBits": null,
+          "_currentRenderer": null,
+          "_currentRenderer2": null,
+          "_currentValue": undefined,
+          "_currentValue2": undefined,
+          "_threadCount": 0,
+        },
       },
     },
   ],

@@ -8,9 +8,9 @@ export default function Scene(props) {
     <SceneContainer>
       <SceneImage
         src={
-          value.currentScene===props.sceneId
+          value.currentScene === props.sceneId
             ? "https://via.placeholder.com/300/000000/FFFFFF/?text=selected"
-            : "https://via.placeholder.com/300"
+            : "https://via.placeholder.com/300?text=Scene"
         }
         onClick={() => {}}
       />

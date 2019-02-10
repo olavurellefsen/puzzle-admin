@@ -16,13 +16,13 @@ describe("Scene", () => {
   it("should render correctly", () => expect(wrapper).toMatchSnapshot());
 });
 
-describe("mounted SceneList", () => {
+describe("mounted Scene", () => {
   let wrapper;
   beforeEach(
     () =>
       (wrapper = mount(
         <MainContextStore>
-          <Scene />
+          <Scene sceneId={1} />
         </MainContextStore>
       ))
   );
