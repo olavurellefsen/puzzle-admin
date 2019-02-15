@@ -28,8 +28,10 @@ describe('mounted DragItems', () => {
   );
   it('should render a DragItemsContainer', () => {
     expect(wrapper.find('DragItemsContainer').length).toEqual(1);
+    wrapper.unmount();
   });
   it('should render the a placeholder image', () => {
     expect(wrapper.containsMatchingElement(<DragItemsImage />)).toEqual(true);
+    wrapper.unmount();
   });
 });

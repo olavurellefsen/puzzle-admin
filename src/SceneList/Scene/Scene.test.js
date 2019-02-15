@@ -28,8 +28,10 @@ describe("mounted Scene", () => {
   );
   it("should render a SceneContainer", () => {
     expect(wrapper.find("SceneContainer").length).toEqual(1);
+    wrapper.unmount();
   });
   it("should render the a placeholder image", () => {
     expect(wrapper.containsMatchingElement(<SceneImage />)).toEqual(true);
+    wrapper.unmount();
   });
 });

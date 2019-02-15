@@ -30,8 +30,10 @@ describe("mounted Puzzle", () => {
   );
   it("should render a PuzzleContainer", () => {
     expect(wrapper.find("PuzzleContainer").length).toEqual(1);
+    wrapper.unmount();
   });
   it("should render the a placeholder image", () => {
     expect(wrapper.containsMatchingElement(<PuzzleImage />)).toEqual(true);
+    wrapper.unmount();
   });
 });
