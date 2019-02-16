@@ -20,16 +20,25 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Scene
-          sceneId={0}
+          sceneId={1}
         />,
         <Scene
-          sceneId={1}
+          sceneId={7}
         />,
         <Scene
           sceneId={2}
         />,
         <Scene
           sceneId={3}
+        />,
+        <Scene
+          sceneId={4}
+        />,
+        <Scene
+          sceneId={5}
+        />,
+        <Scene
+          sceneId={8}
         />,
       ],
     },
@@ -40,7 +49,7 @@ ShallowWrapper {
         "key": "0",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 0,
+          "sceneId": 1,
         },
         "ref": null,
         "rendered": null,
@@ -51,7 +60,7 @@ ShallowWrapper {
         "key": "1",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 1,
+          "sceneId": 7,
         },
         "ref": null,
         "rendered": null,
@@ -74,6 +83,39 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "sceneId": 3,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "4",
+        "nodeType": "function",
+        "props": Object {
+          "sceneId": 4,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "5",
+        "nodeType": "function",
+        "props": Object {
+          "sceneId": 5,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "6",
+        "nodeType": "function",
+        "props": Object {
+          "sceneId": 8,
         },
         "ref": null,
         "rendered": null,
@@ -110,16 +152,25 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Scene
-            sceneId={0}
+            sceneId={1}
           />,
           <Scene
-            sceneId={1}
+            sceneId={7}
           />,
           <Scene
             sceneId={2}
           />,
           <Scene
             sceneId={3}
+          />,
+          <Scene
+            sceneId={4}
+          />,
+          <Scene
+            sceneId={5}
+          />,
+          <Scene
+            sceneId={8}
           />,
         ],
       },
@@ -130,7 +181,7 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 0,
+            "sceneId": 1,
           },
           "ref": null,
           "rendered": null,
@@ -141,7 +192,7 @@ ShallowWrapper {
           "key": "1",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 1,
+            "sceneId": 7,
           },
           "ref": null,
           "rendered": null,
@@ -164,6 +215,39 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "sceneId": 3,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "4",
+          "nodeType": "function",
+          "props": Object {
+            "sceneId": 4,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "5",
+          "nodeType": "function",
+          "props": Object {
+            "sceneId": 5,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "6",
+          "nodeType": "function",
+          "props": Object {
+            "sceneId": 8,
           },
           "ref": null,
           "rendered": null,

@@ -1,13 +1,15 @@
 import React from "react";
 import Scene from './Scene/Scene';
 import { SceneListContainer } from "./SceneList.style";
+import sceneData from './SceneData';
 
 const SceneList = () => {
-  const scenes = [0,1,2,3];
+  const scenes = sceneData.data.scene;
   return (
     <SceneListContainer>
-      {scenes.map((scene, index) => 
-        <Scene key={index} sceneId={scene}/>
+      {scenes.map((scene, index) => {
+        return(<Scene key={index} scene={scene}/>)
+      }
       )}
     </SceneListContainer>
   );
