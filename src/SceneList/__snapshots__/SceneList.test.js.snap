@@ -20,25 +20,81 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Scene
-          sceneId={1}
+          scene={
+            Object {
+              "id": 1,
+              "image_filename": "køkurin.png",
+              "initial_puzzle_id": 1,
+              "sequence": 1,
+              "title": "køkurin",
+            }
+          }
         />,
         <Scene
-          sceneId={7}
+          scene={
+            Object {
+              "id": 2,
+              "image_filename": "sovikamarið.png",
+              "initial_puzzle_id": 10,
+              "sequence": 2,
+              "title": "sovikamarið",
+            }
+          }
         />,
         <Scene
-          sceneId={2}
+          scene={
+            Object {
+              "id": 3,
+              "image_filename": "vesið.png",
+              "initial_puzzle_id": 13,
+              "sequence": 3,
+              "title": "vesið",
+            }
+          }
         />,
         <Scene
-          sceneId={3}
+          scene={
+            Object {
+              "id": 4,
+              "image_filename": "spælikamarið.png",
+              "initial_puzzle_id": 16,
+              "sequence": 4,
+              "title": "spælikamarið",
+            }
+          }
         />,
         <Scene
-          sceneId={4}
+          scene={
+            Object {
+              "id": 5,
+              "image_filename": "gongin.png",
+              "initial_puzzle_id": 19,
+              "sequence": 5,
+              "title": "gongin",
+            }
+          }
         />,
         <Scene
-          sceneId={5}
+          scene={
+            Object {
+              "id": 7,
+              "image_filename": "fjósið.png",
+              "initial_puzzle_id": 25,
+              "sequence": 7,
+              "title": "fjósið",
+            }
+          }
         />,
         <Scene
-          sceneId={8}
+          scene={
+            Object {
+              "id": 8,
+              "image_filename": "hjallurin.png",
+              "initial_puzzle_id": 28,
+              "sequence": 8,
+              "title": "hjallurin",
+            }
+          }
         />,
       ],
     },
@@ -49,7 +105,13 @@ ShallowWrapper {
         "key": "0",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 1,
+          "scene": Object {
+            "id": 1,
+            "image_filename": "køkurin.png",
+            "initial_puzzle_id": 1,
+            "sequence": 1,
+            "title": "køkurin",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -60,7 +122,13 @@ ShallowWrapper {
         "key": "1",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 7,
+          "scene": Object {
+            "id": 2,
+            "image_filename": "sovikamarið.png",
+            "initial_puzzle_id": 10,
+            "sequence": 2,
+            "title": "sovikamarið",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -71,7 +139,13 @@ ShallowWrapper {
         "key": "2",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 2,
+          "scene": Object {
+            "id": 3,
+            "image_filename": "vesið.png",
+            "initial_puzzle_id": 13,
+            "sequence": 3,
+            "title": "vesið",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -82,7 +156,13 @@ ShallowWrapper {
         "key": "3",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 3,
+          "scene": Object {
+            "id": 4,
+            "image_filename": "spælikamarið.png",
+            "initial_puzzle_id": 16,
+            "sequence": 4,
+            "title": "spælikamarið",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -93,7 +173,13 @@ ShallowWrapper {
         "key": "4",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 4,
+          "scene": Object {
+            "id": 5,
+            "image_filename": "gongin.png",
+            "initial_puzzle_id": 19,
+            "sequence": 5,
+            "title": "gongin",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -104,7 +190,13 @@ ShallowWrapper {
         "key": "5",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 5,
+          "scene": Object {
+            "id": 7,
+            "image_filename": "fjósið.png",
+            "initial_puzzle_id": 25,
+            "sequence": 7,
+            "title": "fjósið",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -115,7 +207,13 @@ ShallowWrapper {
         "key": "6",
         "nodeType": "function",
         "props": Object {
-          "sceneId": 8,
+          "scene": Object {
+            "id": 8,
+            "image_filename": "hjallurin.png",
+            "initial_puzzle_id": 28,
+            "sequence": 8,
+            "title": "hjallurin",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -126,7 +224,7 @@ ShallowWrapper {
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-htpNat",
+        "componentId": "sc-bxivhb",
         "isStatic": true,
         "rules": Array [
           "
@@ -137,7 +235,7 @@ ShallowWrapper {
       "displayName": "SceneListContainer",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-htpNat",
+      "styledComponentId": "sc-bxivhb",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],
@@ -152,25 +250,81 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Scene
-            sceneId={1}
+            scene={
+              Object {
+                "id": 1,
+                "image_filename": "køkurin.png",
+                "initial_puzzle_id": 1,
+                "sequence": 1,
+                "title": "køkurin",
+              }
+            }
           />,
           <Scene
-            sceneId={7}
+            scene={
+              Object {
+                "id": 2,
+                "image_filename": "sovikamarið.png",
+                "initial_puzzle_id": 10,
+                "sequence": 2,
+                "title": "sovikamarið",
+              }
+            }
           />,
           <Scene
-            sceneId={2}
+            scene={
+              Object {
+                "id": 3,
+                "image_filename": "vesið.png",
+                "initial_puzzle_id": 13,
+                "sequence": 3,
+                "title": "vesið",
+              }
+            }
           />,
           <Scene
-            sceneId={3}
+            scene={
+              Object {
+                "id": 4,
+                "image_filename": "spælikamarið.png",
+                "initial_puzzle_id": 16,
+                "sequence": 4,
+                "title": "spælikamarið",
+              }
+            }
           />,
           <Scene
-            sceneId={4}
+            scene={
+              Object {
+                "id": 5,
+                "image_filename": "gongin.png",
+                "initial_puzzle_id": 19,
+                "sequence": 5,
+                "title": "gongin",
+              }
+            }
           />,
           <Scene
-            sceneId={5}
+            scene={
+              Object {
+                "id": 7,
+                "image_filename": "fjósið.png",
+                "initial_puzzle_id": 25,
+                "sequence": 7,
+                "title": "fjósið",
+              }
+            }
           />,
           <Scene
-            sceneId={8}
+            scene={
+              Object {
+                "id": 8,
+                "image_filename": "hjallurin.png",
+                "initial_puzzle_id": 28,
+                "sequence": 8,
+                "title": "hjallurin",
+              }
+            }
           />,
         ],
       },
@@ -181,7 +335,13 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 1,
+            "scene": Object {
+              "id": 1,
+              "image_filename": "køkurin.png",
+              "initial_puzzle_id": 1,
+              "sequence": 1,
+              "title": "køkurin",
+            },
           },
           "ref": null,
           "rendered": null,
@@ -192,7 +352,13 @@ ShallowWrapper {
           "key": "1",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 7,
+            "scene": Object {
+              "id": 2,
+              "image_filename": "sovikamarið.png",
+              "initial_puzzle_id": 10,
+              "sequence": 2,
+              "title": "sovikamarið",
+            },
           },
           "ref": null,
           "rendered": null,
@@ -203,7 +369,13 @@ ShallowWrapper {
           "key": "2",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 2,
+            "scene": Object {
+              "id": 3,
+              "image_filename": "vesið.png",
+              "initial_puzzle_id": 13,
+              "sequence": 3,
+              "title": "vesið",
+            },
           },
           "ref": null,
           "rendered": null,
@@ -214,7 +386,13 @@ ShallowWrapper {
           "key": "3",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 3,
+            "scene": Object {
+              "id": 4,
+              "image_filename": "spælikamarið.png",
+              "initial_puzzle_id": 16,
+              "sequence": 4,
+              "title": "spælikamarið",
+            },
           },
           "ref": null,
           "rendered": null,
@@ -225,7 +403,13 @@ ShallowWrapper {
           "key": "4",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 4,
+            "scene": Object {
+              "id": 5,
+              "image_filename": "gongin.png",
+              "initial_puzzle_id": 19,
+              "sequence": 5,
+              "title": "gongin",
+            },
           },
           "ref": null,
           "rendered": null,
@@ -236,7 +420,13 @@ ShallowWrapper {
           "key": "5",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 5,
+            "scene": Object {
+              "id": 7,
+              "image_filename": "fjósið.png",
+              "initial_puzzle_id": 25,
+              "sequence": 7,
+              "title": "fjósið",
+            },
           },
           "ref": null,
           "rendered": null,
@@ -247,7 +437,13 @@ ShallowWrapper {
           "key": "6",
           "nodeType": "function",
           "props": Object {
-            "sceneId": 8,
+            "scene": Object {
+              "id": 8,
+              "image_filename": "hjallurin.png",
+              "initial_puzzle_id": 28,
+              "sequence": 8,
+              "title": "hjallurin",
+            },
           },
           "ref": null,
           "rendered": null,
@@ -258,7 +454,7 @@ ShallowWrapper {
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-htpNat",
+          "componentId": "sc-bxivhb",
           "isStatic": true,
           "rules": Array [
             "
@@ -269,7 +465,7 @@ ShallowWrapper {
         "displayName": "SceneListContainer",
         "foldedComponentIds": Array [],
         "render": [Function],
-        "styledComponentId": "sc-htpNat",
+        "styledComponentId": "sc-bxivhb",
         "target": "div",
         "toString": [Function],
         "warnTooManyClasses": [Function],

@@ -22,7 +22,7 @@ describe("mounted Scene", () => {
     () =>
       (wrapper = mount(
         <MainContextStore>
-          <Scene sceneId={1} />
+          <Scene scene={[{id: 1}]} />
         </MainContextStore>
       ))
   );
@@ -30,7 +30,7 @@ describe("mounted Scene", () => {
     expect(wrapper.find("SceneContainer").length).toEqual(1);
     wrapper.unmount();
   });
-  it("should render the a placeholder image", () => {
+  it("should render an image", () => {
     expect(wrapper.containsMatchingElement(<SceneImage />)).toEqual(true);
     wrapper.unmount();
   });
