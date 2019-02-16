@@ -21,10 +21,13 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": <Puzzle />,
-      "value": Object {
-        "currentPuzzle": 2,
-        "currentScene": 1,
-      },
+      "value": Array [
+        Object {
+          "currentPuzzle": 2,
+          "currentScene": 1,
+        },
+        [Function],
+      ],
     },
     "ref": null,
     "rendered": Object {
@@ -62,10 +65,13 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": <Puzzle />,
-        "value": Object {
-          "currentPuzzle": 2,
-          "currentScene": 1,
-        },
+        "value": Array [
+          Object {
+            "currentPuzzle": 2,
+            "currentScene": 1,
+          },
+          [Function],
+        ],
       },
       "ref": null,
       "rendered": Object {
