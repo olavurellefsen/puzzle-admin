@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import MainContext from "../Context";
 import Puzzle from "./Puzzle/Puzzle";
-import { PuzzleListContainer } from "./PuzzleList.style";
+import { PuzzleListContainer, PuzzleListBox } from "./PuzzleList.style";
 import puzzleData from "./PuzzleData";
 
 export default function PuzzleList() {
@@ -10,14 +10,27 @@ export default function PuzzleList() {
   let currentPuzzleId = 0;
   return (
     <PuzzleListContainer>
-      {puzzles
-        .filter(puzzle => puzzle.scene_id === state.currentScene)
-        .map((puzzle, index) => {
-          if (currentPuzzleId === 0) {
-            currentPuzzleId = getCurrentPuzzleId(state, dispatch, puzzle.id, state.currentScene);
-          }
-          return <Puzzle key={index} puzzle={puzzle} currentPuzzleId={currentPuzzleId}/>;
-        })}
+      <PuzzleListBox>
+        {puzzles
+          .filter(puzzle => puzzle.scene_id === state.currentScene)
+          .map((puzzle, index) => {
+            if (currentPuzzleId === 0) {
+              currentPuzzleId = getCurrentPuzzleId(
+                state,
+                dispatch,
+                puzzle.id,
+                state.currentScene
+              );
+            }
+            return (
+              <Puzzle
+                key={index}
+                puzzle={puzzle}
+                currentPuzzleId={currentPuzzleId}
+              />
+            );
+          })}
+      </PuzzleListBox>
     </PuzzleListContainer>
   );
 }

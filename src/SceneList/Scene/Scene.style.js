@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SceneContainer = styled.div`
   height: 300px;
   width: 400px;
-  margin: 20px;
+  margin: 20px 0px;
   border-radius: 25px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,${props => (props.selected ? 0.4 : 0.2)});
   transition: 0.3s;
