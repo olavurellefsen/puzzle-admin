@@ -1,7 +1,7 @@
 import React, { useState, useContext, useRef } from "react";
 import { capitalizeFirstLetter } from "../../Utils/Utils";
 import MainContext from "../../Context";
-import { SceneContainer, SceneImage, SceneTitleForm, SceneTitle } from "./Scene.style";
+import { SceneContainer, SceneTitleForm, SceneTitle } from "./Scene.style";
 
 export default function Scene(props) {
   const [state, dispatch] = useContext(MainContext);
@@ -19,6 +19,7 @@ export default function Scene(props) {
       onClick={() => {
         dispatch({ type: "setCurrentScene", number: props.scene.id });
       }}
+      backgroundImage={"images/scenes/" + props.scene.image_filename}
     >
       <SceneTitleForm onSubmit={handleFormSubmit}>
         <SceneTitle
@@ -29,7 +30,6 @@ export default function Scene(props) {
           onChange={e => setTitle(e.target.value)}
         />
       </SceneTitleForm>
-      <SceneImage src={"images/scenes/" + props.scene.image_filename} />
     </SceneContainer>
   );
 }
