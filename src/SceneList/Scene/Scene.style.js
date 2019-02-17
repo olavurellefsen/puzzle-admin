@@ -8,14 +8,20 @@ export const SceneContainer = styled.div`
 `;
 SceneContainer.displayName = "SceneContainer";
 
-export const SceneImageText = styled.div`
+export const SceneTitleForm = styled.form`
   height: 25px;
-  color: black;
-  font-size: 18px;
   background-color: rgb(178,253,138);
   padding: 10px;  
 `;
-SceneImageText.displayName = "SceneImageText";
+SceneTitleForm.displayName = "SceneTitleForm";
+
+export const SceneTitle = styled.input`
+  color: black;
+  font-size: 18px;
+  background-color: rgb(178,253,138);
+  border: 0px;
+`;
+SceneTitle.displayName = "SceneTitle";
 
 export const SceneImage = styled.img`
   width: 400px;

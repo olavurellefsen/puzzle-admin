@@ -22,7 +22,7 @@ describe("mounted Scene", () => {
     () =>
       (wrapper = mount(
         <MainContextStore>
-          <Scene scene={[{ id: 2 }]} />
+          <Scene scene={{ id: 2, title: 'køkurin' }} />
         </MainContextStore>
       ))
   );
@@ -35,9 +35,16 @@ describe("mounted Scene", () => {
     wrapper.unmount();
   });
   it("should render a title", () => {
-    expect(wrapper.find("SceneImageText").length).toEqual(1);
+    expect(wrapper.find("SceneTitle").length).toEqual(1);
     wrapper.unmount();
   });
+  // Does not work because Enzyme does not work with hooks yet, see e.g. https://github.com/airbnb/enzyme/issues/1996
+  // it("should be possible to change the title", () => {
+  //   let sceneTitle = wrapper.find("SceneTitle").find("input");
+  //   sceneTitle.simulate('change', { target: { value: 'Hello' } });
+  //   expect(wrapper.find("SceneTitle").text()).toEqual('Hello');
+  //   wrapper.unmount();
+  // })
   it("should become selected if it is clicked", () => {
     expect(wrapper.find('SceneContainer').prop('selected')).toEqual(false);
     wrapper.find("SceneImage").simulate("click");
