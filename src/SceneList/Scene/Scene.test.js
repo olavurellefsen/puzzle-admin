@@ -2,7 +2,6 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import MainContextStore from "../../MainContextStore";
 import Scene from "./Scene";
-import { SceneImage } from "./Scene.style";
 
 describe("Scene", () => {
   let wrapper;
