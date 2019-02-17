@@ -4,7 +4,8 @@ import {
   PuzzleContainer,
   PuzzleFields,
   PuzzleFieldCaption,
-  PuzzleField
+  PuzzleField,
+  PuzzleRightArrow
 } from "./Puzzle.style";
 
 export default function Puzzle(props) {
@@ -34,6 +35,7 @@ export default function Puzzle(props) {
         <PuzzleFieldCaption>CHARACTER</PuzzleFieldCaption>
         <PuzzleField>{character !== null ? character : "-"}</PuzzleField>
       </PuzzleFields>
+      <PuzzleRightArrow selected={selected}>></PuzzleRightArrow>
     </PuzzleContainer>
   );
 }

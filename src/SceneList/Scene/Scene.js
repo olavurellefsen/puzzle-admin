@@ -1,7 +1,7 @@
 import React, { useState, useContext, useRef } from "react";
 import { capitalizeFirstLetter } from "../../Utils/Utils";
 import MainContext from "../../Context";
-import { SceneContainer, SceneTitleForm, SceneTitle } from "./Scene.style";
+import { SceneContainer, SceneTitleForm, SceneTitle, SceneRightArrow } from "./Scene.style";
 
 export default function Scene(props) {
   const [state, dispatch] = useContext(MainContext);
@@ -30,6 +30,7 @@ export default function Scene(props) {
           onChange={e => setTitle(e.target.value)}
         />
       </SceneTitleForm>
+      <SceneRightArrow selected={selected}>></SceneRightArrow>
     </SceneContainer>
   );
 }

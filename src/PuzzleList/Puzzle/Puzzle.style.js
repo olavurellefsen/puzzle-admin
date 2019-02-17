@@ -34,3 +34,12 @@ export const PuzzleField = styled.div`
   padding-bottom: 10px;
 `;
 PuzzleField.displayName = "PuzzleField";
+
+export const PuzzleRightArrow = styled.div`
+  font-size: 60px;
+  color: gray;
+  text-align: right;
+  transform: translate(50px,-60px);
+  visibility: ${props => (props.selected ? 'visible' : 'hidden')}
+`;
+PuzzleRightArrow.displayName = "PuzzleRightArrow";

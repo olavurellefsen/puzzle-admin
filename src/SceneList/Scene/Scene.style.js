@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SceneContainer = styled.div`
   height: 300px;
   width: 400px;
-  margin: 20px 0px;
+  margin: 20px 20px;
   border-radius: 25px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,${props => (props.selected ? 0.4 : 0.2)});
   transition: 0.3s;
@@ -34,3 +34,12 @@ export const SceneTitle = styled.input`
   text-align: center;
 `;
 SceneTitle.displayName = "SceneTitle";
+
+export const SceneRightArrow = styled.div`
+  font-size: 60px;
+  color: gray;
+  text-align: right;
+  transform: translate(40px,60px);
+  visibility: ${props => (props.selected ? 'visible' : 'hidden')}
+`;
+SceneRightArrow.displayName = "SceneRightArrow";
