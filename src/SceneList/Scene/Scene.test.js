@@ -30,10 +30,6 @@ describe("mounted Scene", () => {
     expect(wrapper.find("SceneContainer").length).toEqual(1);
     wrapper.unmount();
   });
-  it("should render an image", () => {
-    expect(wrapper.containsMatchingElement(<SceneImage />)).toEqual(true);
-    wrapper.unmount();
-  });
   it("should render a title", () => {
     expect(wrapper.find("SceneTitle").length).toEqual(1);
     wrapper.unmount();
@@ -47,7 +43,7 @@ describe("mounted Scene", () => {
   // })
   it("should become selected if it is clicked", () => {
     expect(wrapper.find('SceneContainer').prop('selected')).toEqual(false);
-    wrapper.find("SceneImage").simulate("click");
+    wrapper.find("SceneContainer").simulate("click");
     expect(wrapper.find('SceneContainer').prop('selected')).toEqual(true);
     wrapper.unmount();
   });
