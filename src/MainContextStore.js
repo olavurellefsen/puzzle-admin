@@ -13,7 +13,8 @@ export default function MainContextStore(props) {
 
 const initialState = {
   currentScene: 1,
-  currentPuzzle: 2
+  currentPuzzle: 2,
+  userName: 'not logged in'
 };
 
 const reducer = createReducer(initialState, {
