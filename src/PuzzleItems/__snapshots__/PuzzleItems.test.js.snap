@@ -72,6 +72,7 @@ ShallowWrapper {
         "isStatic": true,
         "rules": Array [
           "
+  padding: 10px;
 ",
         ],
       },
@@ -145,6 +146,7 @@ ShallowWrapper {
           "isStatic": true,
           "rules": Array [
             "
+  padding: 10px;
 ",
           ],
         },

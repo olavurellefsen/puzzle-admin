@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const PuzzleListContainer = styled.div`
-  padding-right: 10px;
+  overflow: auto;
 `;
 PuzzleListContainer.displayName = "PuzzleListContainer";
