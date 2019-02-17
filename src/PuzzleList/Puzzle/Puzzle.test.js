@@ -2,7 +2,8 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import MainContextStore from '../../MainContextStore';
 import Puzzle from './Puzzle';
-import { PuzzleImage } from './Puzzle.style';
+
+
 
 describe('Puzzle', () => {
   let wrapper;
@@ -24,7 +25,7 @@ describe('mounted Puzzle', () => {
     () =>
       (wrapper = mount(
         <MainContextStore>
-          <Puzzle puzzle={{id: 1}} />
+          <Puzzle puzzle={{id: 1, scene_id: 1}} currentPuzzleId={2} />
         </MainContextStore>
       ))
   );
@@ -32,10 +33,5 @@ describe('mounted Puzzle', () => {
     expect(wrapper.find('PuzzleContainer').length).toEqual(1);
     wrapper.unmount();
   });
-  it('should become selected if it is clicked', () => {
-    expect(wrapper.find('PuzzleContainer').prop('selected')).toEqual(false);
-    wrapper.find('PuzzleContainer').simulate('click');
-    expect(wrapper.find('PuzzleContainer').prop('selected')).toEqual(true);
-    wrapper.unmount();
-  });
+
 });

@@ -23,7 +23,12 @@ ShallowWrapper {
       "children": <Menu />,
       "value": Array [
         Object {
-          "currentPuzzle": 2,
+          "currentPuzzles": Array [
+            Object {
+              "puzzle_id": 1,
+              "scene_id": 1,
+            },
+          ],
           "currentScene": 1,
           "userName": "not logged in",
         },
@@ -68,7 +73,12 @@ ShallowWrapper {
         "children": <Menu />,
         "value": Array [
           Object {
-            "currentPuzzle": 2,
+            "currentPuzzles": Array [
+              Object {
+                "puzzle_id": 1,
+                "scene_id": 1,
+              },
+            ],
             "currentScene": 1,
             "userName": "not logged in",
           },

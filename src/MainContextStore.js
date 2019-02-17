@@ -13,8 +13,8 @@ export default function MainContextStore(props) {
 
 const initialState = {
   currentScene: 1,
-  currentPuzzle: 2,
-  userName: 'not logged in'
+  currentPuzzles: [{ scene_id: 1, puzzle_id: 1 }],
+  userName: "not logged in"
 };
 
 const reducer = createReducer(initialState, {
@@ -25,6 +25,9 @@ const reducer = createReducer(initialState, {
   }),
   setCurrentPuzzle: (state, action) => ({
     ...state,
-    currentPuzzle: action.number
+    currentPuzzles: [
+      ...state.currentPuzzles.filter(p => p.scene_id !== action.scene_id),
+      { scene_id: action.scene_id, puzzle_id: action.puzzle_id }
+    ]
   })
 });
