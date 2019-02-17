@@ -1,29 +1,36 @@
 import styled from "styled-components";
 
 export const SceneContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  opacity: ${props => (props.selected ? 1 : 0.3)};
+  height: 300px;
+  width: 400px;
+  margin: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,${props => (props.selected ? 0.4 : 0.2)});
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+  }
+  opacity: ${props => (props.selected ? 1 : 0.5)};
+  background-image: url('${props => props.backgroundImage}');
+  background-size: cover;
 `;
 SceneContainer.displayName = "SceneContainer";
 
 export const SceneTitleForm = styled.form`
   height: 25px;
-  background-color: rgb(178,253,138);
-  padding: 10px;  
+  padding: 10px;
 `;
 SceneTitleForm.displayName = "SceneTitleForm";
 
 export const SceneTitle = styled.input`
-  color: black;
-  font-size: 18px;
-  background-color: rgb(178,253,138);
+  display: block;
+  margin : 0 auto;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0);
   border: 0px;
+  text-align: center;
 `;
 SceneTitle.displayName = "SceneTitle";
-
-export const SceneImage = styled.img`
-  width: 400px;
-`;
-SceneImage.displayName = "SceneImage";
