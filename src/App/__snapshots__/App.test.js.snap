@@ -18,18 +18,32 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <Scenes />,
+      "children": Array [
+        <Menu />,
+        <Scenes />,
+      ],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {},
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": Object {
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
@@ -38,7 +52,11 @@ ShallowWrapper {
         "isStatic": true,
         "rules": Array [
           "
-  color: red;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 100vh;
+  background-color: #eeeeee;
 ",
         ],
       },
@@ -58,18 +76,32 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": <Scenes />,
+        "children": Array [
+          <Menu />,
+          <Scenes />,
+        ],
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": Object {
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
@@ -78,7 +110,11 @@ ShallowWrapper {
           "isStatic": true,
           "rules": Array [
             "
-  color: red;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 100vh;
+  background-color: #eeeeee;
 ",
           ],
         },
