@@ -1,25 +1,23 @@
 import styled from "styled-components";
 
 export const SceneContainer = styled.div`
-  position: relative;
-  text-align: center;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  opacity: ${props => (props.selected ? 1 : 0.3)};
 `;
 SceneContainer.displayName = "SceneContainer";
 
-export const SceneImage = styled.img`
-  width: 400px;
-  opacity: ${props => (props.selected ? 1 : 0.3)};
-`;
-SceneImage.displayName = "SceneImage";
-
 export const SceneImageText = styled.div`
-  position: absolute;
-  top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  text-shadow: 1px 1px gray;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 25px;
+  color: black;
+  font-size: 18px;
+  background-color: rgb(178,253,138);
+  padding: 10px;  
 `;
 SceneImageText.displayName = "SceneImageText";
+
+export const SceneImage = styled.img`
+  width: 400px;
+`;
+SceneImage.displayName = "SceneImage";

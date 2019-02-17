@@ -2,7 +2,7 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import MainContextStore from "../../MainContextStore";
 import Scene from "./Scene";
-import { SceneImage, SceneImageText } from "./Scene.style";
+import { SceneImage } from "./Scene.style";
 
 describe("Scene", () => {
   let wrapper;
@@ -35,13 +35,13 @@ describe("mounted Scene", () => {
     wrapper.unmount();
   });
   it("should render a title", () => {
-    expect(wrapper.containsMatchingElement(<SceneImageText />)).toEqual(true);
+    expect(wrapper.find("SceneImageText").length).toEqual(1);
     wrapper.unmount();
   });
   it("should become selected if it is clicked", () => {
-    expect(wrapper.find('img').prop('selected')).toEqual(false);
+    expect(wrapper.find('SceneContainer').prop('selected')).toEqual(false);
     wrapper.find("SceneImage").simulate("click");
-    expect(wrapper.find('img').prop('selected')).toEqual(true);
+    expect(wrapper.find('SceneContainer').prop('selected')).toEqual(true);
     wrapper.unmount();
   });
 });

@@ -25,6 +25,7 @@ ShallowWrapper {
         Object {
           "currentPuzzle": 2,
           "currentScene": 1,
+          "userName": "not logged in",
         },
         [Function],
       ],
@@ -69,6 +70,7 @@ ShallowWrapper {
           Object {
             "currentPuzzle": 2,
             "currentScene": 1,
+            "userName": "not logged in",
           },
           [Function],
         ],

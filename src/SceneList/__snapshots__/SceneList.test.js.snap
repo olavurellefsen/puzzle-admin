@@ -228,7 +228,7 @@ ShallowWrapper {
         "isStatic": true,
         "rules": Array [
           "
-  padding-right: 10px;
+  overflow: auto;  
 ",
         ],
       },
@@ -458,7 +458,7 @@ ShallowWrapper {
           "isStatic": true,
           "rules": Array [
             "
-  padding-right: 10px;
+  overflow: auto;  
 ",
           ],
         },

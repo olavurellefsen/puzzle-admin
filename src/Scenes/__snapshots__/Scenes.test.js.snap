@@ -58,7 +58,7 @@ ShallowWrapper {
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-VigVT",
+        "componentId": "sc-fjdhpX",
         "isStatic": true,
         "rules": Array [
           "
@@ -70,7 +70,7 @@ ShallowWrapper {
       "displayName": "ScenesContainer",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-VigVT",
+      "styledComponentId": "sc-fjdhpX",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],
@@ -123,7 +123,7 @@ ShallowWrapper {
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-VigVT",
+          "componentId": "sc-fjdhpX",
           "isStatic": true,
           "rules": Array [
             "
@@ -135,7 +135,7 @@ ShallowWrapper {
         "displayName": "ScenesContainer",
         "foldedComponentIds": Array [],
         "render": [Function],
-        "styledComponentId": "sc-VigVT",
+        "styledComponentId": "sc-fjdhpX",
         "target": "div",
         "toString": [Function],
         "warnTooManyClasses": [Function],
