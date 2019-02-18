@@ -7,6 +7,7 @@ export const PuzzleContainer = styled.div`
   align-self: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,${props => (props.selected ? 0.4 : 0.2)});
   transition: 0.3s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
   }
@@ -14,12 +15,12 @@ export const PuzzleContainer = styled.div`
 `;
 PuzzleContainer.displayName = "PuzzleContainer";
 
-export const PuzzleFields = styled.div`
+export const PuzzleForm = styled.form`
   display: flex;
   flex-direction: column;
   padding: 2px 16px;
 `;
-PuzzleFields.displayName = "PuzzleFields";
+PuzzleForm.displayName = "PuzzleForm";
 
 export const PuzzleFieldCaption = styled.div`
   font-size: 12px;
@@ -32,6 +33,15 @@ export const PuzzleField = styled.div`
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 10px;
+`;
+PuzzleField.displayName = "PuzzleField";
+
+export const PuzzleInputField = styled.input`
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
 `;
 PuzzleField.displayName = "PuzzleField";
 
