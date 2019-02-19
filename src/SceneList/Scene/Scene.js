@@ -1,7 +1,14 @@
 import React, { useState, useContext, useRef } from "react";
 import { capitalizeFirstLetter } from "../../Utils/Utils";
 import MainContext from "../../Context";
-import { SceneContainer, SceneTitleForm, SceneTitle, SceneRightArrow } from "./Scene.style";
+import {
+  SceneContainer,
+  SceneTitleForm,
+  SceneTitle,
+  SceneRightArrow
+} from "./Scene.style";
+import gql from "graphql-tag";
+import { Mutation } from "react-apollo";
 
 export default function Scene(props) {
   const [state, dispatch] = useContext(MainContext);
@@ -11,15 +18,20 @@ export default function Scene(props) {
   const sceneTitle = useRef(null);
 
   //If the parent component is updated (someone else has changed the value), then update the field here
-  if(title!==titleField && title!==null) {
-    setTitleField(title);
+  if (title !== titleField && title !== null && sceneTitle.current !== null) {
+    if (sceneTitle.current.defaultValue === titleField) {
+      setTitleField(title);
+    }
   }
 
-  const handleFormSubmit = e => {
-    e.preventDefault();
-    sceneTitle.current.blur();
-  };
-  
+  const UPDATE_SCENE = gql`
+    mutation update_scene($id: Int!, $title: String!) {
+      update_scene(where: { id: { _eq: $id } }, _set: { title: $title }) {
+        affected_rows
+      }
+    }
+  `;
+
   const selected = state.currentScene === id;
   return (
     <SceneContainer
@@ -29,15 +41,25 @@ export default function Scene(props) {
       }}
       backgroundImage={"images/scenes/" + image_filename}
     >
-      <SceneTitleForm onSubmit={handleFormSubmit}>
-        <SceneTitle
-          ref={sceneTitle}
-          name="title"
-          type="text"
-          value={titleField}
-          onChange={e => setTitleField(e.target.value)}
-        />
-      </SceneTitleForm>
+      <Mutation mutation={UPDATE_SCENE}>
+        {(updateSceneTitle, { data }) => (
+          <SceneTitleForm
+            onSubmit={e => {
+              e.preventDefault();
+              updateSceneTitle({ variables: { id: id, title: titleField } });
+              sceneTitle.current.blur();
+            }}
+          >
+            <SceneTitle
+              ref={sceneTitle}
+              name="title"
+              type="text"
+              value={titleField}
+              onChange={e => setTitleField(e.target.value)}
+            />
+          </SceneTitleForm>
+        )}
+      </Mutation>
       <SceneRightArrow selected={selected}>></SceneRightArrow>
     </SceneContainer>
   );

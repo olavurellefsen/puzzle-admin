@@ -2,6 +2,8 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import MainContextStore from "../../MainContextStore";
 import Scene from "./Scene";
+import { ApolloProvider } from "react-apollo";
+import client from "../../heyBreydLocalizationClient";
 
 describe("Scene", () => {
   let wrapper;
@@ -20,9 +22,11 @@ describe("mounted Scene", () => {
   beforeEach(
     () =>
       (wrapper = mount(
-        <MainContextStore>
-          <Scene scene={{ id: 2, title: 'køkurin' }} />
-        </MainContextStore>
+        <ApolloProvider client={client}>
+          <MainContextStore>
+            <Scene scene={{ id: 2, title: "køkurin" }} />
+          </MainContextStore>
+        </ApolloProvider>
       ))
   );
   it("should render a SceneContainer", () => {
@@ -41,9 +45,9 @@ describe("mounted Scene", () => {
   //   wrapper.unmount();
   // })
   it("should become selected if it is clicked", () => {
-    expect(wrapper.find('SceneContainer').prop('selected')).toEqual(false);
+    expect(wrapper.find("SceneContainer").prop("selected")).toEqual(false);
     wrapper.find("SceneContainer").simulate("click");
-    expect(wrapper.find('SceneContainer').prop('selected')).toEqual(true);
+    expect(wrapper.find("SceneContainer").prop("selected")).toEqual(true);
     wrapper.unmount();
   });
 });
