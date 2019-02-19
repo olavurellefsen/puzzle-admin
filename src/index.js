@@ -4,11 +4,15 @@ import "./index.css";
 import App from "./App/App";
 import MainContextStore from "./MainContextStore";
 import * as serviceWorker from "./serviceWorker";
+import { ApolloProvider } from "react-apollo";
+import client from "./heyBreydLocalizationClient";
 
 ReactDOM.render(
-  <MainContextStore>
-    <App />
-  </MainContextStore>,
+  <ApolloProvider client={client}>
+    <MainContextStore>
+      <App />
+    </MainContextStore>
+  </ApolloProvider>,
   document.getElementById("root")
 );
 

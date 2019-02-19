@@ -11,8 +11,13 @@ import {
 
 export default function Puzzle(props) {
   const [state, dispatch] = useContext(MainContext);
-  const [summary, setSummary] = useState(props.puzzle.summary!==null ? props.puzzle.summary : "");
-  let { id, intro_audiofile, character } = props.puzzle;
+  let { id, intro_audiofile, character, summary } = props.puzzle;
+  const [summaryField, setSummaryField] = useState(summary!==null ? summary : "");  
+
+  // If the parent component is updated (someone else has changed the value), then update the field here
+  if(summary!==summaryField && summary!==null) {
+    setSummaryField(summary);
+  }
   const puzzleSummary = useRef(null);
 
   const handleFormSubmit = e => {
@@ -37,8 +42,8 @@ export default function Puzzle(props) {
           ref={puzzleSummary}
           name="summary"
           type="text"
-          value={summary}
-          onChange={e => setSummary(e.target.value)}
+          value={summaryField}
+          onChange={e => setSummaryField(e.target.value)}
         />
         <PuzzleFieldCaption>AUDIOFILE</PuzzleFieldCaption>
         <PuzzleField>

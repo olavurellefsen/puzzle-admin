@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const PuzzleListContainer = styled.div`
+  min-width: 494px;
   overflow: hidden;
 `;
 PuzzleListContainer.displayName = "PuzzleListContainer";

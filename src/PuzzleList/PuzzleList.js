@@ -2,34 +2,62 @@ import React, { useContext } from "react";
 import MainContext from "../Context";
 import Puzzle from "./Puzzle/Puzzle";
 import { PuzzleListContainer, PuzzleListBox } from "./PuzzleList.style";
-import puzzleData from "./PuzzleData";
+import { Subscription } from "react-apollo";
+import gql from "graphql-tag";
 
 export default function PuzzleList() {
-  const puzzles = puzzleData.data.puzzle;
   const [state, dispatch] = useContext(MainContext);
+
+  const subscription = gql`
+  subscription {
+    puzzle(
+      order_by: { sequence: asc },
+      where: { scene_id: { _eq: ${state.currentScene} } }
+    ) {
+      id
+      scene_id
+      puzzle_identifier
+      intro_audiofile
+      intro_text_id
+      character
+      summary
+      sequence
+    }
+  }
+  `;
+
   let currentPuzzleId = 0;
   return (
     <PuzzleListContainer>
       <PuzzleListBox>
-        {puzzles
-          .filter(puzzle => puzzle.scene_id === state.currentScene)
-          .map((puzzle, index) => {
-            if (currentPuzzleId === 0) {
-              currentPuzzleId = getCurrentPuzzleId(
-                state,
-                dispatch,
-                puzzle.id,
-                state.currentScene
-              );
+        <Subscription subscription={subscription}>
+          {({ data, loading }) => {
+            if (loading) {
+              return "Loading...";
+            } else {
+              let puzzles = data.puzzle;
+              return(puzzles
+                .map((puzzle, index) => {
+                  if (currentPuzzleId === 0) {
+                    currentPuzzleId = getCurrentPuzzleId(
+                      state,
+                      dispatch,
+                      puzzle.id,
+                      state.currentScene
+                    );
+                  }
+                  return (
+                    <Puzzle
+                      key={index}
+                      puzzle={puzzle}
+                      currentPuzzleId={currentPuzzleId}
+                    />
+                  );
+                })
+              )
             }
-            return (
-              <Puzzle
-                key={index}
-                puzzle={puzzle}
-                currentPuzzleId={currentPuzzleId}
-              />
-            );
-          })}
+          }}
+        </Subscription>
       </PuzzleListBox>
     </PuzzleListContainer>
   );

@@ -2,7 +2,8 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import MainContextStore from "../MainContextStore";
 import PuzzleList from "./PuzzleList";
-import Puzzle from "./Puzzle/Puzzle";
+import { ApolloProvider } from "react-apollo";
+import client from "../heyBreydLocalizationClient";
 
 describe("PuzzleList", () => {
   let wrapper;
@@ -22,16 +23,15 @@ describe("mounted PuzzleList", () => {
   beforeEach(
     () =>
       (wrapper = mount(
-        <MainContextStore>
-          <PuzzleList />
-        </MainContextStore>
+        <ApolloProvider client={client}>
+          <MainContextStore>
+            <PuzzleList />
+          </MainContextStore>
+        </ApolloProvider>
       ))
   );
 
   it("should render a PuzzleListContainer", () => {
     expect(wrapper.find("PuzzleListContainer").length).toEqual(1);
-  });
-  it("should render the Puzzle component", () => {
-    expect(wrapper.containsMatchingElement(<Puzzle />)).toEqual(true);
   });
 });
