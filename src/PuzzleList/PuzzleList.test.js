@@ -8,7 +8,7 @@ it("should render correctly", () => {
   expect(container).toMatchSnapshot();
 });
 
-it("should render a puzzle list", async () => {
+it("should show Loading... and then render AUDIOFILE", async () => {
   const { debug, getByText } = render(<PuzzleList />);
   debug();
   expect(getByText("Loading...")).toBeTruthy();
