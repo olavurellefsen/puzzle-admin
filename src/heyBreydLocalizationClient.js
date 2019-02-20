@@ -11,7 +11,7 @@ const httpLink = new HttpLink({
   uri: 'https://heybreyd-localization.herokuapp.com/v1alpha1/graphql',
   headers: {
     "Content-Type": 'application/json',
-    "X-Hasura-Access-Key": 'heybreyd123' 
+    "X-Hasura-Access-Key": process.env.REACT_APP_HASURA_ACCESS_KEY
   }, 
   credentials: 'same-origin'
 })
@@ -24,7 +24,7 @@ const wsLink = new WebSocketLink(
     connectionParams: {
       headers: {
         "Content-Type": 'application/json',
-        "X-Hasura-Access-Key": 'heybreyd123' 
+        "X-Hasura-Access-Key": process.env.REACT_APP_HASURA_ACCESS_KEY
       }, 
       credentials: 'same-origin'
     }
