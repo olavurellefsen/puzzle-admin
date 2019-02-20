@@ -8,7 +8,7 @@ import { getMainDefinition } from 'apollo-utilities';
 
 // Create an http link:
 const httpLink = new HttpLink({
-  uri: 'https://heybreyd-localization.herokuapp.com/v1alpha1/graphql',
+  uri: process.env.REACT_APP_HASURA_URI,
   headers: {
     "Content-Type": 'application/json',
     "X-Hasura-Access-Key": process.env.REACT_APP_HASURA_ACCESS_KEY
@@ -18,7 +18,7 @@ const httpLink = new HttpLink({
 
 // Create a WebSocket link:
 const wsLink = new WebSocketLink(
-  new SubscriptionClient('ws://heybreyd-localization.herokuapp.com/v1alpha1/graphql', {
+  new SubscriptionClient(process.env.REACT_APP_HASURA_WS, {
     reconnect: true,
     timeout: 30000,
     connectionParams: {
