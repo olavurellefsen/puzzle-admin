@@ -19,9 +19,12 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "gaman.auth0.com",
     clientID: "CHgbizBtOICgxPnjyBbSZxUFg2qVnxMr",
-    redirectUri: "http://localhost:3000/callback",
+    redirectUri:
+      process.env.NODE_ENV === "production"
+        ? "http://puzzle-admin.s3-website-eu-west-1.amazonaws.com/callback"
+        : "http://localhost:3000/callback",
     responseType: "token id_token",
-    scope: "openid",
+    scope: "openid"
   });
 
   login() {
