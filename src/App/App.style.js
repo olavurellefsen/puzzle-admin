@@ -5,6 +5,7 @@ export const MenuContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   background-color: rgb(89,231,255);
+  height: 100vh;
 `;
 
 export const MenuTop = styled.div`
