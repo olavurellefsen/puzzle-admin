@@ -6,7 +6,7 @@ import {
   MenuTitle,
   LoginButton,
   LoginButtonText,
-} from "./App.style";
+} from "./Menu.style";
 
 export default props => {
   const { isAuthenticated } = props.auth;
