@@ -14,7 +14,6 @@ export default (props) => {
 const initialState = {
   currentScene: 1,
   currentPuzzles: [{ scene_id: 1, puzzle_id: 1 }],
-  userName: "not logged in"
 };
 
 const reducer = createReducer(initialState, {
