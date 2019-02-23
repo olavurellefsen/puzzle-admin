@@ -1,168 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SceneList should render correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Scenes />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "children": Array [
-        <SceneList />,
-        <PuzzleList />,
-        <PuzzleItems />,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "sc-kgoBCf",
-        "isStatic": true,
-        "rules": Array [
-          "
-  display: flex;
-  flex-direction: row;
-",
-        ],
-      },
-      "displayName": "ScenesContainer",
-      "foldedComponentIds": Array [],
-      "render": [Function],
-      "styledComponentId": "sc-kgoBCf",
-      "target": "div",
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    },
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <SceneList />,
-          <PuzzleList />,
-          <PuzzleItems />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "attrs": Array [],
-        "componentStyle": ComponentStyle {
-          "componentId": "sc-kgoBCf",
-          "isStatic": true,
-          "rules": Array [
-            "
-  display: flex;
-  flex-direction: row;
-",
-          ],
-        },
-        "displayName": "ScenesContainer",
-        "foldedComponentIds": Array [],
-        "render": [Function],
-        "styledComponentId": "sc-kgoBCf",
-        "target": "div",
-        "toString": [Function],
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
-      },
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
+exports[`should render correctly 1`] = `
+<div>
+  <div
+    class="sc-kgoBCf emYCld"
+    data-testid="ScenesContainer"
+  >
+    <div
+      class="sc-ifAKCX kGRoCY"
+      data-testid="SceneListContainer"
+    >
+      <div
+        class="sc-EHOje bJWVZd"
+      >
+        Loading...
+      </div>
+    </div>
+    <div
+      class="sc-gqjmRU cMsUfQ"
+      data-testid="PuzzleListContainer"
+    >
+      <div
+        class="sc-VigVT dxKgRr"
+      >
+        Loading...
+      </div>
+    </div>
+    <div
+      class="sc-jTzLTM bLPztG"
+      data-testid="PuzzleItemsContainer"
+    >
+      <div
+        class="sc-fjdhpX AUMvr"
+        data-testid="DragItemsContainer"
+      >
+        <img
+          class="sc-jzJRlG istBgv"
+          data-testid="DragItemsImage"
+          src="https://via.placeholder.com/400x800?text=DragItems"
+        />
+      </div>
+      <div
+        class="sc-cSHVUG bubdaT"
+        data-testid="DragLogicsContainer"
+      />
+      <div
+        class="sc-kAzzGY eVuYop"
+        data-testid="TargetItemsContainer"
+      />
+      <div
+        class="sc-chPdSV AGhxe"
+        data-testid="PuzzleItemPropertiesContainer"
+      />
+    </div>
+  </div>
+</div>
 `;

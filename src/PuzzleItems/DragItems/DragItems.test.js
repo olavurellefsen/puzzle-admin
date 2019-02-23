@@ -1,37 +1,19 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import MainContextStore from '../../MainContextStore';
-import DragItems from './DragItems';
-import { DragItemsImage } from './DragItems.style';
+import React from "react";
+import { render, cleanup } from 'test-utils';
+import DragItems from "./DragItems";
+afterEach(cleanup)
 
-describe('DragItems', () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(
-      <MainContextStore>
-        <DragItems />
-      </MainContextStore>
-    );
-  });
-  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
+it("should render correctly", () => {
+  const { container } = render(<DragItems />);
+  expect(container).toMatchSnapshot();
 });
 
-describe('mounted DragItems', () => {
-  let wrapper;
-  beforeEach(
-    () =>
-      (wrapper = mount(
-        <MainContextStore>
-          <DragItems sceneId={1} />
-        </MainContextStore>
-      ))
-  );
-  it('should render a DragItemsContainer', () => {
-    expect(wrapper.find('DragItemsContainer').length).toEqual(1);
-    wrapper.unmount();
-  });
-  it('should render the a placeholder image', () => {
-    expect(wrapper.containsMatchingElement(<DragItemsImage />)).toEqual(true);
-    wrapper.unmount();
-  });
+it("should show the DragItemsContainer element", () => {
+  const { queryByTestId } = render(<DragItems />);
+  expect(queryByTestId("DragItemsContainer")).toBeTruthy();
+});
+
+it("should show the DragItemsImage element", () => {
+  const { queryByTestId } = render(<DragItems />);
+  expect(queryByTestId("DragItemsImage")).toBeTruthy();
 });

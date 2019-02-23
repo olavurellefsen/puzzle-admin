@@ -18,7 +18,7 @@ const SceneList = () => {
   `;
 
   return (
-    <SceneListContainer>
+    <SceneListContainer data-testid="SceneListContainer" >
       <SceneListBox>
       <Subscription subscription={subscription}>
           {({ data, loading }) => {

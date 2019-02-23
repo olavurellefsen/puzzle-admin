@@ -8,9 +8,13 @@ it("should render correctly", () => {
   expect(container).toMatchSnapshot();
 });
 
+it("should show the PuzzleListContainer element", () => {
+  const { queryByTestId } = render(<PuzzleList />);
+  expect(queryByTestId("PuzzleListContainer")).toBeTruthy();
+});
+
 it("should show Loading... and then render AUDIOFILE", async () => {
-  const { debug, getByText } = render(<PuzzleList />);
-  debug();
+  const { getByText } = render(<PuzzleList />);
   expect(getByText("Loading...")).toBeTruthy();
   await waitForElement(() => getByText('AUDIOFILE'));
 });

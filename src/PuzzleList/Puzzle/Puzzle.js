@@ -49,6 +49,7 @@ export default (props) => {
         });
       }}
       selected={selected}
+      data-testid="PuzzleContainer" 
     >
       <Mutation mutation={UPDATE_PUZZLE}>
         {(updatePuzzleTitle, { data }) => (

@@ -1,38 +1,16 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
-import MainContextStore from "../../MainContextStore";
+import { render, cleanup } from 'test-utils';
 import Puzzle from "./Puzzle";
-import { ApolloProvider } from "react-apollo";
-import client from "../../heyBreydLocalizationClient";
+afterEach(cleanup)
 
-describe("Puzzle", () => {
-  let wrapper;
-  beforeEach(
-    () =>
-      (wrapper = shallow(
-        <MainContextStore>
-          <Puzzle />
-        </MainContextStore>
-      ))
-  );
-
-  it("should render correctly", () => expect(wrapper).toMatchSnapshot());
+const puzzle = { id: 1, intro_audiofile: "dummyfile", character: "dummycharacer", summary: "Lorum ipsum" };
+it("should render correctly", () => {
+  
+  const { container } = render(<Puzzle puzzle={puzzle}/>);
+  expect(container).toMatchSnapshot();
 });
 
-describe("mounted Puzzle", () => {
-  let wrapper;
-  beforeEach(
-    () =>
-      (wrapper = mount(
-        <ApolloProvider client={client}>
-          <MainContextStore>
-            <Puzzle puzzle={{ id: 1, scene_id: 1 }} currentPuzzleId={2} />
-          </MainContextStore>
-        </ApolloProvider>
-      ))
-  );
-  it("should render a PuzzleContainer", () => {
-    expect(wrapper.find("PuzzleContainer").length).toEqual(1);
-    wrapper.unmount();
-  });
+it("should show the PuzzleContainer element", () => {
+  const { queryByTestId } = render(<Puzzle puzzle={puzzle} />);
+  expect(queryByTestId("PuzzleContainer")).toBeTruthy();
 });

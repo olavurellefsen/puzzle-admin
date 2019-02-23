@@ -1,14 +1,14 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import TargetItems from './TargetItems';
+import React from "react";
+import { render, cleanup } from 'test-utils';
+import TargetItems from "./TargetItems";
+afterEach(cleanup)
 
-describe('TargetItems', () => {
-  let wrapper;
-  beforeEach(() => wrapper = shallow(<TargetItems />));
+it("should render correctly", () => {
+  const { container } = render(<TargetItems />);
+  expect(container).toMatchSnapshot();
+});
 
-  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
-
-  it('should render a TargetItemsContainer', () => {
-    expect(wrapper.find('TargetItemsContainer').length).toEqual(1);
-  });
+it("should show the TargetItemsContainer element", () => {
+  const { queryByTestId } = render(<TargetItems />);
+  expect(queryByTestId("TargetItemsContainer")).toBeTruthy();
 });

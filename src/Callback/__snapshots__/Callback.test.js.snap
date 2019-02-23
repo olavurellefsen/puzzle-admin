@@ -4,7 +4,13 @@ exports[`should render correctly 1`] = `
 <div>
   <div
     class="sc-bdVaJa fePDys"
-    data-testid="DragLogicsContainer"
-  />
+  >
+    <img
+      alt="loading"
+      class="sc-bwzfXH bFHdpU"
+      data-testid="LoadingImage"
+      src="loading.svg"
+    />
+  </div>
 </div>
 `;

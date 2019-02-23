@@ -1,6 +1,4 @@
 import React from 'react';
 import { TargetItemContainer } from './TargetItem.style';
 
-const TargetItem = () => <TargetItemContainer />;
-
-export default TargetItem;
+export default  () => <TargetItemContainer data-testid="TargetItemContainer" />;

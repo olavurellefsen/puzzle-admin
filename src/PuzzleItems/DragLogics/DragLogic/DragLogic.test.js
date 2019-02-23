@@ -1,14 +1,14 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import DragLogic from './DragLogic';
+import React from "react";
+import { render, cleanup } from 'test-utils';
+import DragLogic from "./DragLogic";
+afterEach(cleanup)
 
-describe('DragLogic', () => {
-  let wrapper;
-  beforeEach(() => wrapper = shallow(<DragLogic />));
+it("should render correctly", () => {
+  const { container } = render(<DragLogic />);
+  expect(container).toMatchSnapshot();
+});
 
-  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
-
-  it('should render a DragLogicContainer', () => {
-    expect(wrapper.find('DragLogicContainer').length).toEqual(1);
-  });
+it("should show the DragLogicContainer element", () => {
+  const { queryByTestId } = render(<DragLogic />);
+  expect(queryByTestId("DragLogicContainer")).toBeTruthy();
 });

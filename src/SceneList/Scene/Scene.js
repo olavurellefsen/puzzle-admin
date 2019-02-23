@@ -40,6 +40,7 @@ export default (props) => {
         dispatch({ type: "setCurrentScene", number: id });
       }}
       backgroundImage={"images/scenes/" + image_filename}
+      data-testid="SceneContainer" 
     >
       <Mutation mutation={UPDATE_SCENE}>
         {(updateSceneTitle, { data }) => (

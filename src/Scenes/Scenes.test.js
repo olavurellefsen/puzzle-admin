@@ -1,29 +1,29 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import SceneList from '../SceneList/SceneList';
-import PuzzleList from '../PuzzleList/PuzzleList';
-import PuzzleItems from '../PuzzleItems/PuzzleItems';
-import Scenes from './Scenes';
+import React from "react";
+import { render, cleanup } from 'test-utils';
+import Scenes from "./Scenes";
+afterEach(cleanup)
 
-describe('SceneList', () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(
-        <Scenes />
-    );
-  });
+it("should render correctly", () => {
+  const { container } = render(<Scenes />);
+  expect(container).toMatchSnapshot();
+});
 
-  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
-  it('should render a ScenesContainer', () => {
-    expect(wrapper.find('ScenesContainer').length).toEqual(1);
-  });
-  it('should render the SceneList component', () => {
-    expect(wrapper.containsMatchingElement(<SceneList />)).toEqual(true);
-  });
-  it('should render the PuzzleList component', () => {
-    expect(wrapper.containsMatchingElement(<PuzzleList />)).toEqual(true);
-  });
-  it('should render the PuzzleItems component', () => {
-    expect(wrapper.containsMatchingElement(<PuzzleItems />)).toEqual(true);
-  });
+it("should show the ScenesContainer element", () => {
+  const { queryByTestId } = render(<Scenes />);
+  expect(queryByTestId("ScenesContainer")).toBeTruthy();
+});
+
+it("should show the SceneListContainer element", () => {
+  const { queryByTestId } = render(<Scenes />);
+  expect(queryByTestId("SceneListContainer")).toBeTruthy();
+});
+
+it("should show the PuzzleListContainer element", () => {
+  const { queryByTestId } = render(<Scenes />);
+  expect(queryByTestId("PuzzleListContainer")).toBeTruthy();
+});
+
+it("should show the PuzzleItemsContainer element", () => {
+  const { queryByTestId } = render(<Scenes />);
+  expect(queryByTestId("PuzzleItemsContainer")).toBeTruthy();
 });

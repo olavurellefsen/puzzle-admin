@@ -1,17 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, cleanup } from 'test-utils';
 import SceneList from "./SceneList";
+afterEach(cleanup)
 
-describe("SceneList", () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(
-        <SceneList />
-    );
-  });
+it("should render correctly", () => {
+  const { container } = render(<SceneList />);
+  expect(container).toMatchSnapshot();
+});
 
-  it("should render correctly", () => expect(wrapper).toMatchSnapshot());
-  it("should render a SceneListContainer", () => {
-    expect(wrapper.find("SceneListContainer").length).toEqual(1);
-  });
+it("should show the SceneListContainer element", () => {
+  const { queryByTestId } = render(<SceneList />);
+  expect(queryByTestId("SceneListContainer")).toBeTruthy();
 });

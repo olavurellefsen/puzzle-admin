@@ -1,6 +1,4 @@
 import React from 'react';
 import { PuzzleItemPropertiesContainer } from './PuzzleItemProperties.style';
 
-const PuzzleItemProperties = () => <PuzzleItemPropertiesContainer />;
-
-export default PuzzleItemProperties;
+export default () => <PuzzleItemPropertiesContainer data-testid="PuzzleItemPropertiesContainer"/>;

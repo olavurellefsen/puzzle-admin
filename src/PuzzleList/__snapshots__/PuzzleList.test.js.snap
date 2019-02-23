@@ -4,6 +4,7 @@ exports[`should render correctly 1`] = `
 <div>
   <div
     class="sc-bZQynM hQiEfJ"
+    data-testid="PuzzleListContainer"
   >
     <div
       class="sc-gzVnrw kfByfw"

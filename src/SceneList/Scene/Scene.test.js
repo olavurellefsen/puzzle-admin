@@ -1,53 +1,16 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
-import MainContextStore from "../../MainContextStore";
+import { render, cleanup } from 'test-utils';
 import Scene from "./Scene";
-import { ApolloProvider } from "react-apollo";
-import client from "../../heyBreydLocalizationClient";
+afterEach(cleanup)
 
-describe("Scene", () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(
-      <MainContextStore>
-        <Scene />
-      </MainContextStore>
-    );
-  });
-  it("should render correctly", () => expect(wrapper).toMatchSnapshot());
+const scene = { id: 1, title: "Lorum ipsum", image_filename: "Dummy filename" };
+
+it("should render correctly", () => {
+  const { container } = render(<Scene scene={scene} />);
+  expect(container).toMatchSnapshot();
 });
 
-describe("mounted Scene", () => {
-  let wrapper;
-  beforeEach(
-    () =>
-      (wrapper = mount(
-        <ApolloProvider client={client}>
-          <MainContextStore>
-            <Scene scene={{ id: 2, title: "køkurin" }} />
-          </MainContextStore>
-        </ApolloProvider>
-      ))
-  );
-  it("should render a SceneContainer", () => {
-    expect(wrapper.find("SceneContainer").length).toEqual(1);
-    wrapper.unmount();
-  });
-  it("should render a title", () => {
-    expect(wrapper.find("SceneTitle").length).toEqual(1);
-    wrapper.unmount();
-  });
-  // Does not work because Enzyme does not work with hooks yet, see e.g. https://github.com/airbnb/enzyme/issues/1996
-  // it("should be possible to change the title", () => {
-  //   let sceneTitle = wrapper.find("SceneTitle").find("input");
-  //   sceneTitle.simulate('change', { target: { value: 'Hello' } });
-  //   expect(wrapper.find("SceneTitle").text()).toEqual('Hello');
-  //   wrapper.unmount();
-  // })
-  it("should become selected if it is clicked", () => {
-    expect(wrapper.find("SceneContainer").prop("selected")).toEqual(false);
-    wrapper.find("SceneContainer").simulate("click");
-    expect(wrapper.find("SceneContainer").prop("selected")).toEqual(true);
-    wrapper.unmount();
-  });
+it("should show the SceneContainer element", () => {
+  const { queryByTestId } = render(<Scene scene={scene} />);
+  expect(queryByTestId("SceneContainer")).toBeTruthy();
 });

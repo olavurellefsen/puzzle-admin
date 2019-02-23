@@ -6,7 +6,7 @@ import { ScenesContainer } from "./Scenes.style";
 
 export default () => {
   return (
-    <ScenesContainer>
+    <ScenesContainer data-testid="ScenesContainer" >
       <SceneList />
       <PuzzleList />
       <PuzzleItems />

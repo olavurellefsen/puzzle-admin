@@ -28,7 +28,7 @@ export default () => {
 
   let currentPuzzleId = 0;
   return (
-    <PuzzleListContainer>
+    <PuzzleListContainer data-testid="PuzzleListContainer">
       <PuzzleListBox>
         <Subscription subscription={subscription}>
           {({ data, loading }) => {
