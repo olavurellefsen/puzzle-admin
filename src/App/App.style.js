@@ -23,6 +23,7 @@ export const MenuTitle = styled.div`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  width: 120px;
 `;
 
 export const LoginButton = styled.div`
