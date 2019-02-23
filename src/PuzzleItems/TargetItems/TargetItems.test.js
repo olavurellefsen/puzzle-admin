@@ -12,3 +12,8 @@ it("should show the TargetItemsContainer element", () => {
   const { queryByTestId } = render(<TargetItems />);
   expect(queryByTestId("TargetItemsContainer")).toBeTruthy();
 });
+
+it("should show the TargetItemsImage element", () => {
+  const { queryByTestId } = render(<TargetItems />);
+  expect(queryByTestId("TargetItemsImage")).toBeTruthy();
+});

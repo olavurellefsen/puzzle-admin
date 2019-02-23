@@ -3,8 +3,15 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-bdVaJa fePDys"
+    class="sc-bdVaJa dUCXaL"
     data-testid="TargetItemsContainer"
-  />
+  >
+     
+    <img
+      class="sc-bwzfXH bFHdpU"
+      data-testid="TargetItemsImage"
+      src="https://via.placeholder.com/200x800?text=Target"
+    />
+  </div>
 </div>
 `;

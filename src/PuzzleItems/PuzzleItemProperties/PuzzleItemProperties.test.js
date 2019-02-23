@@ -12,3 +12,8 @@ it("should show the PuzzleItemPropertiesContainer element", () => {
   const { queryByTestId } = render(<PuzzleItemProperties />);
   expect(queryByTestId("PuzzleItemPropertiesContainer")).toBeTruthy();
 });
+
+it("should show the PuzzleItemPropertiesImage element", () => {
+  const { queryByTestId } = render(<PuzzleItemProperties />);
+  expect(queryByTestId("PuzzleItemPropertiesImage")).toBeTruthy();
+});

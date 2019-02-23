@@ -3,8 +3,14 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-bdVaJa fePDys"
+    class="sc-bdVaJa cyzjzt"
     data-testid="PuzzleItemPropertiesContainer"
-  />
+  >
+    <img
+      class="sc-bwzfXH bFHdpU"
+      data-testid="PuzzleItemPropertiesImage"
+      src="https://via.placeholder.com/640x200?text=PuzzleItemProperties"
+    />
+  </div>
 </div>
 `;

@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-kgoBCf jNYgRk"
+    class="sc-ckVGcZ bsrtTB"
     data-testid="ScenesContainer"
   >
     <div
@@ -27,31 +27,55 @@ exports[`should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-jTzLTM bLPztG"
+      class="sc-jTzLTM bInSG"
       data-testid="PuzzleItemsContainer"
     >
       <div
-        class="sc-fjdhpX AUMvr"
-        data-testid="DragItemsContainer"
+        class="sc-fjdhpX eXIoUS"
+        data-testid="PuzzleItemsBox"
       >
-        <img
-          class="sc-jzJRlG istBgv"
-          data-testid="DragItemsImage"
-          src="https://via.placeholder.com/400x800?text=DragItems"
-        />
+        <div
+          class="sc-jzJRlG cXWUzt"
+          data-testid="DragItemsContainer"
+        >
+          <img
+            class="sc-cSHVUG bubdaT"
+            data-testid="DragItemsImage"
+            src="https://via.placeholder.com/200x800?text=Drag"
+          />
+        </div>
+        <div
+          class="sc-kAzzGY lmIINU"
+          data-testid="DragLogicsContainer"
+        >
+          <img
+            class="sc-chPdSV byfFmt"
+            data-testid="DragLogicsImage"
+            src="https://via.placeholder.com/200x800?text=Logic"
+          />
+        </div>
+        <div
+          class="sc-kgoBCf eSeTUm"
+          data-testid="TargetItemsContainer"
+        >
+           
+          <img
+            class="sc-kGXeez fqVwMj"
+            data-testid="TargetItemsImage"
+            src="https://via.placeholder.com/200x800?text=Target"
+          />
+        </div>
       </div>
       <div
-        class="sc-cSHVUG bubdaT"
-        data-testid="DragLogicsContainer"
-      />
-      <div
-        class="sc-kAzzGY eVuYop"
-        data-testid="TargetItemsContainer"
-      />
-      <div
-        class="sc-chPdSV AGhxe"
+        class="sc-kpOJdX bQJyxt"
         data-testid="PuzzleItemPropertiesContainer"
-      />
+      >
+        <img
+          class="sc-dxgOiQ cVfJIT"
+          data-testid="PuzzleItemPropertiesImage"
+          src="https://via.placeholder.com/640x200?text=PuzzleItemProperties"
+        />
+      </div>
     </div>
   </div>
 </div>

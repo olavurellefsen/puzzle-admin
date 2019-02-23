@@ -12,3 +12,8 @@ it("should show the DragLogicsContainer element", () => {
   const { queryByTestId } = render(<DragLogics />);
   expect(queryByTestId("DragLogicsContainer")).toBeTruthy();
 });
+
+it("should show the DragLogicsImage element", () => {
+  const { queryByTestId } = render(<DragLogics />);
+  expect(queryByTestId("DragLogicsImage")).toBeTruthy();
+});

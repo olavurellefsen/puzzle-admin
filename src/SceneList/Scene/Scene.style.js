@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const SceneContainer = styled.div`
-  height: 300px;
-  width: 400px;
+  height: 240px;
+  width: 320px;
   margin: 20px 20px;
   border-radius: 25px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,${props => (props.selected ? 0.4 : 0.2)});

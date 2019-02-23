@@ -3,31 +3,55 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-bdVaJa haicEa"
+    class="sc-bdVaJa lhXlbL"
     data-testid="PuzzleItemsContainer"
   >
     <div
-      class="sc-bwzfXH bFHdpU"
-      data-testid="DragItemsContainer"
+      class="sc-bwzfXH fpBhud"
+      data-testid="PuzzleItemsBox"
     >
-      <img
-        class="sc-htpNat hHtpcc"
-        data-testid="DragItemsImage"
-        src="https://via.placeholder.com/400x800?text=DragItems"
-      />
+      <div
+        class="sc-htpNat bwqrCF"
+        data-testid="DragItemsContainer"
+      >
+        <img
+          class="sc-bxivhb eBNJKg"
+          data-testid="DragItemsImage"
+          src="https://via.placeholder.com/200x800?text=Drag"
+        />
+      </div>
+      <div
+        class="sc-ifAKCX dQIIsA"
+        data-testid="DragLogicsContainer"
+      >
+        <img
+          class="sc-EHOje jvzENE"
+          data-testid="DragLogicsImage"
+          src="https://via.placeholder.com/200x800?text=Logic"
+        />
+      </div>
+      <div
+        class="sc-bZQynM cMuJCZ"
+        data-testid="TargetItemsContainer"
+      >
+         
+        <img
+          class="sc-gzVnrw fgSTpW"
+          data-testid="TargetItemsImage"
+          src="https://via.placeholder.com/200x800?text=Target"
+        />
+      </div>
     </div>
     <div
-      class="sc-bxivhb eBNJKg"
-      data-testid="DragLogicsContainer"
-    />
-    <div
-      class="sc-ifAKCX bmKgXx"
-      data-testid="TargetItemsContainer"
-    />
-    <div
-      class="sc-EHOje kSzTaY"
+      class="sc-htoDjs blUkJN"
       data-testid="PuzzleItemPropertiesContainer"
-    />
+    >
+      <img
+        class="sc-dnqmqq hJxOZJ"
+        data-testid="PuzzleItemPropertiesImage"
+        src="https://via.placeholder.com/640x200?text=PuzzleItemProperties"
+      />
+    </div>
   </div>
 </div>
 `;

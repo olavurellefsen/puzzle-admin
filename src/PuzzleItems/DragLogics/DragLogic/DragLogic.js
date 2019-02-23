@@ -1,4 +1,6 @@
-import React from 'react';
-import { DragLogicContainer } from './DragLogic.style';
+import React from "react";
+import { DragLogicContainer } from "./DragLogic.style";
 
-export default () => <DragLogicContainer data-testid="DragLogicContainer" />;
+export default () => (
+  <DragLogicContainer data-testid="DragLogicContainer" />
+);
