@@ -14,13 +14,11 @@ export const SceneContainer = styled.div`
   background-image: url('${props => props.backgroundImage}');
   background-size: cover;
 `;
-SceneContainer.displayName = "SceneContainer";
 
 export const SceneTitleForm = styled.form`
   height: 25px;
   padding: 10px;
 `;
-SceneTitleForm.displayName = "SceneTitleForm";
 
 export const SceneTitle = styled.input`
   display: block;
@@ -33,7 +31,6 @@ export const SceneTitle = styled.input`
   border: 0px;
   text-align: center;
 `;
-SceneTitle.displayName = "SceneTitle";
 
 export const SceneRightArrow = styled.div`
   font-size: 60px;
@@ -42,4 +39,3 @@ export const SceneRightArrow = styled.div`
   transform: translate(40px,60px);
   visibility: ${props => (props.selected ? 'visible' : 'hidden')}
 `;
-SceneRightArrow.displayName = "SceneRightArrow";

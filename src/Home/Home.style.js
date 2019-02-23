@@ -7,4 +7,3 @@ export const HomeContainer = styled.div`
   height: 100vh;
   background-color: #eeeeee;
 `;
-HomeContainer.displayName = 'HomeContainer';

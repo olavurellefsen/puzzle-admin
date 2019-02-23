@@ -13,28 +13,24 @@ export const PuzzleContainer = styled.div`
   }
   opacity: ${props => (props.selected ? 1 : 0.3)};
 `;
-PuzzleContainer.displayName = "PuzzleContainer";
 
 export const PuzzleForm = styled.form`
   display: flex;
   flex-direction: column;
   padding: 2px 16px;
 `;
-PuzzleForm.displayName = "PuzzleForm";
 
 export const PuzzleFieldCaption = styled.div`
   font-size: 12px;
   font-weight: normal;
   color: gray;
 `;
-PuzzleFieldCaption.displayName = "PuzzleFieldCaption";
 
 export const PuzzleField = styled.div`
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 10px;
 `;
-PuzzleField.displayName = "PuzzleField";
 
 export const PuzzleInputField = styled.input`
   font-size: 16px;
@@ -43,7 +39,6 @@ export const PuzzleInputField = styled.input`
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
 `;
-PuzzleField.displayName = "PuzzleField";
 
 export const PuzzleRightArrow = styled.div`
   font-size: 60px;
@@ -52,4 +47,3 @@ export const PuzzleRightArrow = styled.div`
   transform: translate(50px,-60px);
   visibility: ${props => (props.selected ? 'visible' : 'hidden')}
 `;
-PuzzleRightArrow.displayName = "PuzzleRightArrow";

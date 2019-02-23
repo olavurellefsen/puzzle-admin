@@ -6,7 +6,6 @@ export const MenuContainer = styled.div`
   justify-content: space-between;
   background-color: rgb(89,231,255);
 `;
-MenuContainer.displayName = 'MenuContainer';
 
 export const MenuTop = styled.div`
   display: flex;
@@ -17,7 +16,6 @@ export const MenuTop = styled.div`
 export const MenuLogo  = styled.img`
   padding: 10px;
 `;
-MenuLogo.displayName = 'MenuLogo';
 
 export const MenuTitle = styled.div`
   font-size: 24px;
@@ -39,7 +37,6 @@ export const LoginButton = styled.div`
   cursor: pointer;
   margin: 20px 0px;
 `;
-LoginButton.displayName = "LoginButton";
 
 export const LoginButtonText = styled.div`
   font-family: Lato;
@@ -49,4 +46,3 @@ export const LoginButtonText = styled.div`
   font-size: 20px;
   color: white;
 `;
-LoginButtonText.displayName = "LoginButtonText";

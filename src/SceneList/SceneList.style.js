@@ -4,7 +4,6 @@ export const SceneListContainer = styled.div`
   margin-left: 20px;
   overflow: hidden;
 `;
-SceneListContainer.displayName = "SceneListContainer";
 
 export const SceneListBox = styled.div`
   width: 100%;
@@ -12,4 +11,3 @@ export const SceneListBox = styled.div`
   overflow: auto;
   padding-right: 14px;
 `;
-SceneListContainer.displayName = "SceneListContainer";

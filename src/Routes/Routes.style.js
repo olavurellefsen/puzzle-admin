@@ -7,4 +7,3 @@ export const RoutesContainer = styled.div`
   height: 100vh;
   background-color: #eeeeee;
 `;
-RoutesContainer.displayName = 'RoutesContainer';
