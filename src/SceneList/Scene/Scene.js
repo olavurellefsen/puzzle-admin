@@ -10,7 +10,7 @@ import {
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
-export default function Scene(props) {
+export default (props) => {
   const [state, dispatch] = useContext(MainContext);
   let { id, title, image_filename } = props.scene;
   title = capitalizeFirstLetter(title);

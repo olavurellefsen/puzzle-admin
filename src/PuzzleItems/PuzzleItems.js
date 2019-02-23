@@ -5,7 +5,7 @@ import DragLogics from './DragLogics/DragLogics';
 import TargetItems from './TargetItems/TargetItems';
 import PuzzleItemProperties from './PuzzleItemProperties/PuzzleItemProperties';
 
-export default function PuzzleItems() {
+export default () => {
   return (
     <PuzzleItemsContainer>
       <DragItems />

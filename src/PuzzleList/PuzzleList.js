@@ -5,7 +5,7 @@ import { PuzzleListContainer, PuzzleListBox } from "./PuzzleList.style";
 import { Subscription } from "react-apollo";
 import gql from "graphql-tag";
 
-export default function PuzzleList() {
+export default () => {
   const [state, dispatch] = useContext(MainContext);
 
   const subscription = gql`

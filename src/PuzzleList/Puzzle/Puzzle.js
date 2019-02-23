@@ -11,7 +11,7 @@ import {
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
-export default function Puzzle(props) {
+export default (props) => {
   const [state, dispatch] = useContext(MainContext);
   let { id, intro_audiofile, character, summary } = props.puzzle;
   const [summaryField, setSummaryField] = useState(

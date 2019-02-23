@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import MainContext from "./Context";
 import createReducer from "./createReducer";
 
-export default function MainContextStore(props) {
+export default (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <MainContext.Provider value={[state, dispatch]}>

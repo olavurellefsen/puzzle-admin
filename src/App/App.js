@@ -8,19 +8,14 @@ import {
   LoginButtonText,
 } from "./App.style";
 
-export default function App(props) {
+export default props => {
   const { isAuthenticated } = props.auth;
   return (
     <MenuContainer>
       <MenuTop>
         <MenuLogo src="images/logo.png" />
         <MenuTitle>
-          Puzzle
-          <br />
-          Admin
-          <br />
-          System
-          <br />
+          Puzzle Admin System
         </MenuTitle>
         <>
           {!isAuthenticated() && (

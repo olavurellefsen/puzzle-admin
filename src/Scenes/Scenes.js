@@ -4,7 +4,7 @@ import PuzzleList from "../PuzzleList/PuzzleList";
 import PuzzleItems from '../PuzzleItems/PuzzleItems';
 import { ScenesContainer } from "./Scenes.style";
 
-export default function Scenes() {
+export default () => {
   return (
     <ScenesContainer>
       <SceneList />
