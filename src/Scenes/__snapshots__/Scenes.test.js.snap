@@ -38,11 +38,7 @@ exports[`should render correctly 1`] = `
           class="sc-jzJRlG cXWUzt"
           data-testid="DragItemsContainer"
         >
-          <img
-            class="sc-cSHVUG bubdaT"
-            data-testid="DragItemsImage"
-            src="https://via.placeholder.com/200x800?text=Drag"
-          />
+          Loading...
         </div>
         <div
           class="sc-kAzzGY lmIINU"

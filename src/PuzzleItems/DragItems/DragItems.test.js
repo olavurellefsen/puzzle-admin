@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup } from 'test-utils';
+import { render, cleanup, waitForElement } from 'test-utils';
 import DragItems from "./DragItems";
 afterEach(cleanup)
 
@@ -13,7 +13,9 @@ it("should show the DragItemsContainer element", () => {
   expect(queryByTestId("DragItemsContainer")).toBeTruthy();
 });
 
-it("should show the DragItemsImage element", () => {
-  const { queryByTestId } = render(<DragItems />);
+it("should show Loading... and then at least one DragItemsImage element", async () => {
+  const { getByText, queryByTestId } = render(<DragItems />);
+  expect(getByText("Loading...")).toBeTruthy();
+  await waitForElement(() => queryByTestId("DragItemsImage"));
   expect(queryByTestId("DragItemsImage")).toBeTruthy();
 });
