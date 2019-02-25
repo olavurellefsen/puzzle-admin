@@ -6,12 +6,7 @@ exports[`should render correctly 1`] = `
     class="sc-bdVaJa dUCXaL"
     data-testid="TargetItemsContainer"
   >
-     
-    <img
-      class="sc-bwzfXH bFHdpU"
-      data-testid="TargetItemsImage"
-      src="https://via.placeholder.com/200x800?text=Target"
-    />
+    Loading...
   </div>
 </div>
 `;

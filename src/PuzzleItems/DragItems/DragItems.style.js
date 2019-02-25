@@ -5,5 +5,6 @@ export const DragItemsContainer = styled.div`
 `;
 
 export const DragItemsImage = styled.img`
-  width:200px;
+  height:160px;
+  max-width:1600px;
 `;

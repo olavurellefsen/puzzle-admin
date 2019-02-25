@@ -5,4 +5,6 @@ export const TargetItemsContainer = styled.div`
 `;
 
 export const TargetItemsImage = styled.img`
+  height:160px;
+  max-width:1600px;
 `;
