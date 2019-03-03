@@ -3,10 +3,23 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-bdVaJa dUCXaL"
+    class="sc-bdVaJa jnSMQf"
     data-testid="TargetItemsContainer"
   >
-    Loading...
+    <div
+      class="target1 sc-bwzfXH ceVPPq"
+    >
+      Loading...
+    </div>
+    <div
+      class="target2 sc-bwzfXH ceVPPq"
+    />
+    <div
+      class="target3 sc-bwzfXH ceVPPq"
+    />
+    <div
+      class="target4 sc-bwzfXH ceVPPq"
+    />
   </div>
 </div>
 `;

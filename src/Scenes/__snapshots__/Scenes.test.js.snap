@@ -31,30 +31,46 @@ exports[`should render correctly 1`] = `
       data-testid="PuzzleItemsContainer"
     >
       <div
-        class="sc-fjdhpX eXIoUS"
+        class="sc-fjdhpX fKhFGW"
         data-testid="PuzzleItemsBox"
       >
         <div
-          class="sc-jzJRlG cXWUzt"
+          class="sc-jzJRlG jxZJty"
           data-testid="DragItemsContainer"
         >
-          Loading...
-        </div>
-        <div
-          class="sc-kAzzGY lmIINU"
-          data-testid="DragLogicsContainer"
-        >
-          <img
-            class="sc-chPdSV byfFmt"
-            data-testid="DragLogicsImage"
-            src="https://via.placeholder.com/200x800?text=Logic"
+          <div
+            class="drag1 sc-cSHVUG SemmO"
+          >
+            Loading...
+          </div>
+          <div
+            class="drag2 sc-cSHVUG SemmO"
+          />
+          <div
+            class="drag3 sc-cSHVUG SemmO"
+          />
+          <div
+            class="drag4 sc-cSHVUG SemmO"
           />
         </div>
         <div
-          class="sc-kgoBCf eSeTUm"
+          class="sc-chPdSV bkCTlA"
           data-testid="TargetItemsContainer"
         >
-          Loading...
+          <div
+            class="target1 sc-kgoBCf lbAnNV"
+          >
+            Loading...
+          </div>
+          <div
+            class="target2 sc-kgoBCf lbAnNV"
+          />
+          <div
+            class="target3 sc-kgoBCf lbAnNV"
+          />
+          <div
+            class="target4 sc-kgoBCf lbAnNV"
+          />
         </div>
       </div>
       <div

@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import MainContext from "../../Context";
-import { TargetItemsContainer, TargetItemsImage } from "./TargetItems.style";
+import {
+  TargetItemsContainer,
+  TargetPlaceholder,
+  TargetItemsImage
+} from "./TargetItems.style";
 import { Subscription } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -11,12 +15,13 @@ export default () => {
     puzzle => puzzle.scene_id === state.currentScene
   );
   if (typeof currentPuzzle === "undefined") {
-    return "Loading...";
+    return "Loading puzzle...";
   } else {
     let currentPuzzleId = currentPuzzle.puzzle_id;
     const subscription = gql`
     subscription {
       targetitem(order_by: { sequence: asc }, where: { puzzle_id: { _eq: ${currentPuzzleId} } }) {
+        id
         puzzle_id
         sequence
         puzzleItemBypuzzleItemId {
@@ -32,15 +37,24 @@ export default () => {
         <Subscription subscription={subscription}>
           {({ data, loading }) => {
             if (loading) {
-              return "Loading...";
+              return (
+                <>
+                  <TargetPlaceholder className="target1">Loading...</TargetPlaceholder>
+                  <TargetPlaceholder className="target2" />
+                  <TargetPlaceholder className="target3" />
+                  <TargetPlaceholder className="target4" />
+                </>
+              );
             } else {
               let Targetitems = data.targetitem;
-              return Targetitems.map((Targetitem, index) => {
+              return Targetitems.map((targetitem, index) => {
                 return (
                   <TargetItemsImage
                     key={index}
+                    id={`target${targetitem.id}`}
+                    className={`target${targetitem.id}`}
                     src={`images/puzzleitems/${
-                      Targetitem.puzzleItemBypuzzleItemId.imagefile
+                      targetitem.puzzleItemBypuzzleItemId.imagefile
                     }`}
                     data-testid="TargetItemsImage"
                   />

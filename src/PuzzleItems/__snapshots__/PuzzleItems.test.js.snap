@@ -7,30 +7,46 @@ exports[`should render correctly 1`] = `
     data-testid="PuzzleItemsContainer"
   >
     <div
-      class="sc-bwzfXH fpBhud"
+      class="sc-bwzfXH htoLMg"
       data-testid="PuzzleItemsBox"
     >
       <div
-        class="sc-htpNat bwqrCF"
+        class="sc-htpNat fdfuso"
         data-testid="DragItemsContainer"
       >
-        Loading...
-      </div>
-      <div
-        class="sc-ifAKCX dQIIsA"
-        data-testid="DragLogicsContainer"
-      >
-        <img
-          class="sc-EHOje jvzENE"
-          data-testid="DragLogicsImage"
-          src="https://via.placeholder.com/200x800?text=Logic"
+        <div
+          class="drag1 sc-bxivhb cHYYDs"
+        >
+          Loading...
+        </div>
+        <div
+          class="drag2 sc-bxivhb cHYYDs"
+        />
+        <div
+          class="drag3 sc-bxivhb cHYYDs"
+        />
+        <div
+          class="drag4 sc-bxivhb cHYYDs"
         />
       </div>
       <div
-        class="sc-bZQynM cMuJCZ"
+        class="sc-EHOje hnvcFW"
         data-testid="TargetItemsContainer"
       >
-        Loading...
+        <div
+          class="target1 sc-bZQynM pXomn"
+        >
+          Loading...
+        </div>
+        <div
+          class="target2 sc-bZQynM pXomn"
+        />
+        <div
+          class="target3 sc-bZQynM pXomn"
+        />
+        <div
+          class="target4 sc-bZQynM pXomn"
+        />
       </div>
     </div>
     <div
