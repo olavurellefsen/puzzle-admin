@@ -11,7 +11,7 @@ export default () => {
     puzzle => puzzle.scene_id === state.currentScene
   );
   if (typeof currentPuzzle === "undefined") {
-    return "Loading...";
+    return "Loading puzzle...";
   } else {
     let currentPuzzleId = currentPuzzle.puzzle_id;
     const subscription = gql`
