@@ -9,4 +9,5 @@ export const PuzzleItemsContainer = styled.div`
 export const PuzzleItemsBox = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 `;

@@ -18,11 +18,6 @@ it("should show the DragItems element", () => {
   expect(queryByTestId("DragItemsContainer")).toBeTruthy();
 });
 
-it("should show the DragLogics element", () => {
-  const { queryByTestId } = render(<PuzzleItems />);
-  expect(queryByTestId("DragLogicsContainer")).toBeTruthy();
-});
-
 it("should show the TargetItems element", () => {
   const { queryByTestId } = render(<PuzzleItems />);
   expect(queryByTestId("TargetItemsContainer")).toBeTruthy();
