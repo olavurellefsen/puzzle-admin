@@ -4,11 +4,23 @@ import DragItem from "./DragItem";
 afterEach(cleanup)
 
 it("should render correctly", () => {
-  const { container } = render(<DragItem index={0} dragitem={{id: 0, puzzleItemBypuzzleItemId: { imagefile: "dummy.png"}}}/>);
+  const { container } = render(<DragItem
+    index={0}
+    dragitem={{id: 0, puzzleItemBypuzzleItemId:
+      { name: "dummy name",
+        imagefile: "dummyimage.png", itemBybubbleTextId: { value: "dummy bubble text"}
+      }
+    }}/>);
   expect(container).toMatchSnapshot();
 });
 
 it("should show the DragItemContainer element", () => {
-  const { queryByTestId } = render(<DragItem index={0} dragitem={{id: 0, puzzleItemBypuzzleItemId: { imagefile: "dummy.png"}}}/>);
+  const { queryByTestId } = render(<DragItem
+    index={0}
+    dragitem={{id: 0, puzzleItemBypuzzleItemId:
+      { name: "dummy name",
+        imagefile: "dummyimage.png", itemBybubbleTextId: { value: "dummy bubble text"}
+      }
+    }}/>);
   expect(queryByTestId("DragItemContainer")).toBeTruthy();
 });

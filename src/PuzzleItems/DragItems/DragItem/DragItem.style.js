@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const DragItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 200px;
   width: 200px;
   margin: 20px;
@@ -15,8 +17,41 @@ export const DragItemContainer = styled.div`
   background-size: cover;
 `;
 
+export const DragItemTopContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 10px;
+`;
+
 export const DragItemImage = styled.img`
   height:80px;
   max-width:80px;
+  margin-right: 10px;
+`;
+
+export const DragItemBubbleText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+`;
+
+export const DragItemFieldCaption = styled.div`
+  font-size: 12px;
+  font-weight: normal;
+  color: gray;
+`;
+
+export const DragItemField = styled.div`
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+`;
+
+export const DragItemRestContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 10px;
 `;

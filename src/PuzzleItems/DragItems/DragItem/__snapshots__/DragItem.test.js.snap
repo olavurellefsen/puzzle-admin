@@ -3,15 +3,47 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="drag0 sc-bdVaJa ibIzgX"
+    class="drag0 sc-bdVaJa cgfwkQ"
     data-testid="DragItemContainer"
     id="drag0"
   >
-    <img
-      class="sc-bwzfXH giWGMM"
-      data-testid="DragItemsImage"
-      src="images/puzzleitems/dummy.png"
-    />
+    <div
+      class="sc-bwzfXH hpDuqD"
+    >
+      <img
+        class="sc-htpNat hVdzGR"
+        data-testid="DragItemsImage"
+        src="images/puzzleitems/dummyimage.png"
+      />
+      <div
+        class="sc-bxivhb iEkCAb"
+      >
+        <div
+          class="sc-ifAKCX dXqqR"
+        >
+          Bubble text
+        </div>
+        <div
+          class="sc-EHOje jZKflx"
+        >
+          dummy bubble text
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-bZQynM gIlXqS"
+    >
+      <div
+        class="sc-ifAKCX dXqqR"
+      >
+        Name
+      </div>
+      <div
+        class="sc-EHOje jZKflx"
+      >
+        dummy name
+      </div>
+    </div>
   </div>
 </div>
 `;

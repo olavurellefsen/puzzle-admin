@@ -1,5 +1,13 @@
 import React from "react";
-import { DragItemContainer, DragItemImage } from "./DragItem.style";
+import {
+  DragItemContainer,
+  DragItemTopContent,
+  DragItemImage,
+  DragItemBubbleText,
+  DragItemFieldCaption,
+  DragItemField,
+  DragItemRestContent
+} from "./DragItem.style";
 
 export default props => {
   const { index, dragitem } = props;
@@ -9,13 +17,25 @@ export default props => {
       className={`drag${dragitem.id}`}
       id={`drag${dragitem.id}`}
     >
-      <DragItemImage
-        key={index}
-        src={`images/puzzleitems/${
-          dragitem.puzzleItemBypuzzleItemId.imagefile
-        }`}
-        data-testid="DragItemsImage"
-      />
+      <DragItemTopContent>
+        <DragItemImage
+          key={index}
+          src={`images/puzzleitems/${
+            dragitem.puzzleItemBypuzzleItemId.imagefile
+          }`}
+          data-testid="DragItemsImage"
+        />
+        <DragItemBubbleText>
+          <DragItemFieldCaption>Bubble text</DragItemFieldCaption>
+          <DragItemField>
+            {dragitem.puzzleItemBypuzzleItemId.itemBybubbleTextId.value}
+          </DragItemField>
+        </DragItemBubbleText>
+      </DragItemTopContent>
+      <DragItemRestContent>
+        <DragItemFieldCaption>Name</DragItemFieldCaption>
+        <DragItemField>{dragitem.puzzleItemBypuzzleItemId.name}</DragItemField>
+      </DragItemRestContent>
     </DragItemContainer>
   );
 };

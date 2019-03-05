@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-eNQAEJ BjhtN"
+    class="sc-cMljjf ebwIqK"
     data-testid="ScenesContainer"
   >
     <div
@@ -54,31 +54,31 @@ exports[`should render correctly 1`] = `
           />
         </div>
         <div
-          class="sc-kgoBCf ehIMyg"
+          class="sc-jKJlTe iPrhGp"
           data-testid="TargetItemsContainer"
         >
           <div
-            class="target1 sc-kGXeez jQwUsC"
+            class="target1 sc-eNQAEJ kHioKA"
           >
             Loading...
           </div>
           <div
-            class="target2 sc-kGXeez jQwUsC"
+            class="target2 sc-eNQAEJ kHioKA"
           />
           <div
-            class="target3 sc-kGXeez jQwUsC"
+            class="target3 sc-eNQAEJ kHioKA"
           />
           <div
-            class="target4 sc-kGXeez jQwUsC"
+            class="target4 sc-eNQAEJ kHioKA"
           />
         </div>
       </div>
       <div
-        class="sc-ckVGcZ dxqoMe"
+        class="sc-jWBwVP gSTEyx"
         data-testid="PuzzleItemPropertiesContainer"
       >
         <img
-          class="sc-jKJlTe krfdoq"
+          class="sc-brqgnP ygVYg"
           data-testid="PuzzleItemPropertiesImage"
           src="https://via.placeholder.com/640x200?text=PuzzleItemProperties"
         />

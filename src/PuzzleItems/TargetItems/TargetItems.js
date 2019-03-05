@@ -17,14 +17,28 @@ export default () => {
     let currentPuzzleId = currentPuzzle.puzzle_id;
     const subscription = gql`
     subscription {
-      targetitem(order_by: { sequence: asc }, where: { puzzle_id: { _eq: ${currentPuzzleId} } }) {
+      targetitem(
+        order_by: {sequence: asc},
+        where: {_and: [
+          {puzzle_id: {_eq: ${currentPuzzleId}}},
+  	      {puzzleItemBypuzzleItemId: {itemBybubbleTextId: { language_id: {_eq: 1}}}},
+        ]}
+      )
+      {
         id
         puzzle_id
         sequence
+        wait
         puzzleItemBypuzzleItemId {
           imagefile
           name
+          itemBybubbleTextId {
+            value
+          }
         }
+        draglogicsBytargetitemId {
+          dragitem_id
+        }        
       }
     }
     `;
