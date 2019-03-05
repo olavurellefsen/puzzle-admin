@@ -15,46 +15,46 @@ exports[`should render correctly 1`] = `
         data-testid="DragItemsContainer"
       >
         <div
-          class="drag1 sc-bxivhb cHYYDs"
+          class="drag1 sc-bxivhb kHGHfL"
         >
           Loading...
         </div>
         <div
-          class="drag2 sc-bxivhb cHYYDs"
+          class="drag2 sc-bxivhb kHGHfL"
         />
         <div
-          class="drag3 sc-bxivhb cHYYDs"
+          class="drag3 sc-bxivhb kHGHfL"
         />
         <div
-          class="drag4 sc-bxivhb cHYYDs"
+          class="drag4 sc-bxivhb kHGHfL"
         />
       </div>
       <div
-        class="sc-EHOje hnvcFW"
+        class="sc-bZQynM gxkZHy"
         data-testid="TargetItemsContainer"
       >
         <div
-          class="target1 sc-bZQynM pXomn"
+          class="target1 sc-gzVnrw gvoOql"
         >
           Loading...
         </div>
         <div
-          class="target2 sc-bZQynM pXomn"
+          class="target2 sc-gzVnrw gvoOql"
         />
         <div
-          class="target3 sc-bZQynM pXomn"
+          class="target3 sc-gzVnrw gvoOql"
         />
         <div
-          class="target4 sc-bZQynM pXomn"
+          class="target4 sc-gzVnrw gvoOql"
         />
       </div>
     </div>
     <div
-      class="sc-htoDjs blUkJN"
+      class="sc-iwsKbI brPmhu"
       data-testid="PuzzleItemPropertiesContainer"
     >
       <img
-        class="sc-dnqmqq hJxOZJ"
+        class="sc-gZMcBi cwkXTh"
         data-testid="PuzzleItemPropertiesImage"
         src="https://via.placeholder.com/640x200?text=PuzzleItemProperties"
       />

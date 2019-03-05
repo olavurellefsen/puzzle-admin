@@ -3,8 +3,15 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-bdVaJa fePDys"
+    class="drag0 sc-bdVaJa ibIzgX"
     data-testid="DragItemContainer"
-  />
+    id="drag0"
+  >
+    <img
+      class="sc-bwzfXH giWGMM"
+      data-testid="DragItemsImage"
+      src="images/puzzleitems/dummy.png"
+    />
+  </div>
 </div>
 `;

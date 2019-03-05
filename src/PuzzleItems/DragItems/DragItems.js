@@ -1,11 +1,8 @@
 import React, { useContext, Fragment } from "react";
 import LineTo from "../../Utils/lineto";
 import MainContext from "../../Context";
-import {
-  DragItemsContainer,
-  DragPlaceholder,
-  DragItemsImage
-} from "./DragItems.style";
+import { DragItemsContainer, DragPlaceholder } from "./DragItems.style";
+import DragItem from "./DragItem/DragItem";
 import { Subscription } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -21,13 +18,24 @@ export default () => {
     let currentPuzzleId = currentPuzzle.puzzle_id;
     const subscription = gql`
     subscription {
-      dragitem(order_by: { sequence: asc }, where: { puzzle_id: { _eq: ${currentPuzzleId} } }) {
+      dragitem(
+        order_by: {sequence: asc},
+        where: {_and: [
+          {puzzle_id: {_eq: ${currentPuzzleId}}},
+  	      {puzzleItemBypuzzleItemId: {itemBybubbleTextId: { language_id: {_eq: 1}}}},
+        ]}
+      )
+      {
         id
         puzzle_id
         sequence
+        wait
         puzzleItemBypuzzleItemId {
           imagefile
           name
+          itemBybubbleTextId {
+            value
+          }
         }
         draglogicsBydragitemId {
           targetitem_id
@@ -43,7 +51,9 @@ export default () => {
             if (loading) {
               return (
                 <>
-                  <DragPlaceholder className="drag1">Loading...</DragPlaceholder>
+                  <DragPlaceholder className="drag1">
+                    Loading...
+                  </DragPlaceholder>
                   <DragPlaceholder className="drag2" />
                   <DragPlaceholder className="drag3" />
                   <DragPlaceholder className="drag4" />
@@ -70,15 +80,7 @@ export default () => {
                 );
                 return (
                   <Fragment key={index}>
-                    <DragItemsImage
-                      key={index}
-                      id={`drag${dragitem.id}`}
-                      className={`drag${dragitem.id}`}
-                      src={`images/puzzleitems/${
-                        dragitem.puzzleItemBypuzzleItemId.imagefile
-                      }`}
-                      data-testid="DragItemsImage"
-                    />
+                    <DragItem key={index} index={index} dragitem={dragitem} />
                     {lines}
                   </Fragment>
                 );

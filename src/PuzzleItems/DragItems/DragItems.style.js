@@ -7,11 +7,7 @@ export const DragItemsContainer = styled.div`
 `;
 
 export const DragPlaceholder = styled.div`
-  height:160px;
-  width:160px;
-`;
-
-export const DragItemsImage = styled.img`
-  height:160px;
-  max-width:160px;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
 `;

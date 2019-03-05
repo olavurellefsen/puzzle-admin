@@ -7,18 +7,18 @@ exports[`should render correctly 1`] = `
     data-testid="DragItemsContainer"
   >
     <div
-      class="drag1 sc-bwzfXH ceVPPq"
+      class="drag1 sc-bwzfXH wxsdf"
     >
       Loading...
     </div>
     <div
-      class="drag2 sc-bwzfXH ceVPPq"
+      class="drag2 sc-bwzfXH wxsdf"
     />
     <div
-      class="drag3 sc-bwzfXH ceVPPq"
+      class="drag3 sc-bwzfXH wxsdf"
     />
     <div
-      class="drag4 sc-bwzfXH ceVPPq"
+      class="drag4 sc-bwzfXH wxsdf"
     />
   </div>
 </div>

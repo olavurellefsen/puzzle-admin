@@ -1,10 +1,7 @@
 import React, { useContext } from "react";
 import MainContext from "../../Context";
-import {
-  TargetItemsContainer,
-  TargetPlaceholder,
-  TargetItemsImage
-} from "./TargetItems.style";
+import { TargetItemsContainer, TargetPlaceholder } from "./TargetItems.style";
+import TargetItem from "./TargetItem/TargetItem";
 import { Subscription } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -39,7 +36,9 @@ export default () => {
             if (loading) {
               return (
                 <>
-                  <TargetPlaceholder className="target1">Loading...</TargetPlaceholder>
+                  <TargetPlaceholder className="target1">
+                    Loading...
+                  </TargetPlaceholder>
                   <TargetPlaceholder className="target2" />
                   <TargetPlaceholder className="target3" />
                   <TargetPlaceholder className="target4" />
@@ -49,14 +48,10 @@ export default () => {
               let Targetitems = data.targetitem;
               return Targetitems.map((targetitem, index) => {
                 return (
-                  <TargetItemsImage
+                  <TargetItem
                     key={index}
-                    id={`target${targetitem.id}`}
-                    className={`target${targetitem.id}`}
-                    src={`images/puzzleitems/${
-                      targetitem.puzzleItemBypuzzleItemId.imagefile
-                    }`}
-                    data-testid="TargetItemsImage"
+                    index={index}
+                    targetitem={targetitem}
                   />
                 );
               });

@@ -7,18 +7,18 @@ exports[`should render correctly 1`] = `
     data-testid="TargetItemsContainer"
   >
     <div
-      class="target1 sc-bwzfXH ceVPPq"
+      class="target1 sc-bwzfXH wxsdf"
     >
       Loading...
     </div>
     <div
-      class="target2 sc-bwzfXH ceVPPq"
+      class="target2 sc-bwzfXH wxsdf"
     />
     <div
-      class="target3 sc-bwzfXH ceVPPq"
+      class="target3 sc-bwzfXH wxsdf"
     />
     <div
-      class="target4 sc-bwzfXH ceVPPq"
+      class="target4 sc-bwzfXH wxsdf"
     />
   </div>
 </div>
