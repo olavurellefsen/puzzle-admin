@@ -30,31 +30,31 @@ exports[`should render correctly 1`] = `
         />
       </div>
       <div
-        class="sc-gZMcBi ggQDYT"
+        class="sc-fjdhpX byXytU"
         data-testid="TargetItemsContainer"
       >
         <div
-          class="target1 sc-gqjmRU hygCTt"
+          class="target1 sc-jzJRlG fMAYwl"
         >
           Loading...
         </div>
         <div
-          class="target2 sc-gqjmRU hygCTt"
+          class="target2 sc-jzJRlG fMAYwl"
         />
         <div
-          class="target3 sc-gqjmRU hygCTt"
+          class="target3 sc-jzJRlG fMAYwl"
         />
         <div
-          class="target4 sc-gqjmRU hygCTt"
+          class="target4 sc-jzJRlG fMAYwl"
         />
       </div>
     </div>
     <div
-      class="sc-kgoBCf INKp"
+      class="sc-ckVGcZ dxqoMe"
       data-testid="PuzzleItemPropertiesContainer"
     >
       <img
-        class="sc-kGXeez fqVwMj"
+        class="sc-jKJlTe krfdoq"
         data-testid="PuzzleItemPropertiesImage"
         src="https://via.placeholder.com/640x200?text=PuzzleItemProperties"
       />

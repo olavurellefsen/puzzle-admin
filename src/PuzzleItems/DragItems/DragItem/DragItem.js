@@ -8,6 +8,7 @@ import {
   DragItemField,
   DragItemRestContent
 } from "./DragItem.style";
+import ToggleSwitch from '../../../Fields/ToggleSwitch/ToggleSwitch';
 
 export default props => {
   const { index, dragitem } = props;
@@ -35,6 +36,13 @@ export default props => {
       <DragItemRestContent>
         <DragItemFieldCaption>Name</DragItemFieldCaption>
         <DragItemField>{dragitem.puzzleItemBypuzzleItemId.name}</DragItemField>
+        <DragItemFieldCaption>Image file</DragItemFieldCaption>
+        <DragItemField>{dragitem.puzzleItemBypuzzleItemId.imagefile}</DragItemField>
+        <DragItemFieldCaption>Wait</DragItemFieldCaption>
+        <ToggleSwitch 
+          initial={dragitem.wait}
+          onToggle={()=>{console.log("goggle")}}
+        />
       </DragItemRestContent>
     </DragItemContainer>
   );

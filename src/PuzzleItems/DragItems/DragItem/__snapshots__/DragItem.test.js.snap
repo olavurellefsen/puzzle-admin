@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="drag0 sc-bdVaJa cgfwkQ"
+    class="drag0 sc-bdVaJa dStajN"
     data-testid="DragItemContainer"
     id="drag0"
   >
@@ -42,6 +42,39 @@ exports[`should render correctly 1`] = `
         class="sc-EHOje jZKflx"
       >
         dummy name
+      </div>
+      <div
+        class="sc-ifAKCX dXqqR"
+      >
+        Image file
+      </div>
+      <div
+        class="sc-EHOje jZKflx"
+      >
+        dummyimage.png
+      </div>
+      <div
+        class="sc-ifAKCX dXqqR"
+      >
+        Wait
+      </div>
+      <div
+        class="sc-gzVnrw kvhoeX"
+      >
+        <div
+          class="sc-htoDjs dLYCCT"
+          data-testid="toggle"
+          width="40"
+        >
+          <div
+            class="sc-dnqmqq iFylYB"
+            width="40"
+          />
+          <div
+            class="sc-iwsKbI XkTqM"
+            width="40"
+          />
+        </div>
       </div>
     </div>
   </div>

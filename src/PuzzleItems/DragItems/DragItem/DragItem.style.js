@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const DragItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 300px;
   width: 200px;
   margin: 20px;
   border-radius: 25px;
