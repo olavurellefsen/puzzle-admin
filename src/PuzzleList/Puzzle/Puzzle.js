@@ -13,7 +13,7 @@ import { Mutation } from "react-apollo";
 
 export default (props) => {
   const [state, dispatch] = useContext(MainContext);
-  let { id, intro_audiofile, character, summary } = props.puzzle;
+  const { id, intro_audiofile, character, summary } = props.puzzle;
   const [summaryField, setSummaryField] = useState(
     summary !== null ? summary : ""
   );
