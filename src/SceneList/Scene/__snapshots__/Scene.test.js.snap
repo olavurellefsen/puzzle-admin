@@ -3,21 +3,21 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-bdVaJa cLplVt"
+    class="sc-bdVaJa MDYcT"
     data-testid="SceneContainer"
   >
     <form
-      class="sc-bwzfXH icviFT"
+      class="sc-bwzfXH fNIBgf"
     >
       <input
-        class="sc-htpNat jYNbVO"
+        class="sc-htpNat cMcHAB"
         name="title"
         type="text"
         value="Lorum ipsum"
       />
     </form>
     <div
-      class="sc-bxivhb kMcuwI"
+      class="sc-bxivhb kUfTTc"
     >
       &gt;
     </div>

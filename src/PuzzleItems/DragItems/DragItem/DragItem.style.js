@@ -1,12 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DragItemContainer = styled.div`
+  height: 180px;
+  width: 240px;
   display: flex;
   flex-direction: column;
-  height: 300px;
-  width: 200px;
   margin: 20px;
-  border-radius: 25px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,${props => (props.selected ? 0.9 : 0.7)});
   transition: 0.3s;
   &:hover {
@@ -17,6 +16,12 @@ export const DragItemContainer = styled.div`
   background-size: cover;
 `;
 
+export const DragItemForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  padding: 2px 16px;
+`;
+
 export const DragItemTopContent = styled.div`
   display: flex;
   flex-direction: row;
@@ -25,8 +30,8 @@ export const DragItemTopContent = styled.div`
 `;
 
 export const DragItemImage = styled.img`
-  height:80px;
-  max-width:80px;
+  height: 80px;
+  max-width: 80px;
   margin-right: 10px;
 `;
 

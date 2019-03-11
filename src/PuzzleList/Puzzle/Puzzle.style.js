@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const PuzzleContainer = styled.div`
+  height: 180px;
+  width: 240px;
   padding: 10px;
   margin: 20px;
-  width: 400px;
   align-self: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,${props => (props.selected ? 0.4 : 0.2)});
   transition: 0.3s;
@@ -27,14 +28,19 @@ export const PuzzleFieldCaption = styled.div`
 `;
 
 export const PuzzleField = styled.div`
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
   padding-bottom: 10px;
 `;
 
 export const PuzzleInputField = styled.input`
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+`;
+
+export const PuzzleTextAreaField = styled.textarea`
+  font-size: 14px;
   padding-bottom: 10px;
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
@@ -44,6 +50,6 @@ export const PuzzleRightArrow = styled.div`
   font-size: 60px;
   color: gray;
   text-align: right;
-  transform: translate(50px,-60px);
+  transform: translate(50px,-100px);
   visibility: ${props => (props.selected ? 'visible' : 'hidden')}
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PuzzleItemsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 0px;
 `;
 
 export const PuzzleItemsBox = styled.div`

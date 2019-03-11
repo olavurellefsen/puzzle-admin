@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
 export const PuzzleListContainer = styled.div`
-  min-width: 494px;
   overflow: hidden;
+`;
+
+export const PuzzleHeader = styled.div`
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 16px;
+  color: #666666;
 `;
 
 export const PuzzleListBox = styled.div`
@@ -11,4 +18,3 @@ export const PuzzleListBox = styled.div`
   overflow: auto;
   padding-right: 14px;
 `;
-

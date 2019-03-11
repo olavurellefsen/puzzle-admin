@@ -3,80 +3,84 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="drag0 sc-bdVaJa dStajN"
+    class="drag0 sc-bdVaJa fBOIxN"
     data-testid="DragItemContainer"
     id="drag0"
   >
-    <div
-      class="sc-bwzfXH hpDuqD"
-    >
-      <img
-        class="sc-htpNat hVdzGR"
-        data-testid="DragItemsImage"
-        src="images/puzzleitems/dummyimage.png"
-      />
-      <div
-        class="sc-bxivhb iEkCAb"
-      >
-        <div
-          class="sc-ifAKCX dXqqR"
-        >
-          Bubble text
-        </div>
-        <div
-          class="sc-EHOje jZKflx"
-        >
-          dummy bubble text
-        </div>
-      </div>
-    </div>
-    <div
-      class="sc-bZQynM gIlXqS"
+    <form
+      class="sc-bwzfXH iYKgxb"
     >
       <div
-        class="sc-ifAKCX dXqqR"
+        class="sc-htpNat ibokuz"
       >
-        Name
-      </div>
-      <div
-        class="sc-EHOje jZKflx"
-      >
-        dummy name
-      </div>
-      <div
-        class="sc-ifAKCX dXqqR"
-      >
-        Image file
-      </div>
-      <div
-        class="sc-EHOje jZKflx"
-      >
-        dummyimage.png
-      </div>
-      <div
-        class="sc-ifAKCX dXqqR"
-      >
-        Wait
-      </div>
-      <div
-        class="sc-gzVnrw kvhoeX"
-      >
+        <img
+          class="sc-bxivhb cgqVai"
+          data-testid="DragItemsImage"
+          src="images/puzzleitems/dummyimage.png"
+        />
         <div
-          class="sc-htoDjs dLYCCT"
-          data-testid="toggle"
-          width="40"
+          class="sc-ifAKCX JBEal"
         >
           <div
-            class="sc-dnqmqq iFylYB"
-            width="40"
-          />
+            class="sc-EHOje cKywGb"
+          >
+            Bubble text
+          </div>
           <div
-            class="sc-iwsKbI XkTqM"
-            width="40"
-          />
+            class="sc-bZQynM NSNHQ"
+          >
+            dummy bubble text
+          </div>
         </div>
       </div>
-    </div>
+      <div
+        class="sc-gzVnrw fXgyNi"
+      >
+        <div
+          class="sc-EHOje cKywGb"
+        >
+          Name
+        </div>
+        <div
+          class="sc-bZQynM NSNHQ"
+        >
+          dummy name
+        </div>
+        <div
+          class="sc-EHOje cKywGb"
+        >
+          Image file
+        </div>
+        <div
+          class="sc-bZQynM NSNHQ"
+        >
+          dummyimage.png
+        </div>
+        <div
+          class="sc-EHOje cKywGb"
+        >
+          Wait
+        </div>
+        <div
+          class="sc-htoDjs ilsOVI"
+        >
+          <div
+            class="sc-dnqmqq hYKWMG"
+            data-testid="toggle"
+            width="40"
+          >
+            <div
+              class="sc-iwsKbI hCqYwb"
+              width="40"
+            />
+            <div
+              class="sc-gZMcBi gLIrsm"
+              width="40"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 `;

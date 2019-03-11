@@ -22,8 +22,3 @@ it("should show the TargetItems element", () => {
   const { queryByTestId } = render(<PuzzleItems />);
   expect(queryByTestId("TargetItemsContainer")).toBeTruthy();
 });
-
-it("should show the PuzzleItemProperties element", () => {
-  const { queryByTestId } = render(<PuzzleItems />);
-  expect(queryByTestId("PuzzleItemPropertiesContainer")).toBeTruthy();
-});

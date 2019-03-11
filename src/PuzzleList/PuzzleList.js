@@ -1,7 +1,11 @@
 import React, { useContext } from "react";
 import MainContext from "../Context";
 import Puzzle from "./Puzzle/Puzzle";
-import { PuzzleListContainer, PuzzleListBox } from "./PuzzleList.style";
+import {
+  PuzzleListContainer,
+  PuzzleHeader,
+  PuzzleListBox
+} from "./PuzzleList.style";
 import { Subscription } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -29,6 +33,7 @@ export default () => {
   let currentPuzzleId = 0;
   return (
     <PuzzleListContainer data-testid="PuzzleListContainer">
+      <PuzzleHeader>GÁTUR</PuzzleHeader>
       <PuzzleListBox>
         <Subscription subscription={subscription}>
           {({ data, loading }) => {
@@ -36,32 +41,30 @@ export default () => {
               return "Loading...";
             } else {
               let puzzles = data.puzzle;
-              return(puzzles
-                .map((puzzle, index) => {
-                  if (currentPuzzleId === 0) {
-                    currentPuzzleId = getCurrentPuzzleId(
-                      state,
-                      dispatch,
-                      puzzle.id,
-                      state.currentScene
-                    );
-                  }
-                  return (
-                    <Puzzle
-                      key={index}
-                      puzzle={puzzle}
-                      currentPuzzleId={currentPuzzleId}
-                    />
+              return puzzles.map((puzzle, index) => {
+                if (currentPuzzleId === 0) {
+                  currentPuzzleId = getCurrentPuzzleId(
+                    state,
+                    dispatch,
+                    puzzle.id,
+                    state.currentScene
                   );
-                })
-              )
+                }
+                return (
+                  <Puzzle
+                    key={index}
+                    puzzle={puzzle}
+                    currentPuzzleId={currentPuzzleId}
+                  />
+                );
+              });
             }
           }}
         </Subscription>
       </PuzzleListBox>
     </PuzzleListContainer>
   );
-}
+};
 
 const getCurrentPuzzleId = (state, dispatch, id, scene_id) => {
   let currentPuzzle = state.currentPuzzles.filter(

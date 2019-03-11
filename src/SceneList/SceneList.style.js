@@ -5,6 +5,14 @@ export const SceneListContainer = styled.div`
   overflow: hidden;
 `;
 
+export const SceneHeader = styled.div`
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 16px;
+  color: #666666;
+`;
+
 export const SceneListBox = styled.div`
   width: 100%;
   height: 100%;

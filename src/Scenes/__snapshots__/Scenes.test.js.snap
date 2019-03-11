@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-iRbamj kicZPX"
+    class="sc-fBuWsC iTbNxw"
     data-testid="ScenesContainer"
   >
     <div
@@ -11,77 +11,129 @@ exports[`should render correctly 1`] = `
       data-testid="SceneListContainer"
     >
       <div
-        class="sc-EHOje bJWVZd"
+        class="sc-EHOje hKDDmE"
+      >
+        PALLMYNDIR
+      </div>
+      <div
+        class="sc-bZQynM bhdPSx"
       >
         Loading...
       </div>
     </div>
     <div
-      class="sc-gqjmRU cMsUfQ"
+      class="sc-jTzLTM fogJow"
       data-testid="PuzzleListContainer"
     >
       <div
-        class="sc-VigVT dxKgRr"
+        class="sc-fjdhpX kbDeIV"
+      >
+        GÁTUR
+      </div>
+      <div
+        class="sc-jzJRlG bRzXfk"
       >
         Loading...
       </div>
     </div>
     <div
-      class="sc-jTzLTM bInSG"
+      class="sc-cSHVUG bXFLNd"
       data-testid="PuzzleItemsContainer"
     >
       <div
-        class="sc-fjdhpX fKhFGW"
+        class="sc-kAzzGY hgAccu"
         data-testid="PuzzleItemsBox"
       >
         <div
-          class="sc-jzJRlG jxZJty"
+          class="sc-chPdSV fYisGu"
           data-testid="DragItemsContainer"
         >
           <div
-            class="drag1 sc-cSHVUG bpgZQk"
+            class="sc-kgoBCf bhkbON"
           >
-            Loading...
+            HÁLIMYNDIR
           </div>
           <div
-            class="drag2 sc-cSHVUG bpgZQk"
-          />
-          <div
-            class="drag3 sc-cSHVUG bpgZQk"
-          />
-          <div
-            class="drag4 sc-cSHVUG bpgZQk"
-          />
+            class="sc-kGXeez hJUuoF"
+          >
+            <div
+              class="drag1 sc-kpOJdX doVOVn"
+            >
+              Loading...
+            </div>
+            <div
+              class="drag2 sc-kpOJdX doVOVn"
+            />
+            <div
+              class="drag3 sc-kpOJdX doVOVn"
+            />
+            <div
+              class="drag4 sc-kpOJdX doVOVn"
+            />
+            <div
+              class="sc-dxgOiQ eXJHwd"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
         <div
-          class="sc-kkGfuU hqTaMO"
+          class="sc-cMljjf fVRjRt"
           data-testid="TargetItemsContainer"
         >
           <div
-            class="target1 sc-iAyFgw cYlciZ"
+            class="sc-jAaTju WCwBy"
           >
-            Loading...
+            MÁLSKIVUMYNDIR
           </div>
           <div
-            class="target2 sc-iAyFgw cYlciZ"
-          />
-          <div
-            class="target3 sc-iAyFgw cYlciZ"
-          />
-          <div
-            class="target4 sc-iAyFgw cYlciZ"
-          />
+            class="sc-jDwBTQ dKNSQB"
+          >
+            <div
+              class="target1 sc-gPEVay jOLWKT"
+            >
+              Loading...
+            </div>
+            <div
+              class="target2 sc-gPEVay jOLWKT"
+            />
+            <div
+              class="target3 sc-gPEVay jOLWKT"
+            />
+            <div
+              class="target4 sc-gPEVay jOLWKT"
+            />
+            <div
+              class="sc-iRbamj khDgFb"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
-      </div>
-      <div
-        class="sc-jDwBTQ duXKzc"
-        data-testid="PuzzleItemPropertiesContainer"
-      >
-        <img
-          class="sc-gPEVay bWBXGn"
-          data-testid="PuzzleItemPropertiesImage"
-          src="https://via.placeholder.com/640x200?text=PuzzleItemProperties"
-        />
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-bdVaJa kQBxpG"
+    class="sc-bdVaJa ckVdX"
     data-testid="PuzzleContainer"
   >
     <form
@@ -15,35 +15,37 @@ exports[`should render correctly 1`] = `
         PUZZLE 
         1
       </div>
-      <input
-        class="sc-ifAKCX fKnQnD"
+      <textarea
+        class="sc-EHOje cNGKRd"
         name="summary"
-        type="text"
-        value="Lorum ipsum"
-      />
+        rows="3"
+      >
+        Lorum ipsum
+      </textarea>
       <div
         class="sc-htpNat hccyqP"
       >
         AUDIOFILE
       </div>
-      <div
-        class="sc-bxivhb ciyjik"
-      >
-        dummyfile
-      </div>
+      <input
+        class="sc-ifAKCX hcaYub"
+        name="audiofile"
+        type="text"
+        value="dummyfile"
+      />
       <div
         class="sc-htpNat hccyqP"
       >
         CHARACTER
       </div>
       <div
-        class="sc-bxivhb ciyjik"
+        class="sc-bxivhb ewohWO"
       >
         dummycharacer
       </div>
     </form>
     <div
-      class="sc-EHOje exxHXC"
+      class="sc-bZQynM gXQNYs"
     >
       &gt;
     </div>

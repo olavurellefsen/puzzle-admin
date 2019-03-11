@@ -1,6 +1,6 @@
 import React from "react";
 import Scene from "./Scene/Scene";
-import { SceneListContainer, SceneListBox } from "./SceneList.style";
+import { SceneListContainer, SceneListBox, SceneHeader } from "./SceneList.style";
 import { Subscription } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -19,6 +19,7 @@ const SceneList = () => {
 
   return (
     <SceneListContainer data-testid="SceneListContainer" >
+      <SceneHeader>PALLMYNDIR</SceneHeader>
       <SceneListBox>
       <Subscription subscription={subscription}>
           {({ data, loading }) => {

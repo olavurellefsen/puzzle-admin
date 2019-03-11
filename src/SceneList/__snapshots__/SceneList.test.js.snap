@@ -7,7 +7,12 @@ exports[`should render correctly 1`] = `
     data-testid="SceneListContainer"
   >
     <div
-      class="sc-EHOje bJWVZd"
+      class="sc-EHOje hKDDmE"
+    >
+      PALLMYNDIR
+    </div>
+    <div
+      class="sc-bZQynM bhdPSx"
     >
       Loading...
     </div>

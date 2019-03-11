@@ -3,11 +3,16 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-bZQynM hQiEfJ"
+    class="sc-gzVnrw eWSoAv"
     data-testid="PuzzleListContainer"
   >
     <div
-      class="sc-gzVnrw kfByfw"
+      class="sc-htoDjs gDMKQy"
+    >
+      GÁTUR
+    </div>
+    <div
+      class="sc-dnqmqq hUpzNd"
     >
       Loading...
     </div>
