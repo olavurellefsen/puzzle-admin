@@ -16,12 +16,8 @@ const handleAuthentication = ({ location }) => {
 };
 
 export const MakeMainRoutes = () => {
-  const logoutURL =
-    process.env.NODE_ENV === "production"
-      ? "https://gaman.auth0.com/v2/logout?returnTo=http%3A%2F%2Fpuzzle%2Dadmin%2Es3%2Dwebsite%2Deu%2Dwest%2D1%2Eamazonaws%2Ecom/&client_id=CHgbizBtOICgxPnjyBbSZxUFg2qVnxMr"
-      : "https://gaman.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost:3000/&client_id=CHgbizBtOICgxPnjyBbSZxUFg2qVnxMr";
   return (
-    <Router history={history} component={Menu}>
+    <Router history={history}>
       <RoutesContainer>
         <Route path="/" render={props => <Menu auth={auth} {...props} />} />
         <Route path="/home" render={props => <Home auth={auth} {...props} />} />
@@ -30,13 +26,6 @@ export const MakeMainRoutes = () => {
           render={props => {
             handleAuthentication(props);
             return <Callback {...props} />;
-          }}
-        />
-        <Route
-          path="/logout"
-          component={() => {
-            window.location = logoutURL;
-            return null;
           }}
         />
       </RoutesContainer>

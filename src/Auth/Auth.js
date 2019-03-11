@@ -1,10 +1,24 @@
-import auth0 from "auth0-js";
-import history from "../history";
+import auth0 from 'auth0-js';
+import { AUTH_CONFIG } from './auth0-variables.js';
+import history from '../history';
 
 export default class Auth {
   accessToken;
   idToken;
   expiresAt;
+  userProfile;
+  tokenRenewalTimeout;
+
+  auth0 = new auth0.WebAuth({
+    domain: AUTH_CONFIG.domain,
+    clientID: AUTH_CONFIG.clientId,
+    redirectUri:
+      process.env.NODE_ENV === "production"
+        ? AUTH_CONFIG.callbackUrlProduction
+        : AUTH_CONFIG.callbackUrlDevelop,
+    responseType: 'token id_token',
+    scope: 'openid profile'
+  });
 
   constructor() {
     this.login = this.login.bind(this);
@@ -14,18 +28,10 @@ export default class Auth {
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
+    this.getProfile = this.getProfile.bind(this);
+    this.getExpiryDate = this.getExpiryDate.bind(this);
+    this.scheduleRenewal();
   }
-
-  auth0 = new auth0.WebAuth({
-    domain: "gaman.auth0.com",
-    clientID: "CHgbizBtOICgxPnjyBbSZxUFg2qVnxMr",
-    redirectUri:
-      process.env.NODE_ENV === "production"
-        ? "http://puzzle-admin.s3-website-eu-west-1.amazonaws.com/callback"
-        : "http://localhost:3000/callback",
-    responseType: "token id_token",
-    scope: "openid"
-  });
 
   login() {
     this.auth0.authorize();
@@ -36,8 +42,8 @@ export default class Auth {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
       } else if (err) {
+        history.replace('/home');
         console.log(err);
-        history.replace("/home");
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
@@ -53,28 +59,39 @@ export default class Auth {
 
   setSession(authResult) {
     // Set isLoggedIn flag in localStorage
-    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem('isLoggedIn', 'true');
 
     // Set the time that the access token will expire at
-    let expiresAt = authResult.expiresIn * 1000 + new Date().getTime();
+    let expiresAt = (authResult.expiresIn * 1000) + new Date().getTime();
     this.accessToken = authResult.accessToken;
     this.idToken = authResult.idToken;
     this.expiresAt = expiresAt;
 
+    // schedule a token renewal
+    this.scheduleRenewal();
+
     // navigate to the home route
-    history.replace("/home");
+    history.replace('/home');
   }
 
   renewSession() {
     this.auth0.checkSession({}, (err, authResult) => {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        this.setSession(authResult);
-      } else if (err) {
-        this.logout();
-        alert(
-          `Could not get a new token (${err.error}: ${err.error_description}).`
-        );
+       if (authResult && authResult.accessToken && authResult.idToken) {
+         this.setSession(authResult);
+       } else if (err) {
+         this.logout();
+         console.log(err);
+         alert(`Could not get a new token (${err.error}: ${err.error_description}).`);
+       }
+    });
+  }
+
+  getProfile(cb) {
+    this.auth0.client.userInfo(this.accessToken, (err, profile) => {
+      if (profile) {
+        this.userProfile = profile;
       }
+      cb(err, profile);
     });
   }
 
@@ -84,11 +101,17 @@ export default class Auth {
     this.idToken = null;
     this.expiresAt = 0;
 
+    // Remove user profile
+    this.userProfile = null;
+
+    // Clear token renewal
+    clearTimeout(this.tokenRenewalTimeout);
+
     // Remove isLoggedIn flag from localStorage
-    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem('isLoggedIn');
 
     // navigate to the home route
-    history.replace("/logout");
+    history.replace('/home');
   }
 
   isAuthenticated() {
@@ -96,5 +119,19 @@ export default class Auth {
     // access token's expiry time
     let expiresAt = this.expiresAt;
     return new Date().getTime() < expiresAt;
+  }
+
+  scheduleRenewal() {
+    let expiresAt = this.expiresAt;
+    const timeout = expiresAt - Date.now();
+    if (timeout > 0) {
+      this.tokenRenewalTimeout = setTimeout(() => {
+        this.renewSession();
+      }, timeout);
+    }
+  }
+
+  getExpiryDate() {
+    return JSON.stringify(new Date(this.expiresAt));
   }
 }
