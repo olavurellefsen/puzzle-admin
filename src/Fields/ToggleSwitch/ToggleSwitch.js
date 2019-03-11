@@ -14,28 +14,25 @@ const propTypes = {
 };
 
 const ToggleSwitch = (props) => {
-  const { initial, onToggle } = props;
-  const [toggled, setToggled] = useState(initial)
-
-  const doToggle = () => {
-    setToggled(!toggled);
-    onToggle();
-  }
-
+  const { toggled, onToggle } = props;
+  const [ toggleState, changeToggleState ] = useState(toggled);
   return (
     <ToggleSwitchWrapper>
       <Toggle
         data-testid="toggle"
-        onClick={() => doToggle()}
-        toggled={toggled}
+        onClick={() => {
+          changeToggleState(!toggleState);
+          onToggle();
+        }}
+        toggled={toggleState}
         {...props}
       >
         <ToggleBall
-          toggled={toggled}
+          toggled={toggleState}
           {...props}
         />
         <RippleBg
-          visible={toggled}
+          visible={toggleState}
           {...props}
         />
       </Toggle>
