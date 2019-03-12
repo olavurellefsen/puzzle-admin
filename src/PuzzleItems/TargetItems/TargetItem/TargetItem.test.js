@@ -12,7 +12,7 @@ it("should render correctly", () => {
         puzzleItemBypuzzleItemId: {
           name: "dummy name",
           imagefile: "dummyimage.png",
-          itemBybubbleTextId: { value: "dummy bubble text" }
+          itemBypuzzletextKey: { value: "dummy bubble text" }
         }
       }}
     />
@@ -29,7 +29,7 @@ it("should show the TargetItemContainer element", () => {
         puzzleItemBypuzzleItemId: {
           name: "dummy name",
           imagefile: "dummyimage.png",
-          itemBybubbleTextId: { value: "dummy bubble text" }
+          itemBypuzzletextKey: { value: "dummy bubble text" }
         }
       }}
     />

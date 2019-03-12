@@ -3,83 +3,36 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="drag0 sc-bdVaJa fBOIxN"
+    class="drag0 sc-bdVaJa gxvLGW"
     data-testid="DragItemContainer"
     id="drag0"
   >
     <form
-      class="sc-bwzfXH iYKgxb"
+      class="sc-bwzfXH eVbLsU"
     >
       <div
-        class="sc-htpNat ibokuz"
+        class="sc-htpNat hccyqP"
       >
-        <img
-          class="sc-bxivhb cgqVai"
-          data-testid="DragItemsImage"
-          src="images/puzzleitems/dummyimage.png"
-        />
-        <div
-          class="sc-ifAKCX JBEal"
-        >
-          <div
-            class="sc-EHOje cKywGb"
-          >
-            Bubble text
-          </div>
-          <div
-            class="sc-bZQynM NSNHQ"
-          >
-            dummy bubble text
-          </div>
-        </div>
+        LÝSING AV HÁLIMYND 
+        0
       </div>
+      <input
+        class="sc-bxivhb gsEoFf"
+        name="itemName"
+        type="text"
+        value="dummy name"
+      />
       <div
-        class="sc-gzVnrw fXgyNi"
+        class="sc-htpNat hccyqP"
       >
-        <div
-          class="sc-EHOje cKywGb"
-        >
-          Name
-        </div>
-        <div
-          class="sc-bZQynM NSNHQ"
-        >
-          dummy name
-        </div>
-        <div
-          class="sc-EHOje cKywGb"
-        >
-          Image file
-        </div>
-        <div
-          class="sc-bZQynM NSNHQ"
-        >
-          dummyimage.png
-        </div>
-        <div
-          class="sc-EHOje cKywGb"
-        >
-          Wait
-        </div>
-        <div
-          class="sc-htoDjs ilsOVI"
-        >
-          <div
-            class="sc-dnqmqq hYKWMG"
-            data-testid="toggle"
-            width="40"
-          >
-            <div
-              class="sc-iwsKbI hCqYwb"
-              width="40"
-            />
-            <div
-              class="sc-gZMcBi gLIrsm"
-              width="40"
-            />
-          </div>
-        </div>
+        TEKSTUR
       </div>
+      <input
+        class="sc-bxivhb gsEoFf"
+        name="itemText"
+        type="text"
+        value="dummy bubble text"
+      />
     </form>
   </div>
 </div>

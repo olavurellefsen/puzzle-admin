@@ -1,11 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const TargetItemContainer = styled.div`
   height: 180px;
   width: 240px;
+  padding: 10px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
-  margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,${props => (props.selected ? 0.9 : 0.7)});
   transition: 0.3s;
   &:hover {
@@ -16,24 +17,10 @@ export const TargetItemContainer = styled.div`
   background-size: cover;
 `;
 
-export const TargetItemTopContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 10px;
-`;
-
-export const TargetItemImage = styled.img`
-  height:80px;
-  max-width:80px;
-  margin-right: 10px;
-`;
-
-export const TargetItemBubbleText = styled.div`
+export const TargetItemForm = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 20px;
+  padding: 2px;
 `;
 
 export const TargetItemFieldCaption = styled.div`
@@ -42,15 +29,9 @@ export const TargetItemFieldCaption = styled.div`
   color: gray;
 `;
 
-export const TargetItemField = styled.div`
-  font-size: 16px;
-  font-weight: bold;
-  padding-bottom: 10px;
-`;
-
-export const TargetItemRestContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 10px;
+export const TargetItemInputField = styled.input`
+  font-size: 14px;
+  padding: 0px 0px 10px 0px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
 `;

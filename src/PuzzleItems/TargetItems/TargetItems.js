@@ -30,7 +30,6 @@ export default () => {
               data: {
                 imagefile: "placeholder.png"
                 name: "new target item"
-                bubble_text_id: 26
               }
             }
           }
@@ -52,7 +51,7 @@ export default () => {
             { puzzle_id: { _eq: $puzzle_id } }
             {
               puzzleItemBypuzzleItemId: {
-                itemBybubbleTextId: { language_id: { _eq: 1 } }
+                itemBypuzzletextKey: { language_id: { _eq: 1 } }
               }
             }
           ]
@@ -63,9 +62,11 @@ export default () => {
         sequence
         wait
         puzzleItemBypuzzleItemId {
+          id
           imagefile
           name
-          itemBybubbleTextId {
+          puzzletext_key
+          itemBypuzzletextKey {
             value
           }
         }
@@ -131,7 +132,6 @@ export default () => {
         <TargetItemsHeader>MÁLSKIVUMYNDIR</TargetItemsHeader>
         <TargetItemsBox>
           {targetItems}
-          {insertTargetItem}
         </TargetItemsBox>
       </TargetItemsContainer>
     );

@@ -31,7 +31,6 @@ export default () => {
               data: {
                 imagefile: "placeholder.png"
                 name: "new drag item"
-                bubble_text_id: 26
               }
             }
           }
@@ -53,7 +52,7 @@ export default () => {
             { puzzle_id: { _eq: $puzzle_id } }
             {
               puzzleItemBypuzzleItemId: {
-                itemBybubbleTextId: { language_id: { _eq: 1 } }
+                itemBypuzzletextKey: { language_id: { _eq: 1 } }
               }
             }
           ]
@@ -64,9 +63,11 @@ export default () => {
         sequence
         wait
         puzzleItemBypuzzleItemId {
+          id
           imagefile
           name
-          itemBybubbleTextId {
+          puzzletext_key
+          itemBypuzzletextKey {
             value
           }
         }
@@ -118,7 +119,7 @@ export default () => {
               );*/
               return (
                 <Fragment key={index}>
-                  <DragItem key={index} index={index} dragitem={dragitem} />
+                  <DragItem data-testid="DragItem" key={index} index={index} dragitem={dragitem} />
                 </Fragment>
               );
             });
@@ -148,7 +149,6 @@ export default () => {
         <DragItemsHeader>HÁLIMYNDIR</DragItemsHeader>
         <DragItemsBox>
           {dragItems}
-          {insertDragItem}
         </DragItemsBox>
       </DragItemsContainer>
     );

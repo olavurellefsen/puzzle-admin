@@ -13,9 +13,9 @@ it("should show the TargetItemsContainer element", () => {
   expect(queryByTestId("TargetItemsContainer")).toBeTruthy();
 });
 
-it("should show Loading... and then at least one TargetItemsImage element", async () => {
+it("should show Loading... and then at least one TargetItemContainer (singular) element", async () => {
   const { getByText, queryByTestId } = render(<TargetItems />);
   expect(getByText("Loading...")).toBeTruthy();
-  await waitForElement(() => queryByTestId("TargetItemsImage"));
-  expect(queryByTestId("TargetItemsImage")).toBeTruthy();
+  await waitForElement(() => queryByTestId("TargetItemContainer"));
+  expect(queryByTestId("TargetItemContainer")).toBeTruthy();
 });

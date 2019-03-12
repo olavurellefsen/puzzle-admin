@@ -3,47 +3,37 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="target0 sc-bdVaJa fBOIxN"
+    class="target0 sc-bdVaJa gxvLGW"
     data-testid="TargetItemContainer"
     id="target0"
   >
-    <div
-      class="sc-bwzfXH hpDuqD"
+    <form
+      class="sc-bwzfXH eVbLsU"
     >
-      <img
-        class="sc-htpNat hVdzGR"
-        data-testid="TargetItemsImage"
-        src="images/puzzleitems/dummyimage.png"
+      <div
+        class="sc-htpNat hccyqP"
+      >
+        LÝSING AV HÁLIMYND 
+        0
+      </div>
+      <input
+        class="sc-bxivhb gsEoFf"
+        name="itemName"
+        type="text"
+        value="dummy name"
       />
       <div
-        class="sc-bxivhb iEkCAb"
+        class="sc-htpNat hccyqP"
       >
-        <div
-          class="sc-ifAKCX dXqqR"
-        >
-          Bubble text
-        </div>
-        <div
-          class="sc-EHOje jZKflx"
-        >
-          dummy bubble text
-        </div>
+        TEKSTUR
       </div>
-    </div>
-    <div
-      class="sc-bZQynM gIlXqS"
-    >
-      <div
-        class="sc-ifAKCX dXqqR"
-      >
-        Name
-      </div>
-      <div
-        class="sc-EHOje jZKflx"
-      >
-        dummy name
-      </div>
-    </div>
+      <input
+        class="sc-bxivhb gsEoFf"
+        name="itemText"
+        type="text"
+        value="dummy bubble text"
+      />
+    </form>
   </div>
 </div>
 `;

@@ -1,38 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   DragItemContainer,
   DragItemForm,
-  DragItemTopContent,
-  DragItemImage,
-  DragItemBubbleText,
   DragItemFieldCaption,
-  DragItemField,
-  DragItemRestContent
+  DragItemInputField
 } from "./DragItem.style";
-import ToggleSwitch from "../../../Fields/ToggleSwitch/ToggleSwitch";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
 export default props => {
-  const { index, dragitem } = props;
-  const wait = dragitem.wait;
-  const [ waitField, setWaitField ] = useState(wait);
+  const { dragitem } = props;
   const puzzleItem = dragitem.puzzleItemBypuzzleItemId;
-  const item = puzzleItem.itemBybubbleTextId;
+  const puzzleitemId = puzzleItem.id;
+  const puzzleitemName = puzzleItem.name;
+  const puzzleItemText = puzzleItem.itemBypuzzletextKey.value;
+  const puzzletextKey = puzzleItem.puzzletext_key;
+
+  const [textField, setTextField] = useState(
+    puzzleItemText !== null ? puzzleItemText : ""
+  );
+  const [puzzleItemNameField, setPuzzleItemNameField] = useState(
+    puzzleitemName !== null ? puzzleitemName : ""
+  );
+
+  const itemText = useRef(null);
+  const itemName = useRef(null);
 
   // If the parent component is updated (someone else has changed the value), then update the field here
-  if (wait !== waitField) {
-    setWaitField(wait);
+  if (puzzleItemText !== textField && puzzleitemName !== puzzleItemNameField) {
+    if (itemText.current.defaultValue === textField) {
+      setTextField(puzzleItemText);
+    }
+    if (itemName.current.defaultValue === puzzleItemNameField) {
+      setPuzzleItemNameField(puzzleitemName);
+    }
   }
 
   const UPDATE_DRAGITEM = gql`
-    mutation update_dragitem($id: Int!, $wait: Boolean!) {
-      update_dragitem(where: { id: { _eq: $id } }, _set: { wait: $wait }) {
+    mutation update_dragitem(
+      $puzzleitemid: Int!
+      $puzzleitemtext: String!
+      $puzzletextitemkey: String!
+      $puzzlename: String!
+    ) {
+      update_puzzle_item(
+        where: { id: { _eq: $puzzleitemid } }
+        _set: { name: $puzzlename }
+      ) {
+        affected_rows
+      }
+      update_item(
+        where: {
+          _and: [
+            { key: { _eq: $puzzletextitemkey } }
+            { language_id: { _eq: 1 } }
+          ]
+        }
+        _set: { value: $puzzleitemtext }
+      ) {
         affected_rows
       }
     }
   `;
-  
+
   return (
     <DragItemContainer
       data-testid="DragItemContainer"
@@ -40,43 +70,50 @@ export default props => {
       id={`drag${dragitem.id}`}
     >
       <Mutation mutation={UPDATE_DRAGITEM}>
-        {(updateDragItem, { data }) => (
-          <DragItemForm
-            onSubmit={e => {
-              e.preventDefault();
-              updateDragItem({
-                variables: { id: dragitem.id, wait: waitField }
-              })
-            }}>
-            <DragItemTopContent>
-              <DragItemImage
-                key={index}
-                src={`images/puzzleitems/${puzzleItem.imagefile}`}
-                data-testid="DragItemsImage"
+        {(updateDragItem, { data }) => {
+          const submitForm = e => {
+            e.preventDefault();
+            updateDragItem({
+              variables: {
+                puzzleitemid: puzzleitemId,
+                puzzleitemtext: textField,
+                puzzletextitemkey: puzzletextKey,
+                puzzlename: puzzleItemNameField
+              }
+            });
+            itemName.current.blur();
+            itemText.current.blur();
+          };
+          return (
+            <DragItemForm
+              onKeyPress={e => {
+                if (e.key === "Enter") {
+                  submitForm(e);
+                }
+              }}
+              onSubmit={e => submitForm(e)}
+            >
+              <DragItemFieldCaption>
+                LÝSING AV HÁLIMYND {dragitem.id}
+              </DragItemFieldCaption>
+              <DragItemInputField
+                ref={itemName}
+                name="itemName"
+                type="text"
+                value={puzzleItemNameField}
+                onChange={e => setPuzzleItemNameField(e.target.value)}
               />
-              <DragItemBubbleText>
-                <DragItemFieldCaption>Bubble text</DragItemFieldCaption>
-                <DragItemField>{item.value}</DragItemField>
-              </DragItemBubbleText>
-            </DragItemTopContent>
-            <DragItemRestContent>
-              <DragItemFieldCaption>Name</DragItemFieldCaption>
-              <DragItemField>{puzzleItem.name}</DragItemField>
-              <DragItemFieldCaption>Image file</DragItemFieldCaption>
-              <DragItemField>{puzzleItem.imagefile}</DragItemField>
-              <DragItemFieldCaption>Wait</DragItemFieldCaption>
-              <ToggleSwitch
-                toggled={waitField}
-                onToggle={() => {
-                  updateDragItem({
-                    variables: { id: dragitem.id, wait: !waitField }
-                  })
-                  setWaitField(!waitField);
-                }}
+              <DragItemFieldCaption>TEKSTUR</DragItemFieldCaption>
+              <DragItemInputField
+                ref={itemText}
+                name="itemText"
+                type="text"
+                value={textField}
+                onChange={e => setTextField(e.target.value)}
               />
-            </DragItemRestContent>
-          </DragItemForm>
-        )}
+            </DragItemForm>
+          );
+        }}
       </Mutation>
     </DragItemContainer>
   );
