@@ -108,7 +108,7 @@ export default props => {
             puzzleSummary.current.blur();
             puzzleIntroText.current.blur();
             puzzleCharacter.current.blur();
-            puzzleAudiofile.current.blur();            
+            //puzzleAudiofile.current.blur();            
           };
           return (
             <PuzzleForm
