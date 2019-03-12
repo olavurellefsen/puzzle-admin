@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 <div>
   <div
-    class="sc-fBuWsC iTbNxw"
+    class="sc-jhAzac gzxBca"
     data-testid="ScenesContainer"
   >
     <div
@@ -22,56 +22,56 @@ exports[`should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-jTzLTM fogJow"
+      class="sc-VigVT lmpajv"
       data-testid="PuzzleListContainer"
     >
       <div
-        class="sc-fjdhpX kbDeIV"
+        class="sc-jTzLTM ecWMei"
       >
         GÁTUR
       </div>
       <div
-        class="sc-jzJRlG bRzXfk"
+        class="sc-fjdhpX dNExfa"
       >
         Loading...
       </div>
     </div>
     <div
-      class="sc-cSHVUG bXFLNd"
+      class="sc-jzJRlG eIXOmt"
       data-testid="PuzzleItemsContainer"
     >
       <div
-        class="sc-kAzzGY hgAccu"
+        class="sc-cSHVUG HSayv"
         data-testid="PuzzleItemsBox"
       >
         <div
-          class="sc-chPdSV fYisGu"
+          class="sc-kAzzGY VLhrr"
           data-testid="DragItemsContainer"
         >
           <div
-            class="sc-kgoBCf bhkbON"
+            class="sc-chPdSV gCVgfv"
           >
             HÁLIMYNDIR
           </div>
           <div
-            class="sc-kGXeez hJUuoF"
+            class="sc-kgoBCf ePpbge"
           >
             <div
-              class="drag1 sc-kpOJdX doVOVn"
+              class="drag1 sc-kGXeez jQwUsC"
             >
               Loading...
             </div>
             <div
-              class="drag2 sc-kpOJdX doVOVn"
+              class="drag2 sc-kGXeez jQwUsC"
             />
             <div
-              class="drag3 sc-kpOJdX doVOVn"
+              class="drag3 sc-kGXeez jQwUsC"
             />
             <div
-              class="drag4 sc-kpOJdX doVOVn"
+              class="drag4 sc-kGXeez jQwUsC"
             />
             <div
-              class="sc-dxgOiQ eXJHwd"
+              class="sc-kpOJdX cnXRFe"
             >
               <svg
                 fill="currentColor"
@@ -90,33 +90,33 @@ exports[`should render correctly 1`] = `
           </div>
         </div>
         <div
-          class="sc-cMljjf fVRjRt"
+          class="sc-brqgnP ksXXtN"
           data-testid="TargetItemsContainer"
         >
           <div
-            class="sc-jAaTju WCwBy"
+            class="sc-cMljjf izcHvg"
           >
             MÁLSKIVUMYNDIR
           </div>
           <div
-            class="sc-jDwBTQ dKNSQB"
+            class="sc-jAaTju jeHMHH"
           >
             <div
-              class="target1 sc-gPEVay jOLWKT"
+              class="target1 sc-jDwBTQ ixDKyT"
             >
               Loading...
             </div>
             <div
-              class="target2 sc-gPEVay jOLWKT"
+              class="target2 sc-jDwBTQ ixDKyT"
             />
             <div
-              class="target3 sc-gPEVay jOLWKT"
+              class="target3 sc-jDwBTQ ixDKyT"
             />
             <div
-              class="target4 sc-gPEVay jOLWKT"
+              class="target4 sc-jDwBTQ ixDKyT"
             />
             <div
-              class="sc-iRbamj khDgFb"
+              class="sc-gPEVay fiqBpF"
             >
               <svg
                 fill="currentColor"

@@ -3,7 +3,7 @@ import { render, cleanup } from 'test-utils';
 import Puzzle from "./Puzzle";
 afterEach(cleanup)
 
-const puzzle = { id: 1, intro_audiofile: "dummyfile", character: "dummycharacer", summary: "Lorum ipsum" };
+const puzzle = { id: 1, intro_audiofile: "dummyfile", character: "dummycharacer", summary: "Lorum ipsum", itemByintrotextItemKey: {value: "Intro text"} };
 it("should render correctly", () => {
   
   const { container } = render(<Puzzle puzzle={puzzle}/>);

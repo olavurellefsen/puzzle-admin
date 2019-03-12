@@ -16,13 +16,23 @@ export default () => {
   subscription {
     puzzle(
       order_by: { sequence: asc },
-      where: { scene_id: { _eq: ${state.currentScene} } }
+      where: {
+        _and: [
+          { scene_id: { _eq: ${state.currentScene} } }
+          {
+            itemByintrotextItemKey: { language_id: { _eq: 1 } }
+          }
+        ]
+      }      
     ) {
       id
       scene_id
       puzzle_identifier
       intro_audiofile
-      intro_text_id
+      introtext_item_key
+      itemByintrotextItemKey {
+        value
+      }
       character
       summary
       sequence

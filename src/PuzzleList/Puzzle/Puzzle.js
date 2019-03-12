@@ -4,7 +4,6 @@ import {
   PuzzleContainer,
   PuzzleForm,
   PuzzleFieldCaption,
-  PuzzleField,
   PuzzleInputField,
   PuzzleTextAreaField,
   PuzzleRightArrow
@@ -14,15 +13,26 @@ import { Mutation } from "react-apollo";
 
 export default props => {
   const [state, dispatch] = useContext(MainContext);
-  const { id, intro_audiofile, character, summary } = props.puzzle;
+  const { id, summary, character, intro_audiofile, introtext_item_key } = props.puzzle;
+  const introText = props.puzzle.itemByintrotextItemKey.value;
+
   const [summaryField, setSummaryField] = useState(
     summary !== null ? summary : ""
+  );
+  const [introtextField, setIntrotextField] = useState(
+    introText !== null ? introText : ""
+  );
+  const [characterField, setCharacterField] = useState(
+    character !== null ? character : ""
   );
   const [audiofileField, setAudiofileField] = useState(
     intro_audiofile !== null ? intro_audiofile : ""
   );
+
   const puzzleSummary = useRef(null);
-  const audiofile = useRef(null);
+  const puzzleIntroText = useRef(null);
+  const puzzleCharacter = useRef(null);
+  const puzzleAudiofile = useRef(null);
 
   // If the parent component is updated (someone else has changed the value), then update the fields here
   if (
@@ -33,19 +43,38 @@ export default props => {
     if (puzzleSummary.current.defaultValue === summaryField) {
       setSummaryField(summary);
     }
-    if (audiofile.current.defaultValue === audiofileField) {
+    if (puzzleIntroText.current.defaultValue === introtextField) {
+      setIntrotextField(introText);
+    }    
+    if (puzzleCharacter.current.defaultValue === characterField) {
+      setCharacterField(character);
+    }    
+    if (puzzleAudiofile.current.defaultValue === audiofileField) {
       setAudiofileField(intro_audiofile);
     }
   }
 
   const UPDATE_PUZZLE = gql`
-    mutation update_puzzle($id: Int!, $summary: String!, $audiofile: String!) {
+    mutation update_puzzle($id: Int!, $summary: String!, $character: String!, $audiofile: String!, $introtextitemkey: String!, $introtext: String!) {
       update_puzzle(
         where: { id: { _eq: $id } }
-        _set: { summary: $summary, intro_audiofile: $audiofile }
+        _set: { summary: $summary, character: $character, intro_audiofile: $audiofile }
       ) {
         affected_rows
       }
+      update_item(
+        where: {
+          _and: [
+            {key: { _eq: $introtextitemkey }}
+            {language_id: { _eq: 1 }}
+          ]
+        }
+        _set: { 
+          value: $introtext
+        }
+      ) {
+        affected_rows
+      }  
     }
   `;
 
@@ -70,11 +99,16 @@ export default props => {
               variables: {
                 id: id,
                 summary: summaryField,
-                audiofile: audiofileField
+                character: characterField,
+                audiofile: audiofileField,
+                introtextitemkey: introtext_item_key,
+                introtext: introtextField            
               }
             });
             puzzleSummary.current.blur();
-            audiofile.current.blur();
+            puzzleIntroText.current.blur();
+            puzzleCharacter.current.blur();
+            puzzleAudiofile.current.blur();            
           };
           return (
             <PuzzleForm
@@ -85,7 +119,7 @@ export default props => {
               }}
               onSubmit={e => submitForm(e)}
             >
-              <PuzzleFieldCaption>PUZZLE {id}</PuzzleFieldCaption>
+              <PuzzleFieldCaption>GÁTUHEITI {id}</PuzzleFieldCaption>
               <PuzzleTextAreaField
                 rows="3"
                 columns="50"
@@ -94,16 +128,31 @@ export default props => {
                 value={summaryField}
                 onChange={e => setSummaryField(e.target.value)}
               />
-              <PuzzleFieldCaption>AUDIOFILE</PuzzleFieldCaption>
+              <PuzzleFieldCaption>INTROTEKSTUR</PuzzleFieldCaption>
+              <PuzzleTextAreaField
+                rows="3"
+                columns="50"
+                ref={puzzleIntroText}
+                name="introtext"
+                value={introtextField}
+                onChange={e => setIntrotextField(e.target.value)}
+              />              
+              <PuzzleFieldCaption>LEIKARI</PuzzleFieldCaption>
               <PuzzleInputField
-                ref={audiofile}
+                ref={puzzleCharacter}
+                name="character"
+                type="text"
+                value={characterField}
+                onChange={e => setCharacterField(e.target.value)}
+              />
+              {/*<PuzzleFieldCaption>LJÓÐFÍLA</PuzzleFieldCaption>
+              <PuzzleInputField
+                ref={puzzleAudiofile}
                 name="audiofile"
                 type="text"
                 value={audiofileField}
                 onChange={e => setAudiofileField(e.target.value)}
-              />
-              <PuzzleFieldCaption>CHARACTER</PuzzleFieldCaption>
-              <PuzzleField>{character !== null ? character : "-"}</PuzzleField>
+              />*/}              
             </PuzzleForm>
           );
         }}

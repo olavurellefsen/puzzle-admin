@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PuzzleContainer = styled.div`
-  height: 180px;
+  height: 200px;
   width: 240px;
   padding: 10px;
   margin: 20px;
@@ -27,21 +27,16 @@ export const PuzzleFieldCaption = styled.div`
   color: gray;
 `;
 
-export const PuzzleField = styled.div`
-  font-size: 14px;
-  padding-bottom: 10px;
-`;
-
 export const PuzzleInputField = styled.input`
   font-size: 14px;
-  padding-bottom: 10px;
+  padding: 0px 0px 10px 0px;
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
 `;
 
 export const PuzzleTextAreaField = styled.textarea`
   font-size: 14px;
-  padding-bottom: 10px;
+  padding: 0px 0px 10px 0px;
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
 `;

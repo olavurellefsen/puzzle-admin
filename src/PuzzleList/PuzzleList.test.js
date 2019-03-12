@@ -13,8 +13,8 @@ it("should show the PuzzleListContainer element", () => {
   expect(queryByTestId("PuzzleListContainer")).toBeTruthy();
 });
 
-it("should show Loading... and then render AUDIOFILE", async () => {
+it("should show Loading... and then render INTROTEKSTUR", async () => {
   const { getByText } = render(<PuzzleList />);
   expect(getByText("Loading...")).toBeTruthy();
-  await waitForElement(() => getByText('AUDIOFILE'));
+  await waitForElement(() => getByText('INTROTEKSTUR'));
 });
