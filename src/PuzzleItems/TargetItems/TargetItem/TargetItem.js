@@ -86,7 +86,7 @@ export default props => {
               }}
               onSubmit={e => submitForm(e)}
             >
-              <TargetItemFieldCaption>LÝSING AV HÁLIMYND {targetitem.id}</TargetItemFieldCaption>
+              <TargetItemFieldCaption>LÝSING AV MÁLSKIVUMYND {targetitem.id}</TargetItemFieldCaption>
               <TargetItemInputField
                 ref={itemName}
                 name="itemName"
