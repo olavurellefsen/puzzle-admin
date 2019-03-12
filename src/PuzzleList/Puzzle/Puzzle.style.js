@@ -18,7 +18,7 @@ export const PuzzleContainer = styled.div`
 export const PuzzleForm = styled.form`
   display: flex;
   flex-direction: column;
-  padding: 2px 16px;
+  padding: 2px;
 `;
 
 export const PuzzleFieldCaption = styled.div`
