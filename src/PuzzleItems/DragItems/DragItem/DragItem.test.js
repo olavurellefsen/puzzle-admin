@@ -8,7 +8,9 @@ it("should render correctly", () => {
     index={0}
     dragitem={{id: 0, puzzleItemBypuzzleItemId:
       { name: "dummy name",
-        imagefile: "dummyimage.png", itemBypuzzletextKey: { value: "dummy bubble text"}
+        imagefile: "dummyimage.png",
+        textitemBynameTextitemId: { id: 1, textitemLanguagesBytextitemId : [{ textvalue: "name"}]},
+        textitemBypuzzletextTextitemId: { id: 2, textitemLanguagesBytextitemId : [{ textvalue: "puzzletext"}]},
       }
     }}/>);
   expect(container).toMatchSnapshot();
@@ -19,7 +21,9 @@ it("should show the DragItemContainer element", () => {
     index={0}
     dragitem={{id: 0, puzzleItemBypuzzleItemId:
       { name: "dummy name",
-        imagefile: "dummyimage.png", itemBypuzzletextKey: { value: "dummy bubble text"}
+        imagefile: "dummyimage.png",
+        textitemBynameTextitemId: { id: 1, textitemLanguagesBytextitemId : [{ textvalue: "name"}]},
+        textitemBypuzzletextTextitemId: { id: 2, textitemLanguagesBytextitemId : [{ textvalue: "puzzletext"}]},
       }
     }}/>);
   expect(queryByTestId("DragItemContainer")).toBeTruthy();

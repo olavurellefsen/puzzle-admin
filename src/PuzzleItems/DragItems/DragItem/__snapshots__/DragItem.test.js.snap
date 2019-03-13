@@ -13,25 +13,29 @@ exports[`should render correctly 1`] = `
       <div
         class="sc-htpNat hccyqP"
       >
-        LÝSING AV HÁLIMYND 
+        LÝSING AV FRÁ-MYND 
         0
+         (
+        1
+        )
       </div>
       <input
         class="sc-bxivhb gsEoFf"
         name="itemName"
         type="text"
-        value="dummy name"
+        value="name"
       />
       <div
         class="sc-htpNat hccyqP"
       >
-        TEKSTUR
+        TEKSTUR 
+        2
       </div>
       <input
         class="sc-bxivhb gsEoFf"
         name="itemText"
         type="text"
-        value="dummy bubble text"
+        value="puzzletext"
       />
     </form>
   </div>

@@ -28,8 +28,28 @@ export default () => {
             wait: false
             puzzleItemBypuzzleItemId: {
               data: {
-                imagefile: "placeholder.png"
-                name: "new target item"
+                textitemBynameTextitemId: {
+                  data : {
+                    textgroup: "targetitem-name"
+                    textitemLanguagesBytextitemId: {
+                      data: {
+                        language_id: 1
+                        textvalue: ""
+                      }
+                    }
+                  }
+                }
+								textitemBypuzzletextTextitemId: {
+                  data: {
+                    textgroup:"targetitem-text"
+                    textitemLanguagesBytextitemId: {
+                      data: {
+                        language_id: 1
+                        textvalue: ""
+                      }
+                    }                    
+                  }
+                }
               }
             }
           }
@@ -51,9 +71,22 @@ export default () => {
             { puzzle_id: { _eq: $puzzle_id } }
             {
               puzzleItemBypuzzleItemId: {
-                itemBypuzzletextKey: { language_id: { _eq: 1 } }
+                textitemBynameTextitemId: { 
+                  textitemLanguagesBytextitemId : {
+                  	language_id: { _eq: 1 } 
+                  }
+                }
               }
             }
+            {
+              puzzleItemBypuzzleItemId: {
+                textitemBypuzzletextTextitemId: { 
+                  textitemLanguagesBytextitemId : {
+                  	language_id: { _eq: 1 } 
+                  }
+                }
+              }
+            }            
           ]
         }
       ) {
@@ -64,17 +97,26 @@ export default () => {
         puzzleItemBypuzzleItemId {
           id
           imagefile
-          name
-          puzzletext_key
-          itemBypuzzletextKey {
-            value
+          textitemBynameTextitemId {
+            id
+            textgroup
+            textitemLanguagesBytextitemId {
+              textvalue
+            }
+          }
+          textitemBypuzzletextTextitemId {
+            id
+            textgroup
+            textitemLanguagesBytextitemId {
+              textvalue
+            }
           }
         }
         draglogicsBytargetitemId {
           dragitem_id
         }
       }
-    }
+    } 
   `;
 
   if (typeof currentPuzzle === "undefined") {
@@ -129,9 +171,10 @@ export default () => {
 
     return (
       <TargetItemsContainer data-testid="TargetItemsContainer">
-        <TargetItemsHeader>MÁLSKIVUMYNDIR</TargetItemsHeader>
+        <TargetItemsHeader>TIL-MYNDIR</TargetItemsHeader>
         <TargetItemsBox>
           {targetItems}
+          {insertTargetItem}
         </TargetItemsBox>
       </TargetItemsContainer>
     );

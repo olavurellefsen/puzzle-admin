@@ -11,10 +11,10 @@ import { Mutation } from "react-apollo";
 export default props => {
   const { targetitem } = props;
   const puzzleItem = targetitem.puzzleItemBypuzzleItemId;
-  const puzzleitemId = puzzleItem.id;
-  const puzzleitemName = puzzleItem.name;
-  const puzzleItemText = puzzleItem.itemBypuzzletextKey.value;
-  const puzzletextKey = puzzleItem.puzzletext_key;
+  const puzzleNameTextId = puzzleItem.textitemBynameTextitemId.id;
+  const puzzleitemName = puzzleItem.textitemBynameTextitemId.textitemLanguagesBytextitemId[0].textvalue;
+  const puzzleTextTextId = puzzleItem.textitemBypuzzletextTextitemId.id;
+  const puzzleItemText = puzzleItem.textitemBypuzzletextTextitemId.textitemLanguagesBytextitemId[0].textvalue;
 
   const [textField, setTextField] = useState(puzzleItemText);
   const [puzzleItemNameField, setPuzzleItemNameField] = useState(puzzleitemName);
@@ -34,23 +34,15 @@ export default props => {
 
   const UPDATE_DRAGITEM = gql`
     mutation update_targetitem(
-      $puzzleitemid: Int!
-      $puzzleitemtext: String!
-      $puzzletextitemkey: String!
+      $puzzlename_textid: Int!
       $puzzlename: String!
+      $puzzletext_textid: Int!
+      $puzzletext: String!
     ) {
-      update_puzzle_item(where: { id: { _eq: $puzzleitemid } }, _set: { name: $puzzlename }) {
+      name: update_textitem_language(where: {_and: [{textitem_id: {_eq: $puzzlename_textid}}, {language_id: {_eq: 1}}]}, _set: {textvalue: $puzzlename}) {
         affected_rows
       }
-      update_item(
-        where: {
-          _and: [
-            { key: { _eq: $puzzletextitemkey } }
-            { language_id: { _eq: 1 } }
-          ]
-        }
-        _set: { value: $puzzleitemtext }
-      ) {
+      puzzletext: update_textitem_language(where: {_and: [{textitem_id: {_eq: $puzzletext_textid}}, {language_id: {_eq: 1}}]}, _set: {textvalue: $puzzletext}) {
         affected_rows
       }
     }
@@ -68,10 +60,10 @@ export default props => {
             e.preventDefault();
             updateTargetItem({
               variables: {
-                puzzleitemid: puzzleitemId,
-                puzzleitemtext: textField,
-                puzzletextitemkey: puzzletextKey,
-                puzzlename: puzzleItemNameField
+                puzzlename_textid: puzzleNameTextId,
+                puzzlename: puzzleItemNameField,
+                puzzletext_textid: puzzleTextTextId,
+                puzzletext: textField
               }
             });
             itemName.current.blur();
@@ -86,7 +78,7 @@ export default props => {
               }}
               onSubmit={e => submitForm(e)}
             >
-              <TargetItemFieldCaption>LÝSING AV MÁLSKIVUMYND {targetitem.id}</TargetItemFieldCaption>
+              <TargetItemFieldCaption>LÝSING AV TIL-MYND {targetitem.id}  ({puzzleNameTextId})</TargetItemFieldCaption>
               <TargetItemInputField
                 ref={itemName}
                 name="itemName"
@@ -94,7 +86,7 @@ export default props => {
                 value={puzzleItemNameField}
                 onChange={e => setPuzzleItemNameField(e.target.value)}
               />
-              <TargetItemFieldCaption>TEKSTUR</TargetItemFieldCaption>
+              <TargetItemFieldCaption>TEKSTUR {puzzleTextTextId}</TargetItemFieldCaption>
               <TargetItemInputField
                 ref={itemText}
                 name="itemText"
