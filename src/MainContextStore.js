@@ -12,12 +12,17 @@ export default (props) => {
 }
 
 const initialState = {
+  currentAudioItem: 1,
   currentScene: 1,
   currentPuzzles: [{ scene_id: 1, puzzle_id: 1 }],
 };
 
 const reducer = createReducer(initialState, {
   reset: () => initialState,
+  setCurrentAudioItem: (state, action) => ({
+    ...state,
+    currentAudioItem: action.number
+  }),
   setCurrentScene: (state, action) => ({
     ...state,
     currentScene: action.number

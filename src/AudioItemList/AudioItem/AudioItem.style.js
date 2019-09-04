@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SceneContainer = styled.div`
+export const AudioItemContainer = styled.div`
   height: 180px;
   width: 240px;
   margin: 20px 20px;
@@ -14,12 +14,12 @@ export const SceneContainer = styled.div`
   background-size: cover;
 `;
 
-export const SceneTitleForm = styled.form`
+export const AudioItemTitleForm = styled.form`
   height: 25px;
   padding: 5px 0px;
 `;
 
-export const SceneTitle = styled.input`
+export const AudioItemTitle = styled.input`
   display: block;
   margin : 0 auto;
   color: white;
@@ -31,7 +31,7 @@ export const SceneTitle = styled.input`
   text-align: center;
 `;
 
-export const SceneRightArrow = styled.div`
+export const AudioItemRightArrow = styled.div`
   font-size: 60px;
   color: gray;
   text-align: right;

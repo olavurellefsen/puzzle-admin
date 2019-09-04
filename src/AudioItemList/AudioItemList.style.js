@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const PuzzleListContainer = styled.div`
+export const AudioItemListContainer = styled.div`
+  margin-left: 20px;
   overflow: hidden;
 `;
 
-export const PuzzleHeader = styled.div`
+export const AudioItemHeader = styled.div`
   text-align: left;
   padding-top: 10px;
   padding-left: 20px;
@@ -12,7 +13,7 @@ export const PuzzleHeader = styled.div`
   color: #666666;
 `;
 
-export const PuzzleListBox = styled.div`
+export const AudioItemListBox = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
