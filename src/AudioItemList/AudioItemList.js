@@ -1,6 +1,6 @@
 import React from "react";
 import AudioItem from "./AudioItem/AudioItem";
-import { AudioItemListContainer, AudioItemListBox, AudioItemHeader } from "./AudioItemList.style";
+import { AudioItemListContainer, AudioItemListBox } from "./AudioItemList.style";
 import { Subscription } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -16,7 +16,6 @@ const AudioItemList = () => {
 
   return (
     <AudioItemListContainer data-testid="AudioItemListContainer" >
-      <AudioItemHeader>LJÓÐBITAR</AudioItemHeader>
       <AudioItemListBox>
       <Subscription subscription={subscription}>
           {({ data, loading }) => {

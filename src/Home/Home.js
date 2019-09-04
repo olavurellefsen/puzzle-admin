@@ -1,5 +1,5 @@
 import React from "react";
-import Scenes from "../Scenes/Scenes";
+import AudioItemList from "../AudioItemList/AudioItemList";
 import { HomeContainer } from "./Home.style";
 
 export default props => {
@@ -7,8 +7,8 @@ export default props => {
   return (
     <HomeContainer>
       {isAuthenticated() && (
-        <div data-testid="Scenes">
-          <Scenes />
+        <div data-testid="AudioItemList">
+          <AudioItemList />
         </div>
       )}
     </HomeContainer>
