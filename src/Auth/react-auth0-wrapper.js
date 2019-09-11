@@ -38,7 +38,8 @@ export const Auth0Provider = ({
 
         let tokenClaims = await auth0FromHook.getIdTokenClaims()
         setToken(tokenClaims.__raw)
-        localStorage.setItem("auth0:id_token", tokenClaims.__raw);
+        localStorage.setItem("auth0:id_token", tokenClaims.__raw)
+        console.log(tokenClaims.__raw)
 
       }
 
