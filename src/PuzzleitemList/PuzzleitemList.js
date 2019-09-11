@@ -21,12 +21,10 @@ const PuzzleitemList = () => {
       <Subscription subscription={subscription}>
         {({ data, loading }) => {
           if (loading) {
-            console.log("loading")
             return 'Loading...'
           } else {
             let puzzleitems = data.puzzleitem
             return puzzleitems.map((puzzleitem, index) => {
-              console.log(puzzleitem)
               return <Puzzleitem key={index} puzzleitem={puzzleitem} />
             })
           }
