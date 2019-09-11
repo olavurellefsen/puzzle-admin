@@ -1,16 +1,33 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { ApolloProvider } from "react-apollo";
-import "./index.css";
-import { MakeMainRoutes } from "./Routes/Routes";
-import MainContextStore from "./MainContextStore";
-import client from "./heyBreydLocalizationClient";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import MainContextStore from './Store/MainContextStore'
+import { Auth0Provider } from './Auth/react-auth0-wrapper'
+import config from './Auth/auth_config.json'
+
+// A function that routes the user to the right place
+// after login
+const onRedirectCallback = appState => {
+  window.history.replaceState(
+    {},
+    document.title,
+    appState && appState.targetUrl
+      ? appState.targetUrl
+      : window.location.pathname
+  )
+}
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
+  <Auth0Provider
+    domain={config.domain}
+    client_id={config.clientId}
+    redirect_uri={window.location.origin}
+    onRedirectCallback={onRedirectCallback}
+  >
     <MainContextStore>
-      <MakeMainRoutes />
+      <App />
     </MainContextStore>
-  </ApolloProvider>,
-  document.getElementById("root")
-);
+  </Auth0Provider>,
+  document.getElementById('root')
+)
