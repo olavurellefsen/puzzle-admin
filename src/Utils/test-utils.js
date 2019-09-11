@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { ApolloProvider } from "react-apollo";
 import MainContextStore from "../MainContextStore";
-import client from "../heyBreydLocalizationClient";
+import client from "../heyBreydClient";
 
 const AllTheProviders = ({ children }) => {
   return (
