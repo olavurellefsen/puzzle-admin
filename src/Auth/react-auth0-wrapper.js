@@ -17,7 +17,7 @@ export const Auth0Provider = ({
   const [auth0Client, setAuth0] = useState()
   const [loading, setLoading] = useState(true)
   const [popupOpen, setPopupOpen] = useState(false)
-
+  
   useEffect(() => {
     const initAuth0 = async () => {
       const auth0FromHook = await createAuth0Client(initOptions)
@@ -83,7 +83,10 @@ export const Auth0Provider = ({
         loginWithRedirect: (...p) => auth0Client.loginWithRedirect(...p),
         getTokenSilently: (...p) => auth0Client.getTokenSilently(...p),
         getTokenWithPopup: (...p) => auth0Client.getTokenWithPopup(...p),
-        logout: (...p) => auth0Client.logout(...p),
+        logout: (...p) => auth0Client.logout({
+          returnTo: initOptions.redirect_uri,
+          client_id: initOptions.client_id, ...p
+        }),
       }}
     >
       {children}
