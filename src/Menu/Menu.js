@@ -1,29 +1,40 @@
-import React, { useContext } from "react";
-import MainContext from "../Context";
+import React from 'react'
+import { useAuth0 } from '../Auth/react-auth0-wrapper'
+import { Link } from 'react-router-dom'
 import {
   MenuContainer,
   MenuTop,
   MenuLogo,
   MenuTitle,
-  MenuUserArea
-} from "./Menu.style";
+  LoginButton,
+  LoginButtonText,
+} from './Menu.style'
 
-export default function Menu() {
-  const [state] = useContext(MainContext);
+const Menu = () => {
+  const { isAuthenticated, loading, loginWithRedirect, logout } = useAuth0()
+
   return (
     <MenuContainer>
       <MenuTop>
-        <MenuLogo src="images/logo.png" />
-        <MenuTitle>
-          Puzzle
-          <br />
-          Admin
-          <br />
-          System
-          <br />
-        </MenuTitle>
+        <Link to="/">
+          <MenuLogo src="images/logo.png" />
+        </Link>
+        <MenuTitle>Puzzle Admin System</MenuTitle>
+        <>
+          {!isAuthenticated && !loading && (
+            <LoginButton onClick={() => loginWithRedirect({})}>
+              <LoginButtonText>Login</LoginButtonText>
+            </LoginButton>
+          )}
+          {isAuthenticated && (
+            <LoginButton onClick={() => logout()}>
+              <LoginButtonText>Logout</LoginButtonText>
+            </LoginButton>
+          )}
+        </>
       </MenuTop>
-      <MenuUserArea>{state.userName}</MenuUserArea>
     </MenuContainer>
-  );
+  )
 }
+
+export default Menu
