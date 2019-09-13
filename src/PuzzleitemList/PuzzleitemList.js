@@ -1,6 +1,6 @@
 import React from 'react'
 import Puzzleitem from './Puzzleitem/Puzzleitem'
-import { PuzzleitemListContainer } from './PuzzleitemList.style'
+import { PuzzleitemListContainer, PuzzleitemAdd } from './PuzzleitemList.style'
 import { Subscription } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -30,6 +30,7 @@ const PuzzleitemList = () => {
           }
         }}
       </Subscription>
+      <PuzzleitemAdd>Legg afturat</PuzzleitemAdd>
     </PuzzleitemListContainer>
   )
 }
