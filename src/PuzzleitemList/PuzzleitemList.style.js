@@ -2,7 +2,9 @@ import styled from 'styled-components'
 
 export const PuzzleitemListContainer = styled.div`
   margin-left: 20px;
-  overflow: visible;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 `
 
 export const PuzzleitemAdd = styled.button`

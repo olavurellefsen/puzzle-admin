@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from 'react'
+import React, { useState, useContext, useRef, useEffect } from 'react'
 import { capitalizeFirstLetter } from '../../Utils/Utils'
 import MainContext from '../../Store/Context'
 import {
@@ -19,6 +19,10 @@ export default props => {
   title = capitalizeFirstLetter(title)
   const [titleField, setTitleField] = useState(title)
   const puzzleitemTitle = useRef(null)
+
+  useEffect(() => {
+    if(props.newItem) puzzleitemTitle.current.focus()
+  })
 
   //If the parent component is updated (someone else has changed the value), then update the field here
   if (
