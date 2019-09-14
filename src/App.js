@@ -1,12 +1,14 @@
 import React from 'react'
 import Menu from './Menu/Menu'
 import Home from './Home/Home'
+import Puzzleitems from './Puzzleitems/Puzzleitems'
 import { ApolloProvider } from 'react-apollo'
 import makeApolloClient from './Hasura/apollo'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import PrivateRoute from './Routing/PrivateRoute'
 import { useAuth0 } from './Auth/react-auth0-wrapper'
 import styled from 'styled-components'
+
 
 export const AppContainer = styled.div`
   display: flex;
@@ -29,7 +31,7 @@ function App() {
               <Menu />
               <Switch>
                 <Route path="/" exact component={Home} />
-                <PrivateRoute path="/home" component={Home} />
+                <PrivateRoute path="/puzzleitems" component={Puzzleitems} />
               </Switch>
             </AppContainer>
           </ApolloProvider>
