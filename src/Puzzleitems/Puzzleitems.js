@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import gql from 'graphql-tag'
 import { useQuery, useMutation, useSubscription } from '@apollo/react-hooks'
 
-export const PuzzleitemsContainer = styled.div`
+const PuzzleitemsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -14,7 +14,7 @@ export const PuzzleitemsContainer = styled.div`
   margin: 20px;
 `
 
-export const FormHeaderStyle = styled.h2`
+const FormHeaderStyle = styled.h2`
   margin: 0px;
 `
 
@@ -128,7 +128,7 @@ const Puzzleitems = () => {
     setCurrentPuzzleitem({
       id: puzzleitem.id,
       title: puzzleitem.title,
-      audiourl: puzzleitem.audiourl,
+      audiourl: puzzleitem.audiourl ? puzzleitem.audiourl : '',
     })
   }
 
