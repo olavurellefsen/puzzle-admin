@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import AudioRecorder from './AudioRecorder/AudioRecorder'
+import uploadToFirebase from './uploadToFirebase'
 
-export const FormContainer = styled.div`
+const FormContainer = styled.div`
   margin: 0px;
 `
 
-export const FormStyle = styled.form`
+const FormStyle = styled.form`
   display: block;
 `
 
-export const LabelStyle = styled.label`
+const LabelStyle = styled.label`
   font-weight: 600;
   max-width: 100%;
   display: block;
   margin: 1rem 0 0.5rem;
 `
 
-export const InputStyle = styled.input`
+const InputStyle = styled.input`
   display: block;
   border: 1px solid #dedede;
   border-radius: 4px;
@@ -32,7 +34,7 @@ export const InputStyle = styled.input`
   margin: 0;
 `
 
-export const FormButton = styled.button`
+const FormButton = styled.button`
   display: inline-block;
   border: 1px solid #0366ee;
   border-radius: 4px;
@@ -52,6 +54,7 @@ export const FormButton = styled.button`
 
 const EditPuzzleitemForm = props => {
   const [puzzleitem, setPuzzleitem] = useState(props.currentPuzzleitem)
+  const [audio, setAudio] = useState()
 
   useEffect(() => {
     setPuzzleitem(props.currentPuzzleitem)
@@ -65,25 +68,31 @@ const EditPuzzleitemForm = props => {
   return (
     <FormContainer>
       <FormStyle
-        onSubmit={event => {
+        onSubmit={async event => {
           event.preventDefault()
-          props.updatePuzzleitem(puzzleitem.id, puzzleitem)
+          let newpuzzleitem = puzzleitem
+          if (audio) {
+            let newUrl = await uploadToFirebase(audio)
+            newpuzzleitem = {
+              id: puzzleitem.id,
+              title: puzzleitem.title,
+              audiourl: newUrl,
+            }
+            setPuzzleitem(newpuzzleitem)
+          }          
+          props.updatePuzzleitem(puzzleitem.id, newpuzzleitem)
         }}
       >
         <LabelStyle>Tekstur</LabelStyle>
         <InputStyle
           type="text"
           title="title"
+          placeholder="Tekstur, sum skal vísast í spælinum"
           value={puzzleitem.title}
           onChange={handleInputChange}
         />
         <LabelStyle>Ljóð</LabelStyle>
-        <InputStyle
-          type="text"
-          title="audiourl"
-          value={puzzleitem.audiourl}
-          onChange={handleInputChange}
-        />
+        <AudioRecorder audiourl={puzzleitem.audiourl} updateAudio={audio => setAudio(audio)} />
         <FormButton>Dagfør</FormButton>
         <FormButton onClick={() => props.setEditing(false)}>Angra</FormButton>
       </FormStyle>

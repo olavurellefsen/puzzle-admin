@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaMusic } from 'react-icons/fa'
 
-export const TableContainer = styled.div`
+const TableContainer = styled.div`
   margin: 30px 0px 0px 0px;
 `
 
-export const TableStyle = styled.table`
+const TableStyle = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -15,19 +15,19 @@ export const TableStyle = styled.table`
   border-color: grey;
 `
 
-export const TableHeadStyle = styled.thead`
+const TableHeadStyle = styled.thead`
   display: table-header-group;
   vertical-align: middle;
   border-color: inherit;
 `
 
-export const TableHeadRowStyle = styled.tr`
+const TableHeadRowStyle = styled.tr`
   display: table-row;
   vertical-align: inherit;
   border-color: inherit;
 `
 
-export const ThStyle = styled.th`
+const ThStyle = styled.th`
   display: table-cell;
   vertical-align: inherit;
   font-weight: bold;
@@ -36,19 +36,19 @@ export const ThStyle = styled.th`
   border-bottom: 2px solid #666666;
 `
 
-export const TableBodyStyle = styled.tbody`
+const TableBodyStyle = styled.tbody`
   display: table-row-group;
   vertical-align: middle;
   border-color: inherit;
 `
 
-export const TrStyle = styled.tr`
+const TrStyle = styled.tr`
   display: table-row;
   vertical-align: inherit;
   border-color: inherit;
 `
 
-export const TableitemStyle = styled.td`
+const TableitemStyle = styled.td`
   display: table-cell;
   vertical-align: inherit;
   border-bottom: 1px solid #dedede;
@@ -56,7 +56,7 @@ export const TableitemStyle = styled.td`
   padding: 0.5rem;
 `
 
-export const TableButtonStyle = styled.button`
+const TableButtonStyle = styled.button`
   background: transparent;
   border: 1px solid #cdcdcd;
   color: #4e4e4e;

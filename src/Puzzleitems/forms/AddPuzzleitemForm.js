@@ -1,22 +1,25 @@
 import React, { useState } from 'react'
+import AudioRecorder from './AudioRecorder/AudioRecorder'
+import uploadToFirebase from './uploadToFirebase'
+
 import styled from 'styled-components'
 
-export const FormContainer = styled.div`
+const FormContainer = styled.div`
   margin: 0px;
 `
 
-export const FormStyle = styled.form`
+const FormStyle = styled.form`
   display: block;
 `
 
-export const LabelStyle = styled.label`
+const LabelStyle = styled.label`
   font-weight: 600;
   max-width: 100%;
   display: block;
   margin: 1rem 0 0.5rem;
 `
 
-export const InputStyle = styled.input`
+const InputStyle = styled.input`
   display: block;
   border: 1px solid #dedede;
   border-radius: 4px;
@@ -32,7 +35,7 @@ export const InputStyle = styled.input`
   margin: 0;
 `
 
-export const FormButton = styled.button`
+const FormButton = styled.button`
   display: inline-block;
   border: 1px solid #0366ee;
   border-radius: 4px;
@@ -53,6 +56,7 @@ export const FormButton = styled.button`
 const AddPuzzleitemForm = ({ addPuzzleitem }) => {
   const initialFormState = { id: null, title: '', audiourl: '' }
   const [puzzleitem, setPuzzleitem] = useState(initialFormState)
+  const [audio, setAudio] = useState()
 
   const handleInputChange = event => {
     const { title, value } = event.target
@@ -62,10 +66,20 @@ const AddPuzzleitemForm = ({ addPuzzleitem }) => {
   return (
     <FormContainer>
       <FormStyle
-        onSubmit={event => {
+        onSubmit={async event => {
           event.preventDefault()
-          if (!puzzleitem.title || !puzzleitem.audiourl) return
-          addPuzzleitem(puzzleitem)
+          if (!puzzleitem.title) return
+          let newpuzzleitem = puzzleitem
+          if (audio) {
+            let newUrl = await uploadToFirebase(audio)
+            newpuzzleitem = {
+              id: null,
+              title: puzzleitem.title,
+              audiourl: newUrl,
+            }
+            setPuzzleitem(newpuzzleitem)
+          }
+          addPuzzleitem(newpuzzleitem)
           setPuzzleitem(initialFormState)
         }}
       >
@@ -73,16 +87,11 @@ const AddPuzzleitemForm = ({ addPuzzleitem }) => {
         <InputStyle
           type="text"
           title="title"
+          placeholder="Tekstur, sum skal vísast í spælinum"
           value={puzzleitem.title}
           onChange={handleInputChange}
         />
-        <LabelStyle>Ljóð</LabelStyle>
-        <InputStyle
-          type="text"
-          title="audiourl"
-          value={puzzleitem.audiourl}
-          onChange={handleInputChange}
-        />
+        <AudioRecorder audiourl={null} updateAudio={audio => setAudio(audio)} />
         <FormButton>Legg afturat</FormButton>
       </FormStyle>
     </FormContainer>
