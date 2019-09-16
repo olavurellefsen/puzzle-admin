@@ -77,6 +77,7 @@ const EditPuzzleitemForm = props => {
               id: puzzleitem.id,
               title: puzzleitem.title,
               audiourl: newUrl,
+              key: puzzleitem.key
             }
             setPuzzleitem(newpuzzleitem)
           }          
@@ -91,6 +92,13 @@ const EditPuzzleitemForm = props => {
           value={puzzleitem.title}
           onChange={handleInputChange}
         />
+        <InputStyle
+          type="text"
+          title="key"
+          placeholder="Tekstkoda"
+          value={puzzleitem.key}
+          onChange={handleInputChange}
+        />        
         <LabelStyle>Ljóð</LabelStyle>
         <AudioRecorder audiourl={puzzleitem.audiourl} updateAudio={audio => setAudio(audio)} />
         <FormButton>Dagfør</FormButton>
