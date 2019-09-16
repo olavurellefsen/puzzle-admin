@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { FaMusic } from 'react-icons/fa'
 
 const TableContainer = styled.div`
+  flex: 1;
+  overflow: auto;
   margin: 30px 0px 0px 0px;
 `
 
