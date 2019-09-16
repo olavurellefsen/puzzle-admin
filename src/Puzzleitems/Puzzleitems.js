@@ -20,17 +20,27 @@ const FormHeaderStyle = styled.h2`
 
 const PUZZLEITEM_QUERY = gql`
   query {
-    puzzleitem(where: {archived: {_eq: false}}, order_by: { sequence: asc }) {
+    puzzleitem(
+      where: { archived: { _eq: false } }
+      order_by: { sequence: asc }
+    ) {
       id
       title
       audiourl
+      key
     }
   }
 `
 
 const PUZZLEITEM_INSERT = gql`
-  mutation insert_puzzleitem($title: String!, $audiourl: String!) {
-    insert_puzzleitem(objects: { title: $title, audiourl: $audiourl }) {
+  mutation insert_puzzleitem(
+    $title: String!
+    $audiourl: String!
+    $key: String!
+  ) {
+    insert_puzzleitem(
+      objects: { title: $title, audiourl: $audiourl, key: $key }
+    ) {
       returning {
         id
       }
@@ -39,10 +49,15 @@ const PUZZLEITEM_INSERT = gql`
 `
 
 const UPDATE_PUZZLEITEM = gql`
-  mutation update_puzzleitem($id: Int!, $title: String!, $audiourl: String!) {
+  mutation update_puzzleitem(
+    $id: Int!
+    $title: String!
+    $audiourl: String!
+    $key: String!
+  ) {
     update_puzzleitem(
       where: { id: { _eq: $id } }
-      _set: { title: $title, audiourl: $audiourl }
+      _set: { title: $title, audiourl: $audiourl, key: $key }
     ) {
       affected_rows
     }
@@ -67,6 +82,7 @@ const PUZZLEITEM_SUBSCRIPTION = gql`
       title
       audiourl
       archived
+      key
     }
   }
 `
@@ -78,11 +94,19 @@ const Puzzleitems = () => {
       setCurrentPuzzleitem(initialFormState)
     },
   })
-  const [dbInsertPuzzleitem] = useMutation(PUZZLEITEM_INSERT)
+  const [dbInsertPuzzleitem] = useMutation(PUZZLEITEM_INSERT, {
+    onError: error => console.log('ein foylur', error),
+  })
   const [dbUpdatePuzzleitem] = useMutation(UPDATE_PUZZLEITEM)
   const [dbArchivePuzzleitem] = useMutation(ARCHIVE_PUZZLEITEM)
 
-  const initialFormState = { id: null, title: '', audiourl: '', deactivated: false }
+  const initialFormState = {
+    id: null,
+    title: '',
+    audiourl: '',
+    key: '',
+    deactivated: false,
+  }
 
   const [puzzleitems, setPuzzleitems] = useState(false)
   const [currentPuzzleitem, setCurrentPuzzleitem] = useState(initialFormState)
@@ -99,7 +123,11 @@ const Puzzleitems = () => {
     puzzleitem.id = -1
     setPuzzleitems([...puzzleitems, puzzleitem])
     dbInsertPuzzleitem({
-      variables: { title: puzzleitem.title, audiourl: puzzleitem.audiourl },
+      variables: {
+        title: puzzleitem.title,
+        audiourl: puzzleitem.audiourl,
+        key: puzzleitem.key,
+      },
     })
   }
 
@@ -129,6 +157,7 @@ const Puzzleitems = () => {
       id: puzzleitem.id,
       title: puzzleitem.title,
       audiourl: puzzleitem.audiourl ? puzzleitem.audiourl : '',
+      key: puzzleitem.key,
     })
   }
 
