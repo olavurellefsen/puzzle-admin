@@ -54,7 +54,7 @@ const FormButton = styled.button`
 `
 
 const AddPuzzleitemForm = ({ addPuzzleitem }) => {
-  const initialFormState = { id: null, title: '', audiourl: '' }
+  const initialFormState = { id: null, title: '', audiourl: '', key: '' }
   const [puzzleitem, setPuzzleitem] = useState(initialFormState)
   const [audio, setAudio] = useState()
 
@@ -76,6 +76,7 @@ const AddPuzzleitemForm = ({ addPuzzleitem }) => {
               id: null,
               title: puzzleitem.title,
               audiourl: newUrl,
+              key: puzzleitem.key
             }
             setPuzzleitem(newpuzzleitem)
           }
@@ -91,6 +92,13 @@ const AddPuzzleitemForm = ({ addPuzzleitem }) => {
           value={puzzleitem.title}
           onChange={handleInputChange}
         />
+        <InputStyle
+          type="text"
+          title="key"
+          placeholder="Tekstkoda"
+          value={puzzleitem.key}
+          onChange={handleInputChange}
+        />        
         <AudioRecorder audiourl={null} updateAudio={audio => setAudio(audio)} />
         <FormButton>Legg afturat</FormButton>
       </FormStyle>
