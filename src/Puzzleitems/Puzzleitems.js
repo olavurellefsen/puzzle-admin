@@ -11,7 +11,11 @@ const PuzzleitemsContainer = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   margin: 20px;
+`
+
+const EditorContainer = styled.div`
 `
 
 const FormHeaderStyle = styled.h2`
@@ -135,7 +139,7 @@ const Puzzleitems = () => {
   return (
     <PuzzleitemsContainer>
       {editing ? (
-        <>
+        <EditorContainer>
           <FormHeaderStyle>Rætta</FormHeaderStyle>
           <EditPuzzleitemForm
             editing={editing}
@@ -143,12 +147,12 @@ const Puzzleitems = () => {
             currentPuzzleitem={currentPuzzleitem}
             updatePuzzleitem={updatePuzzleitem}
           />
-        </>
+        </EditorContainer>
       ) : (
-        <>
+        <EditorContainer>
           <FormHeaderStyle>Stovna</FormHeaderStyle>
           <AddPuzzleitemForm addPuzzleitem={addPuzzleitem} />
-        </>
+        </EditorContainer>
       )}
       {loading ? (
         'Loading...'
