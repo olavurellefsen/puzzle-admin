@@ -32,6 +32,7 @@ const PUZZLEITEM_QUERY = gql`
       title
       audiourl
       key
+      actor
     }
   }
 `
@@ -87,6 +88,7 @@ const PUZZLEITEM_SUBSCRIPTION = gql`
       audiourl
       archived
       key
+      actor
     }
   }
 `
@@ -110,6 +112,7 @@ const Puzzleitems = () => {
     audiourl: '',
     key: '',
     deactivated: false,
+    actor: 1,
   }
 
   const [puzzleitems, setPuzzleitems] = useState(false)
