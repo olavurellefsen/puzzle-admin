@@ -82,6 +82,7 @@ const PuzzleTable = ({ puzzleitems, editRow, deletePuzzleitem }) => {
       <TableStyle>
         <TableHeadStyle>
           <TableHeadRowStyle>
+            <ThStyle>Rødd</ThStyle>
             <ThStyle>Tekstur</ThStyle>
             <ThStyle>Ljóð</ThStyle>
             <ThStyle>Gerðir</ThStyle>
@@ -91,6 +92,7 @@ const PuzzleTable = ({ puzzleitems, editRow, deletePuzzleitem }) => {
           {puzzleitems.length > 0 ? (
             puzzleitems.map((p,index) => (
               <TrStyle key={index}>
+                <TableitemStyle>{p.actor===1 ? '-' : (p.actor===2 ? 'Bina' : 'Broddi')}</TableitemStyle>
                 <TableitemStyle>{p.title}</TableitemStyle>
                 <TableitemStyle
                   onClick={() => {
